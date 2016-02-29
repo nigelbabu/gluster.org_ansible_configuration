@@ -1,2 +1,2 @@
 [bastion]
-salt-master.gluster.org ansible_ssh_user=root ansible_connexion=saltstack
+salt-master.gluster.org ansible_connection=saltstack
