@@ -1,0 +1,6 @@
+- hosts: bastion
+  roles:
+  - role: bastion
+    compat_disable: True
+    ansible_admin_group: admins
+  - role: salt_transport

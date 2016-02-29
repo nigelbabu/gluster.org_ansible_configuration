@@ -1,0 +1,5 @@
+---
+- src: https://github.com/OSAS/ansible-role-ansible_bastion
+  name: bastion
+- src: https://github.com/OSAS/ansible-role-salt_transport
+  name: salt_transport
