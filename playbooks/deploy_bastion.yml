@@ -3,4 +3,6 @@
   - role: bastion
     compat_disable: True
     ansible_admin_group: admins
+    remotes:
+    - { name: 'github', url: 'git@github.com:gluster/gluster.org_ansible_configuration.git'}
   - role: salt_transport
