@@ -3,3 +3,5 @@
   name: bastion
 - src: https://github.com/OSAS/ansible-role-salt_transport
   name: salt_transport
+- src: https://github.com/OSAS/ansible-role-httpd
+  name: httpd
