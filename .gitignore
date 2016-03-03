@@ -1,2 +1,5 @@
 roles/bastion
 roles/salt_transport
+roles/httpd
+roles/freeipa
+roles/openssh
