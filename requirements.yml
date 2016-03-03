@@ -7,3 +7,5 @@
   name: httpd
 - src: https://github.com/OSAS/ansible-role-freeipa
   name: freeipa
+- src: https://github.com/OSAS/ansible-role-openssh
+  name: openssh
