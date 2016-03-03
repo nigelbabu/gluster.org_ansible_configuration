@@ -5,3 +5,5 @@
   name: salt_transport
 - src: https://github.com/OSAS/ansible-role-httpd
   name: httpd
+- src: https://github.com/OSAS/ansible-role-freeipa
+  name: freeipa
