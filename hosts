@@ -1,5 +1,9 @@
+[all:vars]
+ansible_connection=saltstack
+
 [bastion]
-salt-master.gluster.org ansible_connection=saltstack
+salt-master.gluster.org
 
 [freeipa]
-freeipa01.rax.gluster.org ansible_connection=saltstack
+freeipa01.rax.gluster.org
+
