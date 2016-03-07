@@ -1,0 +1,4 @@
+- hosts: all
+  roles:
+  - role: rsyslog
+    syslog_server: syslog01.rax.gluster.org
