@@ -9,3 +9,6 @@ freeipa01.rax.gluster.org
 
 [syslog]
 syslog01.rax.gluster.org
+
+[webbuilder]
+webbuilder.gluster.org

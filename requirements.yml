@@ -13,3 +13,5 @@
   name: selinux
 - src: https://github.com/OSAS/ansible-role-rsyslog
   name: rsyslog
+- src: https://github.com/OSAS/ansible-role-middleman_builder
+  name: builder
