@@ -11,3 +11,5 @@
   name: openssh
 - src: https://github.com/OSAS/ansible-role-selinux
   name: selinux
+- src: https://github.com/OSAS/ansible-role-rsyslog
+  name: rsyslog
