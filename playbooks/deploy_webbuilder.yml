@@ -1,0 +1,20 @@
+#
+# this host serve to build the website on middleman and deploy it live.
+#
+- hosts: webbuilder
+  roles:
+  - role: builder
+    name: gluster_web
+    git_url: "https://github.com/gluster/glusterweb.git"
+    git_version: master
+    rsync_location: /srv/middleman_website/www/web/master
+    rsync_server: www.manageiq.org
+    rsync_user: deploy_website
+
+  - role: builder
+    name: gluster_planet
+    git_url: "https://github.com/gluster/planet-gluster.git"
+    git_version: master
+    rsync_location: /srv/middleman_website/www/planet/master
+    rsync_server: planet.manageiq.org
+    rsync_user: deploy_website
