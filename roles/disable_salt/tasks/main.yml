@@ -5,6 +5,6 @@
 # I have to disable the states 
 - lineinfile:
     dest: /etc/salt/grains
-    line: "cfgmgt: ansible\n"
+    line: "cfgmgmt: ansible\n"
     create: yes
     insertafter: EOF
