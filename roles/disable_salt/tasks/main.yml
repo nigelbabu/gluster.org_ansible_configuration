@@ -1,0 +1,6 @@
+---
+# this is used along the salt setup to say "stop managing this 
+# system, it is now in ansible". Since the openssh setup in salt break
+# freeipa, and I cannot fix until that's upgraded all over the board, 
+# I have to disable the states 
+- copy:  dest=/etc/salt/grains content="cfgmgt: ansible\n"
