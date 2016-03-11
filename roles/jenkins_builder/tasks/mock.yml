@@ -1,4 +1,6 @@
 ---
 - package: name=mock state=present
+  name: Install mock package
 
 - user: name=mock groups=mock state=present
+  name: Add a mock user
