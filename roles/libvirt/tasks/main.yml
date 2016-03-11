@@ -1,0 +1,10 @@
+---
+- package: name={{ item }} state=installed
+  with_items:
+  - libvirt-python
+  - virt-install
+  - libguestfs
+  - libguestfs-tools
+  - libvirt
+
+- service: name=libvirtd status=started enable=yes
