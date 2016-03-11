@@ -1,0 +1,28 @@
+---
+- lineinfile: 
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth0
+    regexp: ^IPV6INIT=
+    line: IPV6INIT=no
+  name: Disable ipv6 in eth0 config
+
+- lineinfile: 
+    dest: /etc/sysconfig/network
+    regexp: ^NETWORKING_IPV6=
+    line: NETWORKING_IPV6=no
+  name: Disable ipv6 in network config
+
+- sysctl:
+    name: {{ item }}
+    value: 1
+    state: present
+    sysctl_set: yes 
+    reload: yes
+  with_items:
+  - net.ipv6.conf.all.disable_ipv6
+  - net.ipv6.conf.default.disable_ipv6
+  name: Disable ipv6 in sysctl
+
+- copy:
+    dest: /etc/modprobe.d/ipv6.conf
+    contents: "options ipv6 disable=1"
+  name: Disable ipv6 module
