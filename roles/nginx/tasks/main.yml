@@ -7,5 +7,6 @@
 - file: state=directory name={{ nginx_prefix }}etc/nginx/conf.d/
 
 - template: dest={{ nginx_prefix }}etc/nginx/nginx.conf src=nginx.conf
+  notify: restart nginx
 
 - service: name=nginx state=started enabled=yes
