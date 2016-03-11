@@ -1,2 +1,3 @@
 ---
 - include: pkgs.yml
+- include: authroot_georep.yml

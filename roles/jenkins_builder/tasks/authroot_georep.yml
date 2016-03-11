@@ -1,0 +1,12 @@
+---
+- shell: ssh-keygen -q -P '' -C "key for georep test" -f /root/.ssh/id_georep
+  name: Generate a key for georep
+  args:
+    creates: /root/.ssh/id_georep
+
+- shell: cat /root/.ssh/id_georep.pub
+  name: Get the public key
+  register: georep_pub_key
+  changed_when: False
+
+- authorized_key: user=root key="{{ georep_pub_key.stdout }}" key_options="from=127.0.0.1"
