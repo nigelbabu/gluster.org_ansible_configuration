@@ -1,0 +1,3 @@
+- hosts: jenkins_builders
+  roles:
+  - jenkins_builder
