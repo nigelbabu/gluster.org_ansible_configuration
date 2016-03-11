@@ -10,3 +10,5 @@
 
 - include: mock.yml
   when: ansible_os_family == 'RedHat'
+
+- include: gluster_qa_scripts.yml
