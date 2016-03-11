@@ -22,3 +22,5 @@ munin.gluster.org
 
 [jenkins_builder]
 freebsd0.cloud.gluster.org ansible_python_interpreter=/usr/local/bin/python
+slave47.cloud.gluster.org
+
