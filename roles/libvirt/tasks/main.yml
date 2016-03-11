@@ -7,4 +7,4 @@
   - libguestfs-tools
   - libvirt
 
-- service: name=libvirtd state=started enable=yes
+- service: name=libvirtd state=started enabled=yes
