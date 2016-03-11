@@ -4,9 +4,9 @@
   - lsof
   - screen
   - htop
-  - vim-enhanced
 
 - package: state=present name={{ item }}
   with_items:
   - strace
+  - vim-enhanced
   when: ansible_system == 'Linux'
