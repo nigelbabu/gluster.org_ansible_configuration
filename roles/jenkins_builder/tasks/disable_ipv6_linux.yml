@@ -23,5 +23,5 @@
 
 - copy:
     dest: /etc/modprobe.d/ipv6.conf
-    contents: "options ipv6 disable=1"
+    content: "options ipv6 disable=1"
   name: Disable ipv6 module
