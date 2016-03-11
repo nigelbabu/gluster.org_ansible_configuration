@@ -1,7 +1,7 @@
 - hosts: all
   roles:
   - openssh
-  - selinux
+  - { role: selinux, when: ansible_system == 'Linux'}
   - disable_salt
   - ntp
   - shell_timeout
