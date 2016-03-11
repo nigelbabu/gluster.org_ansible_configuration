@@ -12,3 +12,7 @@ syslog01.rax.gluster.org
 
 [webbuilder]
 webbuilder.gluster.org
+
+[virt_hosts]
+formircary.gluter.org
+ci.gluster.org
