@@ -14,5 +14,5 @@ syslog01.rax.gluster.org
 webbuilder.gluster.org
 
 [virt_hosts]
-formircary.gluter.org
-ci.gluster.org
+formicary.gluter.org
+ci.rht.gluster.org
