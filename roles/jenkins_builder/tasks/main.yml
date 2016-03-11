@@ -12,3 +12,16 @@
   when: ansible_os_family == 'RedHat'
 
 - include: gluster_qa_scripts.yml
+
+- name: Deploy sudoers config for jenkins 
+  copy:
+    dest: /{% if ansible_system == 'FreeBSD'%}usr/local/{% endif %}etc/sudoers.d/sudoers_jenkins
+    src: sudoers_jenkins
+
+# TODO /home should be 755
+# TODO set a static password
+- name: Create jenkins user
+  user:
+    name: jenkins
+    groups: wheel
+
