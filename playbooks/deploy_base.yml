@@ -3,3 +3,4 @@
   - openssh
   - selinux
   - disable_salt
+  - ntp
