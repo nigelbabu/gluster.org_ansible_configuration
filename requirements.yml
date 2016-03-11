@@ -3,6 +3,8 @@
   name: bastion
 - src: https://github.com/OSAS/ansible-role-salt_transport
   name: salt_transport
+- src: git+https://gitlab.com/misc/ansible-role-tor.git
+  name: tor
 - src: https://github.com/OSAS/ansible-role-httpd
   name: httpd
 - src: https://github.com/OSAS/ansible-role-freeipa
