@@ -1,0 +1,4 @@
+---
+- package: name=mock state=present
+
+- user: name=mock groups=mock state=present
