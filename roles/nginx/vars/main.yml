@@ -1,0 +1,7 @@
+nginx_setup:
+    Linux:
+        prefix: /
+        user: nginx
+    FreeBSD:
+        prefix: /usr/local/
+        user: www
