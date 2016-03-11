@@ -5,6 +5,8 @@
   name: salt_transport
 - src: git+https://gitlab.com/misc/ansible-role-tor.git
   name: tor
+- src: git+https://gitlab.com/misc/ansible-role-shell_timeout.git
+  name: shell_timeout
 - src: https://github.com/OSAS/ansible-role-httpd
   name: httpd
 - src: https://github.com/OSAS/ansible-role-freeipa
