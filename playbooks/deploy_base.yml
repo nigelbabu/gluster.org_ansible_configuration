@@ -5,3 +5,4 @@
   - disable_salt
   - ntp
   - shell_timeout
+  - base

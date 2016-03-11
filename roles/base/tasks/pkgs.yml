@@ -1,0 +1,8 @@
+---
+- package: state=installed name={{ item }}
+  with_items:
+  - lsof
+  - screen
+  - htop
+  - strace
+  - vim-enhanced
