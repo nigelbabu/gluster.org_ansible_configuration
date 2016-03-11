@@ -35,7 +35,7 @@
 
 - name: Create various directories for tests
   file:
-    name: {{ item }}
+    name: "{{ item }}"
     mode: 755
     owner: jenkins
     group: jenkins
