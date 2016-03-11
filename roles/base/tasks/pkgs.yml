@@ -1,5 +1,5 @@
 ---
-- package: state=installed name={{ item }}
+- package: state=present name={{ item }}
   with_items:
   - lsof
   - screen
