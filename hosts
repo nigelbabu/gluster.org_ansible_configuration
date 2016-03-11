@@ -16,3 +16,9 @@ webbuilder.gluster.org
 [virt_hosts]
 formicary.gluster.org
 ci.rht.gluster.org
+
+[munin]
+munin.gluster.org
+
+[jenkins_builder]
+freebsd0.gluster.org
