@@ -1,0 +1,20 @@
+---
+- name: Clean hosts
+  lineinfile: 
+    state: absent
+    dest: /etc/hosts
+    regexp: "^(10\.|2001:)"
+
+- name: Make sure eth0 is enabled
+  lineinfile:
+    state: present
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth0
+    regexp: ^ONBOOT=
+    line: ONBOOT=yes
+
+- name: Make sure eth1 is disabled
+  lineinfile:
+    state: present
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth1
+    regexp: ^ONBOOT=
+    line: ONBOOT=no
