@@ -1,0 +1,55 @@
+---
+- package: state=installed name={{ item }}
+  name: Install jenkins builder standard packages
+  with_items:
+  - git
+  - dbench
+  - yajl
+
+- package: state=installed name={{ item }}
+  name: Install jenkins builder Linux packages
+  when: ansible_system == 'Linux'
+  with_items:
+  # needed for some tests
+  - net-tools
+  # used for smoke.sh, for killall
+  - psmisc
+  - libacl-devel
+  - nfs-utils
+  - automake
+  - autoconf
+  - libtool
+  - flex
+  - bison
+  - cmockery2-devel
+  - perl-Test-Harness
+  - openssl-devel
+  - lvm2-devel
+  - sqlite-devel
+  - libxml2-devel
+  - python-devel
+  - userspace-rcu-devel
+  - libibverbs-devel
+  - librdmacm-devel
+  - libaio-devel
+
+- package: state=installed name={{ item }}
+  name: Install jenkins builder FreeBSD packages
+  when: ansible_system == 'Linux'
+  with_items:
+  - cmockery2
+  - perl5
+  - openjdk8-jre
+  - sqlite3
+
+- package: state=installed name={{ item }}
+  name: Install jenkins builder jdk for RHEL/Centos
+  when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS'
+  with_items:
+  - java-1.7.0-openjdk
+
+- package: state=installed name={{ item }}
+  name: Install jenkins builder jdk for RHEL/Centos
+  when: ansible_distribution == 'Fedora'
+  with_items:
+  - java-1.8.0-openjdk
