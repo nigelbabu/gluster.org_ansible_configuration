@@ -25,9 +25,33 @@
     name: jenkins
     groups: wheel
 
+#TODO add the fingerprint of review.gluster.org to user jenkins
+# so it doesn't block
 - name: Add builds to the PATH
   copy:
     dest: /etc/profile.d/gluster_test.sh
     content: 'export PATH="$PATH:/build/install/sbin:/build/install/bin"'
   when: ansible_system == 'Linux'
-  
+
+- name: Create various directories for tests
+  file:
+    name: {{ item }}
+    mode: 755
+    owner: jenkins
+    group: jenkins
+  with_items:
+  - /var/log/glusterfs
+  - /var/lib/glusterd
+  - /var/run/gluster
+  - /d
+  - /archives
+  - /d/archived_builds
+  - /d/backends
+  - /d/build
+  - /d/logs
+  - /home/jenkins/root
+  - /archives/archived_builds
+  - /archives/log
+
+- name: Symlink /d/build to /build
+  file: src=/d/build dest=/build state=link
