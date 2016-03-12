@@ -1,0 +1,21 @@
+---
+- name: Create bitergia user for rsync
+  user:
+    state: present
+    comment: Bitergia user to sync logs
+    home: /srv/bitergia/
+    name: bitergia
+
+- name: Add the bitergia ssh keys
+  authorized_key: 
+    user: bitergia
+    key: "{{ item }}"
+  with_file:
+  - bot.pub
+  - daniel.pub
+
+- name: Install cron to copy the file
+  cron:
+    user: root
+    job:  /bin/cp -f -R /var/log/httpd ~bitergia/logs && chown -R bitergia ~bitergia/
+    minute: '*/30'
