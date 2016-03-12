@@ -1,4 +1,9 @@
 ---
+#
+# This playbook is here to make sure that jenkins builder
+# on rackspace have one single interface, as the current testsuite
+# may fail with more than 1 interface (ideally, this should be fixed
+# and bug reports should be opened to track progress)
 - name: Clean hosts
   lineinfile: 
     state: absent
