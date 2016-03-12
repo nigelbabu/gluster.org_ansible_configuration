@@ -26,3 +26,6 @@ slave47.cloud.gluster.org
 
 [gerrit]
 dev.gluster.org
+
+[download]
+download01.rax.gluster.org
