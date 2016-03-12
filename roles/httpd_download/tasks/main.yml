@@ -1,0 +1,11 @@
+---
+- copy:
+    src: download_config.conf
+    dest: /etc/httpd/conf.d/{{ _website_domain }}.conf.d/download_config.conf
+  notify: verify config and restart httpd
+
+- copy:
+    src: custom_log.conf
+    dest: /etc/httpd/conf.d/custom_log.conf
+  notify: verify config and restart httpd
+
