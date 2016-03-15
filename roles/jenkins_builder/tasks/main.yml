@@ -61,3 +61,10 @@
     src: /opt/qa/nginx/default.conf
     dest: /{% if ansible_system == 'FreeBSD'%}usr/local/{% endif %}etc/nginx/conf.d/default.conf
   notify: restart nginx
+
+- sysctl:
+    name: kernel.core_pattern
+    value: "/%e-%p.core"
+    state: present
+    reload: yes
+  name: use the same naming policy for corefile than NetBSD
