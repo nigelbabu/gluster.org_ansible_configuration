@@ -8,7 +8,7 @@
     git_url: "https://github.com/gluster/glusterweb.git"
     git_version: master
     rsync_location: /srv/middleman_website/www/web/master
-    rsync_server: www.manageiq.org
+    rsync_server: www.gluster.org
     rsync_user: deploy_website
 
   - role: builder
@@ -16,5 +16,5 @@
     git_url: "https://github.com/gluster/planet-gluster.git"
     git_version: master
     rsync_location: /srv/middleman_website/www/planet/master
-    rsync_server: planet.manageiq.org
+    rsync_server: planet.gluster.org
     rsync_user: deploy_website
