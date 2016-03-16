@@ -39,6 +39,7 @@
     mode: 755
     owner: jenkins
     group: jenkins
+    state: directory
   with_items:
   - /var/log/glusterfs
   - /var/lib/glusterd
