@@ -64,7 +64,7 @@
   notify: restart nginx
 
 - sysctl:
-    name: {% if ansible_system == 'FreeBSD' %}kern.corefile{% else %}kernel.core_pattern{% endif %}
+    name: "{% if ansible_system == 'FreeBSD' %}kern.corefile{% else %}kernel.core_pattern{% endif %}"
     value: "/%e-%p.core"
     state: present
     reload: yes
