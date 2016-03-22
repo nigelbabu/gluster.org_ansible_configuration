@@ -32,6 +32,7 @@
   - libibverbs-devel
   - librdmacm-devel
   - libaio-devel
+  - clang-analyzer
 
 - package: state=present name={{ item }}
   name: Install jenkins builder FreeBSD packages
