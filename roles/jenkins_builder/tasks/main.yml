@@ -36,7 +36,7 @@
 - name: Create various directories for tests
   file:
     name: "{{ item }}"
-    mode: "u+rwx,g+rx,o+rx"
+    mode: "u=rwx,g=rx,o=rx"
     owner: jenkins
     group: jenkins
     state: directory
