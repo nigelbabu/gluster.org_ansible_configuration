@@ -19,5 +19,5 @@
   name: rsyslog
 - src: https://github.com/OSAS/ansible-role-middleman_builder
   name: builder
-- src: git+https://gitlab.com/misc/ansible-role-ntp.git
+- src: git+https://gitlab.com/osas/ansible-role-ntp.git
   name: ntp
