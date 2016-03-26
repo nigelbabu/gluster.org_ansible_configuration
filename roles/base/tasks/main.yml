@@ -1,2 +1,3 @@
 ---
 - include: pkgs.yml
+- include: root_ssh_keys.yml
