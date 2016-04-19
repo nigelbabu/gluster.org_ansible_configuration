@@ -33,6 +33,13 @@
   - librdmacm-devel
   - libaio-devel
   - clang-analyzer
+  # needed for REST APIs and Eventing
+  - golang
+  - golang-github-gorilla-mux-devel
+  - golang-github-gorilla-handlers-devel
+  - golang-github-gorilla-websocket-devel
+  - golang-github-dgrijalva-jwt-go-devel
+  - golang-github-Sirupsen-logrus-devel
 
 - package: state=present name={{ item }}
   name: Install jenkins builder FreeBSD packages
