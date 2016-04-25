@@ -62,3 +62,8 @@
   when: ansible_distribution == 'Fedora'
   with_items:
   - java-1.8.0-openjdk
+
+- package: state=absent name={{ item }}
+  name: Remove package that cause trouble with the regression suite
+  with_items:
+  - qemu-img
