@@ -21,5 +21,5 @@
   name: builder
 - src: git+https://gitlab.com/osas/ansible-role-ntp.git
   name: ntp
-- src: git+https://gitlab.com/misc/ansible-role-systemd_container
+- src: git+https://gitlab.com/misc/ansible-role-systemd_container.git
   name: systemd_container
