@@ -23,5 +23,5 @@
   name: ntp
 - src: git+https://gitlab.com/misc/ansible-role-systemd_container.git
   name: systemd_container
-- src: git+https://gitlab.com/misc/ansible-role-libvirt.git
+- src: git+https://gitlab.com/osas/ansible-role-libvirt.git
   name: libvirt
