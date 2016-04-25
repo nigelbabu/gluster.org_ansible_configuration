@@ -33,6 +33,8 @@
   - librdmacm-devel
   - libaio-devel
   - clang-analyzer
+  # needed to make rpm
+  - rpm-build
   # needed for REST APIs and Eventing
   - golang
   - golang-github-gorilla-mux-devel
