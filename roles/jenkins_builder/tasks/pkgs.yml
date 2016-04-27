@@ -12,6 +12,7 @@
   with_items:
   # needed for some tests
   - net-tools
+  - netstat
   # used for smoke.sh, for killall
   - psmisc
   - libacl-devel
