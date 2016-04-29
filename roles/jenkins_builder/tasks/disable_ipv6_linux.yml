@@ -23,7 +23,8 @@
   - net.ipv6.conf.default.disable_ipv6
   name: Disable ipv6 in sysctl
 
+#do not disable ipv6 here, since it make the previous tasks fail after a reboot
 - copy:
     dest: /etc/modprobe.d/ipv6.conf
-    content: "options ipv6 disable=1"
+    content: "options ipv6"
   name: Disable ipv6 module
