@@ -24,6 +24,7 @@ munin.gluster.org
 freebsd0.cloud.gluster.org ansible_python_interpreter=/usr/local/bin/python
 slave47.cloud.gluster.org
 slave29.cloud.gluster.org
+slave34.cloud.gluster.org
 
 [gerrit]
 dev.gluster.org
