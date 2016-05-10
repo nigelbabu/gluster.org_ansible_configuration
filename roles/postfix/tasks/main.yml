@@ -1,0 +1,6 @@
+---
+- name: Install postfix
+  package: name=postfix state=installed
+
+- name: Start postfix
+  service: name=postfix status=started enabled=yes
