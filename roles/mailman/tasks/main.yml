@@ -1,0 +1,12 @@
+---
+- name: Install mailman
+  package: name=mailman state=present
+
+- name: Deploy mm_cfg.py
+  template: dest=/etc/mailman/mm_cfg.py src=mm_cfg.py
+  notify: restart mailman
+
+- name: Ensure the mailman service is started
+  service: name=mailman state=started enabled=yes
+
+- include: create_lists.yml

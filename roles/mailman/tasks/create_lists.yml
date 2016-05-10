@@ -1,0 +1,5 @@
+- name: Creates the lists
+  command: /usr/lib/mailman/bin/newlist {{ item }} list-admin@{{ domain }} {{ item }}
+  args:
+    creates: /var/lib/mailman/lists/{{ item }}/config.pck
+  with_items: mailing_lists
