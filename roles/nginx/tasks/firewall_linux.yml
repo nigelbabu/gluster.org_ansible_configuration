@@ -1,0 +1,13 @@
+- name: Open firewall (EL6)
+  shell: lokkit -s {{ item }}
+  with_items:
+  - http
+  - https
+  when: ansible_distribution_major_version == '6' and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
+
+- name: Open firewall (firewalld)
+  firewalld: service={{ item }} permanent=true state=enabled immediate=yes
+  with_items:
+  - http
+  - https
+  when: ansible_distribution == 'Fedora' or ansible_distribution_major_version == '7'

@@ -10,3 +10,6 @@
   notify: restart nginx
 
 - service: name=nginx state=started enabled=yes
+
+- include: firewall_linux.yml
+  when: ansible_system == 'Linux'
