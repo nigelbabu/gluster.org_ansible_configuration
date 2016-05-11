@@ -1,0 +1,17 @@
+---
+- name: Install memcached
+  package: 
+    name: memcached
+    state: present
+
+- name: Start the service
+  service:
+    name: memcached
+    enabled: True
+    state: started
+    
+- name: Let httpd connect to memcache
+  seboolean: 
+    name: httpd_can_network_connect 
+    state: yes 
+    persistent: yes
