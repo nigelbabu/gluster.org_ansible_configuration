@@ -26,6 +26,8 @@ slave47.cloud.gluster.org
 slave29.cloud.gluster.org
 slave34.cloud.gluster.org
 slave32.cloud.gluster.org
+slave0.cloud.gluster.org
+slave1.cloud.gluster.org
 
 [gerrit]
 dev.gluster.org
