@@ -13,5 +13,14 @@
   copy: dest=/etc/sysconfig/ipv4_conntrack content="-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT"
   notify: Include conntrack rules in lokkit
 
+# so on iptables restart, the conntrack table is dropped
+# so this break salt...
+- name: Do not kill conntrack on firewall restart
+  lineinfile: 
+    dest: /etc:syconfig/iptables-config
+    regexp: '^IPTABLES_MODULES_UNLOAD='
+    line: 'IPTABLES_MODULES_UNLOAD="no"'
+    state: present
+
 - name: Apply change immediately
   meta: flush_handlers
