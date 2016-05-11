@@ -11,8 +11,4 @@
   - vim-enhanced
   when: ansible_system == 'Linux'
 
-- package: state=present name={{ item }}
-  with_items:
-  - system-config-firewall-base
-  - iptables-ipv6
-  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '6'
+

@@ -1,0 +1,3 @@
+---
+- name: Include conntrack rules in lokkit
+  shell: lokkit --custom-rules=/etc/sysconfig/ipv4_conntrack
