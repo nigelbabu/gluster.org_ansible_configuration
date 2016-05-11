@@ -12,3 +12,6 @@
 - name: Copy custom rules for lokkit
   copy: dest=/etc/sysconfig/ipv4_conntrack content="-A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT"
   notify: Include conntrack rules in lokkit
+
+- name: Apply change immediately
+  meta: flush_handlers
