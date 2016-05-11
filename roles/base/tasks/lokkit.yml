@@ -17,7 +17,7 @@
 # so this break salt...
 - name: Do not kill conntrack on firewall restart
   lineinfile: 
-    dest: /etc:syconfig/iptables-config
+    dest: /etc/syconfig/iptables-config
     regexp: '^IPTABLES_MODULES_UNLOAD='
     line: 'IPTABLES_MODULES_UNLOAD="no"'
     state: present
