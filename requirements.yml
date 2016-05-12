@@ -25,3 +25,5 @@
   name: systemd_container
 - src: git+https://gitlab.com/osas/ansible-role-libvirt.git
   name: libvirt
+- src: git+https://gitlab.com/osas/ansible-role-munin.git
+  name: munin
