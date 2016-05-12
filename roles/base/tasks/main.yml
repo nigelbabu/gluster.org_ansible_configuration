@@ -1,5 +1,5 @@
 ---
+- include: pkgs.yml
 - include: lokkit.yml
   when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '6'
-- include: pkgs.yml
 - include: root_ssh_keys.yml
