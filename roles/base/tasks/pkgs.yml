@@ -9,6 +9,7 @@
   with_items:
   - strace
   - vim-enhanced
+  - libselinux-python
   when: ansible_system == 'Linux'
 
 
