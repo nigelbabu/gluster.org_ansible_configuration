@@ -39,6 +39,7 @@ slave33.cloud.gluster.org
 slave34.cloud.gluster.org
 slave46.cloud.gluster.org
 slave47.cloud.gluster.org
+centos6-1.ci.gluster.org
 
 [gerrit]
 dev.gluster.org
