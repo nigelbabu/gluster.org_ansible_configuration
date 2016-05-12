@@ -1,0 +1,5 @@
+- hosts: all
+  roles:
+  - role: munin
+    munin_master: munin.gluster.org
+    admin_email: root@{{ ansible_domain }}
