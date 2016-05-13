@@ -8,6 +8,9 @@
 - include: setup_rackspace_network.yml
   when: ansible_system == 'Linux'
 
+- include: setup_lvm_config.yml
+  when: ansible_system == 'Linux'
+
 - include: mock.yml
   when: ansible_os_family == 'RedHat'
 

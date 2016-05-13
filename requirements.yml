@@ -27,3 +27,5 @@
   name: libvirt
 - src: git+https://gitlab.com/osas/ansible-role-munin.git
   name: munin
+- src: git+https://gitlab.com/osas/ansible-role-lvm_config.git
+  name: lvm_config
