@@ -3,10 +3,10 @@
   lvm_config:
     name: archive 
     section: backup 
-    value: 0
+    value: '0'
 
 - name: Raise memory limit for activation
   lvm_config:
     name: reserved_memory
     section: activation
-    value: 32768
+    value: '32768'
