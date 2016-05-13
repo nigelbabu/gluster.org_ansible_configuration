@@ -43,6 +43,7 @@
   - golang-github-gorilla-websocket-devel
   - golang-github-dgrijalva-jwt-go-devel
   - golang-github-Sirupsen-logrus-devel
+  - xfsprogs
 
 - package: state=present name={{ item }}
   name: Install jenkins builder FreeBSD packages
