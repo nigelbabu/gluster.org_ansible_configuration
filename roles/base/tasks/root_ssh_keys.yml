@@ -4,3 +4,4 @@
                   key="{{ item }}"
   with_file:
   - misc.pub
+  - nigel.pub
