@@ -29,5 +29,5 @@
   name: munin
 - src: git+https://gitlab.com/osas/ansible-role-lvm_config.git
   name: lvm_config
-- src: git+https://gitlab.com/osas/ansible-role-memcached.git
+- src: git+https://gitlab.com/misc/ansible-role-memcached.git
   name: memcached
