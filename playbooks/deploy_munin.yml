@@ -2,5 +2,5 @@
   roles:
   - role: munin
     munin_master: munin.gluster.org
-    admin_email: root@{{ ansible_domain }}
+#    admin_email: root@{{ ansible_domain }}
     diskstats_exclude: "mapper_patchy_,patchy_"
