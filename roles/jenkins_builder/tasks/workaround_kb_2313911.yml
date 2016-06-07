@@ -2,5 +2,5 @@
 # until centos catch up
 - copy:
     dest: /etc/environment
-    content: "NSS_DISABLE_HW_AES=1"
+    content: "NSS_DISABLE_HW_AES=1\n"
 
