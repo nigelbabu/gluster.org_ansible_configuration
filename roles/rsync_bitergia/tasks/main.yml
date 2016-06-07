@@ -14,6 +14,17 @@
   - bot.pub
   - daniel.pub
 
+- name: Install script to clean logs
+  file:
+    dest: /usr/local/bin/bitergia_clean.pl
+    src: bitergia_clean.pl
+
+- name: Install cron to clean logs
+  cron:
+    user: bitergia
+    job: perl /usr/local/bin/bitergia_clean.pl
+    hour: '5'
+
 - name: Install cron to copy the file
   cron:
     user: root
