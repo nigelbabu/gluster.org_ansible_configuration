@@ -14,6 +14,9 @@
 - include: mock.yml
   when: ansible_os_family == 'RedHat'
 
+- include: workaround_kb_2313911.yml
+  when: ansible_os_family == 'RedHat' and ansible_distribution_major_version == '6'
+ 
 - include: gluster_qa_scripts.yml
 
 - name: Deploy sudoers config for jenkins 
