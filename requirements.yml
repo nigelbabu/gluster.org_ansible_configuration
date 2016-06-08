@@ -31,5 +31,5 @@
   name: lvm_config
 - src: git+https://gitlab.com/misc/ansible-role-memcached.git
   name: memcached
-- src: git+https://gitlab.com/misc/ansible-role-pf_firewall.git
+- src: git+https://gitlab.com/osas/ansible-role-pf_firewall.git
   name: pf_firewall
