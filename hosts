@@ -20,8 +20,14 @@ ci.rht.gluster.org
 [munin]
 munin.gluster.org
 
+[freebsd:vars]
+ansible_python_interpreter=/usr/local/bin/python
+
+[freebsd]
+freebsd0.cloud.gluster.org 
+
 [jenkins_builders]
-freebsd0.cloud.gluster.org ansible_python_interpreter=/usr/local/bin/python
+freebsd0.cloud.gluster.org 
 slave0.cloud.gluster.org
 slave1.cloud.gluster.org
 slave20.cloud.gluster.org

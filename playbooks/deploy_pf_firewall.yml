@@ -1,5 +1,5 @@
 ---
-- hosts: freebsd0.cloud.gluster.org
+- hosts: freebsd
   roles:
   - role: pf_firewall
     tcp_services:
