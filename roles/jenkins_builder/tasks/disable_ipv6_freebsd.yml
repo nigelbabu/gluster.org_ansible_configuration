@@ -1,0 +1,6 @@
+---
+- lineinfile:
+    dest: /etc/rc.conf
+    regexp: ^ipv6_enable=
+    line: ipv6_enable="NO"
+  name: Disable ipv6 on FreeBSD
