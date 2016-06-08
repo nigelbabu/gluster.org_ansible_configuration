@@ -76,6 +76,7 @@
   command: semanage fcontext -a -t public_content_t {{ item }}(/.*)?
   with_items:
   - /archives
+  when: ansible_system == 'Linux'
 
 - sysctl:
     name: "{% if ansible_system == 'FreeBSD' %}kern.corefile{% else %}kernel.core_pattern{% endif %}"
