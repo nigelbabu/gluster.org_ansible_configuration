@@ -5,3 +5,13 @@ roles/httpd
 roles/freeipa
 roles/openssh
 roles/selinux
+roles/shell_timeout
+roles/rsyslog
+roles/builder
+roles/ntp
+roles/systemd_container
+roles/libvirt
+roles/munin
+roles/lvm_config
+roles/memcached
+roles/pf_firewall
