@@ -4,6 +4,9 @@ ansible_connection=saltstack
 [bastion]
 salt-master.gluster.org
 
+[backups]
+backups.cloud.gluster.org
+
 [freeipa]
 freeipa01.rax.gluster.org
 
