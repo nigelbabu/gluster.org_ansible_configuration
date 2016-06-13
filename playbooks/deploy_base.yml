@@ -6,3 +6,4 @@
   - disable_salt
   - ntp
   - { role: shell_timeout, when: ansible_system == 'Linux'}
+  - unattended_updates
