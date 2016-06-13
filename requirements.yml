@@ -33,5 +33,5 @@
   name: memcached
 - src: git+https://gitlab.com/osas/ansible-role-pf_firewall.git
   name: pf_firewall
-- src: git+https://gitlab.com/osas/ansible-role-unattendedi_updates.git
+- src: git+https://gitlab.com/osas/ansible-role-unattended_updates.git
   name: unattended_updates
