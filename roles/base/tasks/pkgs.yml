@@ -10,6 +10,7 @@
   - strace
   - vim-enhanced
   - libselinux-python
+  - lshw
   when: ansible_system == 'Linux'
 
 
