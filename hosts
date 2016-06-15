@@ -31,6 +31,7 @@ munin.gluster.org
 [freebsd:vars]
 ansible_python_interpreter=/usr/local/bin/python
 ansible_connection=ssh
+ansible_username=root
 
 [freebsd]
 freebsd0.cloud.gluster.org 
