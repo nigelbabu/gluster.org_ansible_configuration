@@ -15,7 +15,7 @@
   - daniel.pub
 
 - name: Install script to clean logs
-  file:
+  copy:
     dest: /usr/local/bin/bitergia_clean.pl
     src: bitergia_clean.pl
 
