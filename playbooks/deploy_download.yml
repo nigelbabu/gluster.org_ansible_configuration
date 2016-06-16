@@ -10,4 +10,5 @@
     website_domain: download.gluster.org
     document_root: /var/www/html
     use_letsencrypt: True 
+    mail_domain: gluster.org
   - rsync_bitergia
