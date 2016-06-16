@@ -21,12 +21,14 @@
 
 - name: Install cron to clean logs
   cron:
+    name: Clean logs
     user: bitergia
     job: perl /usr/local/bin/bitergia_clean.pl
     hour: '5'
 
 - name: Install cron to copy the file
   cron:
+    name: Copy bitergia file
     user: root
     job:  /bin/cp -f -R /var/log/httpd ~bitergia/logs && chown -R bitergia ~bitergia/
     minute: '*/30'
