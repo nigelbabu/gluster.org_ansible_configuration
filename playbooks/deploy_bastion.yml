@@ -1,3 +1,13 @@
+- hosts: all
+  tasks:
+  - group_by: key={{ 'salt_transport' if ansible_connection == 'salt_stack' else 'ssh_transport' }}
+    changed_when: False
+
+- hosts: salt_transport
+  roles:
+  - role: salt
+    salt_master: salt-master.gluster.org
+
 - hosts: bastion
   roles:
   - role: bastion
