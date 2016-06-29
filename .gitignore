@@ -15,3 +15,6 @@ roles/munin
 roles/lvm_config
 roles/memcached
 roles/pf_firewall
+roles/tor
+roles/salt
+roles/unattended_updates
