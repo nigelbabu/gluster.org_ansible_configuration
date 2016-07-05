@@ -18,3 +18,5 @@
     rsync_location: /srv/middleman_website/www/planet/master
     rsync_server: supercolony.gluster.org
     rsync_user: deploy_website
+    # push rebuild every hour
+    rebuild_interval: 1
