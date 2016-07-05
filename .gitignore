@@ -1,4 +1,5 @@
 .*.swp
+.*.retry
 roles/bastion
 roles/salt_transport
 roles/httpd
