@@ -3,7 +3,7 @@
   name: bastion
 - src: https://github.com/OSAS/ansible-role-salt_transport
   name: salt_transport
-- src: git+https://gitlab.com/misc/ansible-role-tor.git
+- src: git+https://gitlab.com/OSAS/ansible-role-tor.git
   name: tor
 - src: git+https://gitlab.com/misc/ansible-role-shell_timeout.git
   name: shell_timeout
