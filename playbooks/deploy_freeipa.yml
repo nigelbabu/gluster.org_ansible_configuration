@@ -1,0 +1,6 @@
+- hosts: all
+  roles:
+  - role: freeipa
+    freeipa_master: freeipa01.rax.gluster.org
+    # autodetection do not work due to using subdomain
+    freeipa_domain: gluster.org
