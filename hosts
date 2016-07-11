@@ -1,9 +1,6 @@
 [all:vars]
 ansible_connection=saltstack
 
-[backups]
-backups.cloud.gluster.org
-
 [bastion]
 salt-master.gluster.org
 
