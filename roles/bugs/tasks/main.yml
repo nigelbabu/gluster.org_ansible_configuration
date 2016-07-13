@@ -1,0 +1,25 @@
+---
+- name: Install web configuration
+  template:
+    dest: /etc/nginx/conf.d/{{ server_name }}.conf
+    src: nginx.conf
+  notify: restart nginx
+
+- command: semanage fcontext -a -t httpd_user_rw_content_t /srv/{{ server_name }}/html/(/.*)?
+
+- name: Create the directory holding git checkout
+  file:
+    name: /srv/{{ server_name }}/html/
+    state: directory
+
+- name: Clone the repo
+  git:
+    repo: https://github.com/gluster/gluster-bugs-webui.git
+    dest: /srv/{{server_name }}/html/
+    version: HEAD
+
+- name: Link the cronjob
+  file:
+    state: link
+    path: /etc/cron.daily/update-bug-webui.sh
+    dest: /srv/{{ server_name }}/html/run-report.sh 
