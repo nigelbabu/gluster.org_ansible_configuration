@@ -4,6 +4,8 @@
   - lsof
   - screen
   - htop
+  - nmap
+  - socat
 
 - package: state=present name={{ item }}
   with_items:
