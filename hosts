@@ -22,6 +22,11 @@ ci.rht.gluster.org
 haplometrosis.rht.gluster.org
 pleometrosis.rht.gluster.org
 
+[community_cage]
+haplometrosis.rht.gluster.org
+pleometrosis.rht.gluster.org
+
+
 [munin]
 munin.gluster.org
 

@@ -1,0 +1,5 @@
+# ntp server authorized by NOC, see INC0422529
+ntp_servers:
+- 128.109.42.114
+- 128.109.58.11
+- 128.109.7.241 
