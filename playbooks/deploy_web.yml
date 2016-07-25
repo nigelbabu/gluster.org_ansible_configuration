@@ -1,6 +1,5 @@
 - hosts: web
   roles:
-  - varnish
   # used for wordpress
   - memcached
   - role: httpd
