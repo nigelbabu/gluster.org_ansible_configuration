@@ -1,0 +1,12 @@
+# hack since supercolony is RHEL 6
+---
+- hosts: web
+  roles:
+  - role: gluster_ssl_vhosts
+    vhosts:
+    - gluster.org
+    - supercolony.gluster.org
+    - lists.gluster.org
+    - www.gluster.org
+    - planet.gluster.org
+    - blog.gluster.org
