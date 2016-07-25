@@ -1,4 +1,4 @@
 ---
 - hosts: supercolony.gluster.org
-  role:
+  roles:
   - postgrey
