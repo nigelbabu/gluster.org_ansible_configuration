@@ -4,17 +4,14 @@
   - memcached
   - role: httpd
     website_domain: gluster.org
-    use_letsencrypt: True
     redirect:    https://www.gluster.org/
 
   - role: httpd
     website_domain: supercolony.gluster.org
-    use_letsencrypt: True
     redirect:    https://supercolony.gluster.org/
 
   - role: httpd_www
     website_domain: www.gluster.org
-    use_letsencrypt: True
     document_root: /srv/middleman_website/www/web/master/
     server_aliases:
     - lists.gluster.org
