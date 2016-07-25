@@ -1,7 +1,7 @@
 ---
 - template: 
-    dest: /etc/httpd/conf.d/www.gluster.org.conf.d/{{ item }}.conf 
-    src: {{ item }} 
+    dest: "/etc/httpd/conf.d/www.gluster.org.conf.d/{{ item }}.conf"
+    src: "{{ item }}" 
     mode: 0644
   notify: verify config and restart httpd
   with_items:
