@@ -2,11 +2,6 @@
   roles:
   # used for wordpress
   - memcached
-  - role: httpd
-    website_domain: planet.gluster.org
-    use_letsencrypt: True
-    document_root: /srv/middleman_website/www/planet/master/
-
   - role: httpd_blog
     website_domain: blog.gluster.org
     use_letsencrypt: True
