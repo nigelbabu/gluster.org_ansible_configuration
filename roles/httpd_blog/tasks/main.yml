@@ -1,0 +1,11 @@
+---
+- template: 
+    dest: /etc/httpd/conf.d/blog.gluster.org.conf.d/{{ item }}.conf 
+    src: {{ item }} 
+    mode: 0644
+  notify: verify config and restart httpd
+  with_items:
+  - redirect_blog.conf
+  - force_tls_blog_admin.conf
+  - redirect_old_links.conf
+  - set_index_blog.conf
