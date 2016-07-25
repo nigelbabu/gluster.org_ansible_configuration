@@ -1,0 +1,7 @@
+- hosts: web
+  roles:
+  - role: httpd_blog
+    website_domain: blog.gluster.org
+    document_root: /var/www/html
+
+ 

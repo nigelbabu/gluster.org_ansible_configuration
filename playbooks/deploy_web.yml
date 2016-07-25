@@ -2,11 +2,6 @@
   roles:
   # used for wordpress
   - memcached
-  - role: httpd_blog
-    website_domain: blog.gluster.org
-    use_letsencrypt: True
-    document_root: /var/www/html
-
   - role: httpd
     website_domain: gluster.org
     use_letsencrypt: True
