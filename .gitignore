@@ -19,3 +19,4 @@ roles/pf_firewall
 roles/tor
 roles/salt
 roles/unattended_updates
+roles/postgrey

@@ -37,3 +37,5 @@
   name: unattended_updates
 - src: git+https://gitlab.com/osas/ansible-role-salt.git
   name: salt
+- src: git+https://gitlab.com/osas/ansible-role-postgrey.git
+  name: postgrey
