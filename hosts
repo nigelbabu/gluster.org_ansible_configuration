@@ -60,8 +60,8 @@ slave47.cloud.gluster.org
 centos6-1.ci.gluster.org
 fedora22-1.ci.gluster.org
 
-[gerrit]
-dev.gluster.org
+#[gerrit]
+#dev.gluster.org
 
 [download]
 download01.rax.gluster.org
