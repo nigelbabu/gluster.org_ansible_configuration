@@ -1,7 +1,7 @@
 ---
 - template: 
     dest: "/etc/httpd/conf.d/{{ item }}_ssl.conf"
-    src: "{{ item }}" 
+    src: vhost_ssl.conf
     mode: 0644
   notify: verify config and restart httpd
   with_items: "{{ vhosts }}" 
