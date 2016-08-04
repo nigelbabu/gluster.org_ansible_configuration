@@ -10,3 +10,8 @@
   - redirect_old_links.conf
   - redirect_various.conf
   - redirect_documentation.conf 
+
+- name: Set the proper permission on the directory
+  file:
+    owner: "{{ sync_user }}"
+    path: "{{ document_root }}" 

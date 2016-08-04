@@ -15,4 +15,4 @@
     document_root: /srv/middleman_website/www/web/master/
     server_aliases:
     - lists.gluster.org
-
+    sync_user: deploy_website 
