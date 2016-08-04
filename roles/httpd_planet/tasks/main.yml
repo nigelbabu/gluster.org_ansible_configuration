@@ -1,0 +1,4 @@
+- name: Set the proper permission on the directory
+  file:
+    owner: "{{ sync_user }}"
+    path: "{{ document_root }}" 
