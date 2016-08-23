@@ -18,7 +18,7 @@ webbuilder.gluster.org
 
 [virt_hosts]
 formicary.gluster.org
-ci.rht.gluster.org
+myrmicinae.rht.gluster.org ansible_connection=ssh ansible_ssh_user=root
 haplometrosis.rht.gluster.org
 pleometrosis.rht.gluster.org
 
