@@ -1,7 +1,7 @@
 ---
 dependencies:
 - role: guest_virt_install
-  guest_name: builder{{ number }}.rht.gluster.org
+  name: builder{{ number }}.rht.gluster.org
   disk_size: 30
   volgroup: data
   mem_size: 2048
