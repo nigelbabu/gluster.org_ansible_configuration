@@ -14,7 +14,7 @@ dependencies:
     bootproto: static
     ip: 8.43.85.{{ 140 + number }}/24
     gateway: 8.43.85.254
-    nameserver:
+    nameservers:
     - 8.8.8.8
     - 8.8.4.4
 
