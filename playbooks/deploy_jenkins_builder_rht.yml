@@ -1,4 +1,5 @@
-- host: haplometrosis.rht.gluster.org
+---
+- hosts: haplometrosis.rht.gluster.org
   roles:
   - role: guest_jenkins_builder_rht
     number: 1
