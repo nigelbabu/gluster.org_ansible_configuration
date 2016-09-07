@@ -1,4 +1,9 @@
 ---
+- package:
+    state: present
+    name: epel-release
+  when: ansible_distribution == 'CentOS'
+
 - package: state=present name={{ item }}
   with_items:
   - lsof
