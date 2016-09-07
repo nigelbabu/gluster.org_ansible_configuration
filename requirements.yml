@@ -39,3 +39,5 @@
   name: salt
 - src: git+https://gitlab.com/osas/ansible-role-postgrey.git
   name: postgrey
+- src: git+https://gitlab.com/osas/ansible-role-guest_virt_install.git
+  name: guest_virt_install
