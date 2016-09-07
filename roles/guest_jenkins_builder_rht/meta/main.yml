@@ -1,0 +1,20 @@
+---
+dependencies:
+- role: guest_virt_install
+  guest_name: builder{{ number }}.rht.gluster.org
+  disk_size: 30
+  volgroup: data
+  mem_size: 2048
+  num_cpus: 2
+  distribution: Centos
+  version: 6
+  bridge: virbr1
+  sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+  network:
+    bootproto: static
+    ip: 8.43.85.{{ 140 + number }}/24
+    gateway: 8.43.85.254
+    nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+
