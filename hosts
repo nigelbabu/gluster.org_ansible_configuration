@@ -57,9 +57,9 @@ slave33.cloud.gluster.org
 slave34.cloud.gluster.org
 slave46.cloud.gluster.org
 slave47.cloud.gluster.org
-centos6-1.ci.gluster.org
-fedora22-1.ci.gluster.org
 
+builder1.rht.gluster.org
+builder2.rht.gluster.org
 #[gerrit]
 #dev.gluster.org
 
