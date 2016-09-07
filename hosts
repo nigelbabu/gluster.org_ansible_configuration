@@ -18,7 +18,7 @@ webbuilder.gluster.org
 
 [virt_hosts]
 formicary.gluster.org
-myrmicinae.rht.gluster.org ansible_connection=ssh ansible_ssh_user=root
+myrmicinae.rht.gluster.org
 haplometrosis.rht.gluster.org
 pleometrosis.rht.gluster.org
 
@@ -30,13 +30,23 @@ myrmicinae.rht.gluster.org
 [munin]
 munin.gluster.org
 
+
 [freebsd:vars]
 ansible_python_interpreter=/usr/local/bin/python
-ansible_connection=ssh
-ansible_ssh_user=root
 
 [freebsd]
 freebsd0.cloud.gluster.org 
+
+
+[managed_by_ssh:vars]
+ansible_connection=ssh
+ansible_ssh_user=root
+
+[managed_by_ssh]
+freebsd0.cloud.gluster.org 
+myrmicinae.rht.gluster.org
+builder1.rht.gluster.org
+builder2.rht.gluster.org
 
 [jenkins_builders]
 freebsd0.cloud.gluster.org 
