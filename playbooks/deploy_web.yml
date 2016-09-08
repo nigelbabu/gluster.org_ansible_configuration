@@ -3,10 +3,6 @@
   # used for wordpress
   - memcached
   - role: httpd
-    website_domain: gluster.org
-    redirect:    https://www.gluster.org/
-
-  - role: httpd
     website_domain: supercolony.gluster.org
     redirect:    https://supercolony.gluster.org/
 
@@ -16,3 +12,10 @@
     server_aliases:
     - lists.gluster.org
     sync_user: deploy_website 
+
+  - role: httpd
+    website_domain: gluster.org
+    redirect:    https://www.gluster.org/
+    use_letsencrypt: True
+
+
