@@ -47,6 +47,7 @@ freebsd0.cloud.gluster.org
 myrmicinae.rht.gluster.org
 builder1.rht.gluster.org
 builder2.rht.gluster.org
+supercolony.gluster.org
 
 [jenkins_builders]
 freebsd0.cloud.gluster.org 
