@@ -1,0 +1,20 @@
+- set_fact:
+    vg_root: "{{ ansible_lvm['lvs']['root']['vg'] }}"
+
+- name: Create the logical volume partition
+  lvol:
+    vg: "{{ vg_root }}"
+    size: 8G
+    lv: test
+
+- name: Setup the filesystem for testing gluster
+  filesystem:
+    dev: /dev/mapper/{{ vg_root }}-test
+    fstype: xfs
+
+- name: Mount the device for testing gluster
+  mount:
+    name: /d
+    fstype: xfs
+    src: /dev/mapper/{{ vg_root }}-test
+    state: mounted

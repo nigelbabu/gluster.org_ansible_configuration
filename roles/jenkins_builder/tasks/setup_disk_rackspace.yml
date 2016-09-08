@@ -1,0 +1,11 @@
+- name: Setup the filesystem for testing gluster
+  filesystem:
+    dev: /dev/xvde
+    fstype: xfs
+
+- name: Mount the device for testing gluster
+  mount:
+    name: /d
+    fstype: xfs
+    src: /dev/xvde
+    state: mounted 
