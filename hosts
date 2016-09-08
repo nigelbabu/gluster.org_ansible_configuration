@@ -49,7 +49,13 @@ builder1.rht.gluster.org
 builder2.rht.gluster.org
 supercolony.gluster.org
 
-[jenkins_builders]
+[jenkins_builders_rackspace:vars]
+location=rackspace
+
+[jenkins_builders_rht:vars]
+location=rht
+
+[jenkins_builders_rackspace]
 freebsd0.cloud.gluster.org 
 slave0.cloud.gluster.org
 slave1.cloud.gluster.org
@@ -69,8 +75,14 @@ slave34.cloud.gluster.org
 slave46.cloud.gluster.org
 slave47.cloud.gluster.org
 
+[jenkins_builders_rht]
 builder1.rht.gluster.org
 builder2.rht.gluster.org
+
+[jenkins_builders:children]
+jenkins_builders_rht
+jenkins_builders_rackspace
+
 #[gerrit]
 #dev.gluster.org
 
