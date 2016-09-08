@@ -16,6 +16,7 @@
   - role: httpd
     website_domain: gluster.org
     redirect:    https://www.gluster.org/
-    use_letsencrypt: True
+# disabled while the server is on EL6 (and no certbot)
+#    use_letsencrypt: True
 
 
