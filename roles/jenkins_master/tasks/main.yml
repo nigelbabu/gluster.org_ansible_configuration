@@ -1,5 +1,5 @@
 - name: Open the firewall for Jenkins
-  shell: lokkit -p {{ port }}:tcp
+  shell: lokkit -p {{ item }}:tcp
   with_items:
   - 80
   - 443 
