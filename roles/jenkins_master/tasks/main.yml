@@ -1,0 +1,7 @@
+- name: Open the firewall for Jenkins
+  shell: lokkit -p {{ port }}:tcp
+  with_items:
+  - 80
+  - 443 
+  when: ansible_distribution_major_version == '6' and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
+
