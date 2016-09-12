@@ -48,6 +48,7 @@ myrmicinae.rht.gluster.org
 builder1.rht.gluster.org
 builder2.rht.gluster.org
 supercolony.gluster.org
+build.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
@@ -85,6 +86,9 @@ jenkins_builders_rackspace
 
 #[gerrit]
 #dev.gluster.org
+
+[jenkins_master]
+build.gluster.org
 
 [download]
 download01.rax.gluster.org
