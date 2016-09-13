@@ -49,6 +49,7 @@ builder1.rht.gluster.org
 builder2.rht.gluster.org
 supercolony.gluster.org
 build.gluster.org
+dev.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
@@ -84,8 +85,12 @@ builder2.rht.gluster.org
 jenkins_builders_rht
 jenkins_builders_rackspace
 
-#[gerrit]
-#dev.gluster.org
+[rhel5]
+dev.gluster.org
+
+[gerrit]
+dev.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 172.20.2.7:21 root@formicary.gluster.org"'
+
 
 [jenkins_master]
 build.gluster.org

@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: all:!rhel5
   roles:
   - role: freeipa
     freeipa_master: freeipa01.rax.gluster.org
