@@ -1,0 +1,5 @@
+---
+- name: reload varnish
+  service:
+    name: varnish
+    state: reloaded
