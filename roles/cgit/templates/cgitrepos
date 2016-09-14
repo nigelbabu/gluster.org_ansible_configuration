@@ -12,6 +12,6 @@ repo.desc={{ repo.desc }}
 repo.owner={{ repo.owner }}
 {% endif %}
 {% endfor %}
-{% elif scan_path is True %}
+{% elif scan_path %}
 scan-dir={{ git_repositories_dir }}/
 {% endif %}
