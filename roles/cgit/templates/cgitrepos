@@ -1,5 +1,5 @@
 # {{ ansible_managed }}
-{% if git_repositories is defined and scan_path is not True %}
+{% if git_repositories is defined and not scan_path %}
 {% for repo in git_repositories %}
 {% if not repo.private is defined or not repo.private %}
 repo.url={% if repo.url is defined %}
