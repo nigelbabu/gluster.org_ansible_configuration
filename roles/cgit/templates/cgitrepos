@@ -13,5 +13,5 @@ repo.owner={{ repo.owner }}
 {% endif %}
 {% endfor %}
 {% elif scan_path %}
-scan-dir={{ git_repositories_dir }}/
+scan-path={{ git_repositories_dir }}/
 {% endif %}
