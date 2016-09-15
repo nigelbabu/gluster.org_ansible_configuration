@@ -1,0 +1,12 @@
+- stat:
+    path: /review/
+  register: review
+
+- file:
+    path: /review/
+    mode: 0750
+
+- user:
+    name: apache
+    groups: "{{ review.stat.gr_name }}"
+    append: yes

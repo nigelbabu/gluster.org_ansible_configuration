@@ -9,3 +9,6 @@
 
 - copy: mode=0644 src=cgit.httpd.conf  dest=/etc/httpd/conf.d/cgit.conf
   notify: verify config and restart httpd
+
+# specific config for dev.gluster.org
+- include: fix_review.yml
