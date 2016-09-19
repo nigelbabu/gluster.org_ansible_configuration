@@ -9,5 +9,8 @@
   register: georep_pub_key
   changed_when: False
 
-- authorized_key: user=root key="{{ georep_pub_key.stdout }}" key_options="from=127.0.0.1"
+- authorized_key:
+    user: root
+    key: "{{ georep_pub_key.stdout }}"
+    key_options: "from=127.0.0.1"
   name: Add authorized_key for georep tests
