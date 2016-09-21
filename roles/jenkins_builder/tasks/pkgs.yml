@@ -51,6 +51,8 @@
 # used for build-jobs testing
   - python-virtualenv
   - python-argparse
+# used for utils/create-files.py
+  - pyxattr
 
 - package: state=present name={{ item }}
   name: Install jenkins builder FreeBSD packages
