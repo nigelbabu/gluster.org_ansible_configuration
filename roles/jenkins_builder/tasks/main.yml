@@ -74,6 +74,7 @@
   file: 
     src: /opt/qa/nginx/default.conf
     dest: /{% if ansible_system == 'FreeBSD'%}usr/local/{% endif %}etc/nginx/conf.d/archives.conf
+    state: link
   notify: restart nginx
 
 - name: Set selinux context for nginx
