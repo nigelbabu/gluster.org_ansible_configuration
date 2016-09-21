@@ -65,6 +65,7 @@
   - /home/jenkins/root
   - /archives/archived_builds
   - /archives/log
+  - /archives/logs
 
 - name: Symlink /d/build to /build
   file: src=/d/build dest=/build state=link
