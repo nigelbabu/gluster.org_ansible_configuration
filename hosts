@@ -50,6 +50,7 @@ builder2.rht.gluster.org
 supercolony.gluster.org
 build.gluster.org
 dev.gluster.org
+postgresql.rht.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
@@ -105,3 +106,6 @@ supercolony.gluster.org
 
 [bugs]
 bugs.cloud.gluster.org
+
+[postgresql]
+postgresql.rht.gluster.org
