@@ -22,3 +22,4 @@ roles/unattended_updates
 roles/postgrey
 roles/guest_virt_install
 roles/xinetd
+roles/postgresql

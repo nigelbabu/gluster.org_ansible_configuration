@@ -43,3 +43,5 @@
   name: guest_virt_install
 - src: git+https://gitlab.com/osas/ansible-role-xinetd.git
   name: xinetd
+- src: git+https://gitlab.com/osas/ansible-role-postgresql.git
+  name: postgresql
