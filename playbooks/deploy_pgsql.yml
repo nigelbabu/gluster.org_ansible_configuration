@@ -3,6 +3,7 @@
   roles:
   - role: guest_virt_install
     name: postgresql.rht.gluster.org
+    volgroup: myrmicinae
     disk_size: 20
     mem_size: 2048
     num_cpus: 1
