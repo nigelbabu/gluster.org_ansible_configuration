@@ -18,6 +18,7 @@
   - vim-enhanced
   - libselinux-python
   - lshw
+  - rsync
   when: ansible_system == 'Linux'
 
 
