@@ -1,0 +1,15 @@
+---
+- name: postalias internal
+  command: postalias internal.aliases
+  args:
+    chdir: /etc/postfix
+ 
+- name: postalias mailman
+  command: postalias mailman.aliases
+  args:
+    chdir: /etc/postfix
+
+- name: postalias external
+  command: postalias external.aliases
+  args:
+    chdir: /etc/postfix

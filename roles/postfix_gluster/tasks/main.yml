@@ -1,0 +1,35 @@
+---
+- name: Install postfix
+  package:
+    name: postfix
+    state: present
+
+- name: Deploy main.cf
+  template:
+    dest: /etc/postfix/main.cf
+    src: main.cf
+    mode: 0644
+
+- name: Start the service
+  service:
+    name: postfix
+    enabled: True
+    state: started
+
+- name: Set internal aliases
+  template:
+     dest: /etc/postfix/internal.aliases
+     src: internal.aliases
+  notify: postalias internal
+
+- name: Set external aliases
+  template:
+     dest: /etc/postfix/external.aliases
+     src: external.aliases
+  notify: postalias external
+
+- name: Set mailman aliases
+  template:
+     dest: /etc/postfix/mailman.aliases
+     src: mailman.aliases
+  notify: postalias mailman

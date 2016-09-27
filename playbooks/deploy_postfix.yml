@@ -1,0 +1,24 @@
+---
+- host: supercolony.gluster.org
+  roles:
+  # temporary role
+  - role: postfix_gluster
+    mailing_lists:
+    - gluster-devel
+    - gluster-users
+    - advisors
+    - gluster-infra
+    - bugs
+    - mailman
+    - test
+    - board
+    - announce
+    - cinder.glusterfs.ci
+    - maintainers
+    - packaging
+    - social-media
+    blacklists:
+    - b.barracudacentral.org
+    # see private repo for the vars, on hostvars/supercolony
+    # since emails are private
+    email_aliases: {{ email_aliases }}     

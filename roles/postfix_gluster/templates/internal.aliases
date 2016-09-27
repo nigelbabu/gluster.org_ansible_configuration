@@ -1,0 +1,36 @@
+# {{ ansible_managed }}
+
+#various personal alias
+jclift:         justin
+
+# from old file, not sure why it is here
+# kumar.sampas:  root
+
+deb.packages:   semiosis
+lzuckerman:     semiosis
+gerrithub:      ndevos
+events:         avati,johnmark,vijay,amye
+
+#switch to events ? TODO
+cfp:            root
+workshop:       root
+
+forge-admin:    root
+list-admin:     root
+
+# aliases for rfc 2142
+# https://www.ietf.org/rfc/rfc2142.txt
+
+abuse:          root
+noc:            root
+# TODO go to secalert ?
+security:       root
+
+postmaster:     root
+hostmaster:     root
+webmaster:      root
+www:            root
+ftp:            root
+
+mailer-daemon:  postmaster
+

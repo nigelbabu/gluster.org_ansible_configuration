@@ -1,0 +1,14 @@
+# {{ ansible_managed }}
+{% for list in mailing_lists %}
+## {{ list }} mailing list
+{{ list }}:              "|/usr/lib/mailman/mail/mailman post {{ list }}"
+{{ list }}-admin:        "|/usr/lib/mailman/mail/mailman admin {{ list }}"
+{{ list }}-bounces:      "|/usr/lib/mailman/mail/mailman bounces {{ list }}"
+{{ list }}-confirm:      "|/usr/lib/mailman/mail/mailman confirm {{ list }}"
+{{ list }}-join:         "|/usr/lib/mailman/mail/mailman join {{ list }}"
+{{ list }}-leave:        "|/usr/lib/mailman/mail/mailman leave {{ list }}"
+{{ list }}-owner:        "|/usr/lib/mailman/mail/mailman owner {{ list }}"
+{{ list }}-request:      "|/usr/lib/mailman/mail/mailman request {{ list }}"
+{{ list }}-subscribe:    "|/usr/lib/mailman/mail/mailman subscribe {{ list }}"
+{{ list }}-unsubscribe:  "|/usr/lib/mailman/mail/mailman unsubscribe {{ list }}"
+{% endfor %}

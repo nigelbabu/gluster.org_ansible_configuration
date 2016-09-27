@@ -1,0 +1,4 @@
+# {{ ansible_managed }}
+{% for alias in email_aliases %}
+{{ alias }}: {% for recipient in email_aliases[alias] %}{{ recipient }}{% if not loop.last %},{% endif %}{% endfor %}
+{% endfor %}
