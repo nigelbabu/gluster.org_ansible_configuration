@@ -1,8 +1,7 @@
 ---
 - hosts: supercolony.gluster.org
-  roles:
-  # temporary role
-  - role: postfix_gluster
+  vars:
+    # the variable is used for postfix_gluster and mailman
     mailing_lists:
     - gluster-devel
     - gluster-users
@@ -17,6 +16,12 @@
     - maintainers
     - packaging
     - social-media
+  roles:
+  # temporary role
+  - role: mailman_gluster
+    website_domain: lists.gluster.org
+    mail_domain: gluster.org
+  - role: postfix_gluster
     blacklists:
     - b.barracudacentral.org
     # see private repo for the vars, on hostvars/supercolony
