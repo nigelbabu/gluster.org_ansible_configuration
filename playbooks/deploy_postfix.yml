@@ -1,5 +1,5 @@
 ---
-- host: supercolony.gluster.org
+- hosts: supercolony.gluster.org
   roles:
   # temporary role
   - role: postfix_gluster
