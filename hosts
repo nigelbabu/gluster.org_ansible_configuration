@@ -51,6 +51,7 @@ supercolony.gluster.org
 build.gluster.org
 dev.gluster.org
 postgresql.rht.gluster.org
+gerrit-stage.rht.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
