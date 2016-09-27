@@ -11,4 +11,5 @@
 {{ list }}-request:      "|/usr/lib/mailman/mail/mailman request {{ list }}"
 {{ list }}-subscribe:    "|/usr/lib/mailman/mail/mailman subscribe {{ list }}"
 {{ list }}-unsubscribe:  "|/usr/lib/mailman/mail/mailman unsubscribe {{ list }}"
+
 {% endfor %}
