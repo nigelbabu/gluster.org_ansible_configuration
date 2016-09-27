@@ -26,4 +26,4 @@
     - b.barracudacentral.org
     # see private repo for the vars, on hostvars/supercolony
     # since emails are private
-    email_aliases: "{{ aliases }}"
+    email_aliases: "{{ mail_aliases }}"
