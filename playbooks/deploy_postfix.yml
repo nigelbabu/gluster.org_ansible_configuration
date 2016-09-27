@@ -16,6 +16,7 @@
     - maintainers
     - packaging
     - social-media
+    - heketi-devel
   roles:
   # temporary role
   - role: mailman_gluster
