@@ -18,3 +18,7 @@
       nameservers:
       - 8.8.8.8
       - 8.8.4.4
+
+- hosts: postgresql.rht.gluster.org
+  roles:
+  - role: postgresql
