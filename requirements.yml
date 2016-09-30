@@ -15,8 +15,11 @@
   name: openssh
 - src: https://github.com/OSAS/ansible-role-selinux
   name: selinux
-- src: https://github.com/OSAS/ansible-role-rsyslog
+- src: https://github.com/mscherer/ansible-role-rsyslog
   name: rsyslog
+  version: remove_filtering
+#- src: https://github.com/OSAS/ansible-role-rsyslog
+#  name: rsyslog
 - src: https://github.com/OSAS/ansible-role-middleman_builder
   name: builder
 - src: git+https://gitlab.com/osas/ansible-role-ntp.git
