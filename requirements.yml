@@ -48,3 +48,7 @@
   name: xinetd
 - src: git+https://gitlab.com/osas/ansible-role-postgresql.git
   name: postgresql
+# move to OSAS once https://github.com/OSAS/ansible-role-mariadb/pull/2 is merged
+- src: https://github.com/mscherer/ansible-role-mariadb
+  name: mariadb
+  version: cleanup
