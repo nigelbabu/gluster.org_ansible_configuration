@@ -1,5 +1,5 @@
-# Configuration file managed by salt
-# Do not edit directly on the server, as salt will revert it
+# Configuration file managed by ansible
+# Do not edit directly on the server, as ansible will revert it
 # 
 backend default {
   .host = "127.0.0.1";
