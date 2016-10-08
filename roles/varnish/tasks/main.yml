@@ -1,17 +1,25 @@
 ---
 - name: Install varnish
-  package: name=varnish state=present
+  package:
+    name: varnish
+    state: present
 
 - name: Install varnish sysconfig
-  copy: src=varnish.sysconfig dest=/etc/sysconfig/varnish
+  copy:
+    src: varnish.sysconfig
+    dest: /etc/sysconfig/varnish
   notify: reload varnish
 
 - name: Install varnish configuration
-  copy: src=default.vcl dest=/etc/varnish/default.vcl
+  copy:
+    src: default.vcl
+    dest: /etc/varnish/default.vcl
   notify: reload varnish
 
 - name: Start services
-  service: name={{ item }} state=started
+  service:
+    name: "{{ item }}"
+    state: started
   with_items:
   - varnish
   - varnishncsa
