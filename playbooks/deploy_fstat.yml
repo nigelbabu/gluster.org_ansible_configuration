@@ -1,5 +1,5 @@
 ---
-  hosts: haplometrosis.rht.gluster.org
+- hosts: haplometrosis.rht.gluster.org
   roles:
   - role: guest_virt_install
     name: fstat.rht.gluster.org
