@@ -3,3 +3,6 @@
 - include: lokkit.yml
   when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '6'
 - include: root_ssh_keys.yml
+# for now, the code only work on Linux
+- include: timezone.yml
+  when: ansible_system == 'Linux'

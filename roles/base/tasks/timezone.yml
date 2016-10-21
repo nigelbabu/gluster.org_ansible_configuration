@@ -1,0 +1,4 @@
+- name: Set timezone to UTC on Linux
+  timezone:
+    name: UTC
+  when: ansible_version.major|int >= 2 and ansible_version.minor|int >= 2
