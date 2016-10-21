@@ -5,4 +5,4 @@
 - include: root_ssh_keys.yml
 # for now, the code only work on Linux
 - include: timezone.yml
-  when: ansible_system == 'Linux'
+  when: ansible_version.major|int >= 2 and ansible_version.minor|int >= 2
