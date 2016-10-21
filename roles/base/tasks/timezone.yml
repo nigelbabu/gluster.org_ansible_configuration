@@ -1,4 +1,5 @@
-- name: Set timezone to UTC on Linux
-  timezone:
-    name: UTC
-  when: ansible_system == 'Linux'
+# disabled until 2.2
+#- name: Set timezone to UTC on Linux
+#  timezone:
+#    name: UTC
+#  when: ansible_system == 'Linux'
