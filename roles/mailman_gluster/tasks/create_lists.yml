@@ -7,4 +7,4 @@
   command: /usr/lib/mailman/bin/newlist {{ item }} list-admin@{{ mail_domain }} {{ ansible_date_time.iso8601_micro | shuffle | join |hash('md5') }}
   args:
     creates: /var/lib/mailman/lists/{{ item }}/config.pck
-  with_items: mailing_lists
+  with_items: "{{ mailing_lists }}"
