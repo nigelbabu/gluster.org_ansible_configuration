@@ -8,6 +8,9 @@
     - gcc
 
 # TODO: Setup Nginx
+  name: Copy the nginx config file
+  copy: src=nginx.conf dest=/etc/nginx/conf.d/fstat.conf
+  notify: restart nginx
 
 - name: Create user for fstat
   user: name=fstat shell=/bin/sh system=yes home=/fstat
@@ -16,11 +19,13 @@
   git: repo=https://github.com/gluster/fstat.git dest=/fstat/code update=yes
   become: true
   become_user: fstat
+  notify: reload fstat
 
 - name: Create virtualenv
   pip: requirements=/fstat/code/production.txt virtualenv=/fstat/env
   become: true
   become_user: fstat
+  notify: reload fstat
 
 - name: Copy fstat.service
   copy: src=fstat.service dest=/etc/systemd/system/fstat.service
