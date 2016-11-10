@@ -44,8 +44,9 @@
   name: guest_virt_install
 - src: git+https://gitlab.com/osas/ansible-role-xinetd.git
   name: xinetd
-- src: git+https://gitlab.com/osas/ansible-role-postgresql.git
+- src: git+https://gitlab.com/misc/ansible-role-postgresql.git
   name: postgresql
+  version: open_network
 # move to OSAS once https://github.com/OSAS/ansible-role-mariadb/pull/2 is merged
 # and https://github.com/OSAS/ansible-role-mariadb/pull/3
 - src: https://github.com/mscherer/ansible-role-mariadb
