@@ -22,4 +22,4 @@
 - hosts: postgresql.rht.gluster.org
   roles:
   - role: postgresql
-    listen_addresses: "localhost,8.43.85.173"
+    listen_addresses: "localhost,8.43.85.170"
