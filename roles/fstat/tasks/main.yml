@@ -7,8 +7,7 @@
     - git
     - gcc
 
-# TODO: Setup Nginx
-  name: Copy the nginx config file
+- name: Copy the nginx config file
   copy: src=nginx.conf dest=/etc/nginx/conf.d/fstat.conf
   notify: restart nginx
 
@@ -32,3 +31,9 @@
 
 - name: Copy fstat.socket
   copy: src=fstat.socket dest=/etc/systemd/system/fstat.socket
+
+- name: Create fstat cron - centos
+  cron: name="update fstat centos" minute="0" hour="1" day="*" job="/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j centos6-regression" user=fstat
+
+- name: Create fstat cron - netbsd
+  cron: name="update fstat netbsd" minute="0" hour="1" day="*" job="/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j netbsd7-regression" user=fstat
