@@ -61,6 +61,9 @@ postgresql.rht.gluster.org
 gerrit-stage.rht.gluster.org
 fstat.rht.gluster.org
 download01.rax.gluster.org
+freeipa01.rax.gluster.org
+syslog01.rax.gluster.org
+webbuilder.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
