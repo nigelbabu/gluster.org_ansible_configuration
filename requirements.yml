@@ -52,3 +52,5 @@
 - src: https://github.com/mscherer/ansible-role-mariadb
   name: mariadb
   version: fix_misc
+- src: https://github.com/OSAS/ansible-role-swap_file
+  name: swap_file
