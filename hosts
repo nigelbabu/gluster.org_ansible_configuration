@@ -1,5 +1,6 @@
 [all:vars]
-ansible_connection=saltstack
+ansible_connection=ssh
+ansible_ssh_user=root
 
 [bastion]
 salt-master.gluster.org
@@ -46,27 +47,32 @@ ansible_python_interpreter=/usr/local/bin/python
 freebsd0.cloud.gluster.org
 
 
-[managed_by_ssh:vars]
-ansible_connection=ssh
-ansible_ssh_user=root
+[managed_over_salt:vars]
+ansible_connection=saltstack
 
-[managed_by_ssh]
-freebsd0.cloud.gluster.org
-myrmicinae.rht.gluster.org
-builder1.rht.gluster.org
-builder2.rht.gluster.org
-supercolony.gluster.org
-build.gluster.org
-dev.gluster.org
-postgresql.rht.gluster.org
-gerrit-stage.rht.gluster.org
-fstat.rht.gluster.org
-download01.rax.gluster.org
-freeipa01.rax.gluster.org
-syslog01.rax.gluster.org
-webbuilder.gluster.org
-munin.gluster.org
-proxy.rht.gluster.org
+[managed_over_salt]
+slave0.cloud.gluster.org
+slave1.cloud.gluster.org
+slave20.cloud.gluster.org
+slave21.cloud.gluster.org
+slave22.cloud.gluster.org
+slave23.cloud.gluster.org
+slave24.cloud.gluster.org
+slave25.cloud.gluster.org
+slave26.cloud.gluster.org
+slave27.cloud.gluster.org
+slave28.cloud.gluster.org
+slave32.cloud.gluster.org
+slave33.cloud.gluster.org
+slave34.cloud.gluster.org
+slave46.cloud.gluster.org
+slave47.cloud.gluster.org
+haplometrosis.rht.gluster.org
+pleometrosis.rht.gluster.org
+bugs.cloud.gluster.org
+backups.cloud.gluster.org
+salt-master.gluster.org
+formicary.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
