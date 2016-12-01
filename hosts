@@ -28,6 +28,7 @@ pleometrosis.rht.gluster.org
 myrmicinae.rht.gluster.org
 fstat.rht.gluster.org
 postgresql.rht.gluster.org
+proxy.rht.gluster.org
 gerrit-stage.rht.gluster.org
 builder1.rht.gluster.org
 builder2.rht.gluster.org
@@ -65,6 +66,7 @@ freeipa01.rax.gluster.org
 syslog01.rax.gluster.org
 webbuilder.gluster.org
 munin.gluster.org
+proxy.rht.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
@@ -126,3 +128,6 @@ postgresql.rht.gluster.org
 
 [fstat]
 fstat.rht.gluster.org
+
+[proxy]
+proxy.rht.gluster.org]
