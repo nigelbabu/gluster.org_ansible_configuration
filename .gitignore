@@ -24,3 +24,4 @@ roles/guest_virt_install
 roles/xinetd
 roles/postgresql
 roles/mariadb
+roles/swap_file
