@@ -64,6 +64,7 @@ download01.rax.gluster.org
 freeipa01.rax.gluster.org
 syslog01.rax.gluster.org
 webbuilder.gluster.org
+munin.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
