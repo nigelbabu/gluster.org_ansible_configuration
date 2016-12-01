@@ -1,0 +1,5 @@
+- hosts: bugs
+  roles:
+  - role: swap_file
+    size: 1G
+    path: /var/swap   
