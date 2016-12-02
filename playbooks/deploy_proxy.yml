@@ -18,3 +18,11 @@
       nameservers:
       - 8.8.8.8
       - 8.8.4.4
+
+- hosts: proxy.rht.gluster.org
+  roles:
+  - role: httpd
+    website_domain: build.proxy.gluster.org
+    use_letsencrypt: True
+    force_tls: True
+    reverse_proxy: https://8.43.85.172/
