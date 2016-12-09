@@ -1,3 +1,22 @@
+- hosts: myrmicinae.rht.gluster.org
+  roles:
+  - role: guest_virt_install
+    name: ant-queen.rht.gluster.org
+    volgroup: myrmicinae
+    disk_size: 10
+    mem_size: 1024
+    num_cpus: 1
+    distribution: Centos
+    version: 7
+    bridge: virbr0
+    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    network:
+      bootproto: static
+      ip: 192.168.122.10/24
+      gateway: 192.168.122.1
+      nameservers:
+      - 192.168.122.1
+
 - hosts: all
   tasks:
   - group_by: key={{ 'salt_transport' if ansible_connection == 'salt_stack' else 'ssh_transport' }}
