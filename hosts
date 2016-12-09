@@ -4,6 +4,7 @@ ansible_ssh_user=root
 
 [bastion]
 salt-master.gluster.org
+ant-queen.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168.122.10:22 root@myrmicinae.rht.gluster.org"'
 
 [backups]
 backups.cloud.gluster.org

@@ -34,4 +34,7 @@
     ansible_committers_group: admins
     remotes:
     - { name: 'github', url: 'git@github.com:gluster/gluster.org_ansible_configuration.git'}
+
+- hosts: salt-master.gluster.org
+  roles:
   - role: salt_transport
