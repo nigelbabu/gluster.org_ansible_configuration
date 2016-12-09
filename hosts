@@ -51,10 +51,6 @@ freebsd0.cloud.gluster.org
 ansible_connection=saltstack
 
 [managed_over_salt]
-slave0.cloud.gluster.org
-slave1.cloud.gluster.org
-slave20.cloud.gluster.org
-slave21.cloud.gluster.org
 slave22.cloud.gluster.org
 slave23.cloud.gluster.org
 slave24.cloud.gluster.org
@@ -67,8 +63,6 @@ slave33.cloud.gluster.org
 slave34.cloud.gluster.org
 slave46.cloud.gluster.org
 slave47.cloud.gluster.org
-haplometrosis.rht.gluster.org
-pleometrosis.rht.gluster.org
 salt-master.gluster.org
 formicary.gluster.org
 
