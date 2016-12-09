@@ -19,7 +19,7 @@ syslog01.rax.gluster.org
 webbuilder.gluster.org
 
 [virt_hosts]
-formicary.gluster.org
+formicary.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 172.24.0.14:22 root@myrmicinae.rht.gluster.org"'
 myrmicinae.rht.gluster.org
 haplometrosis.rht.gluster.org
 pleometrosis.rht.gluster.org
@@ -46,13 +46,6 @@ ansible_python_interpreter=/usr/local/bin/python
 
 [freebsd]
 freebsd0.cloud.gluster.org
-
-
-[managed_over_salt:vars]
-ansible_connection=saltstack
-
-[managed_over_salt]
-formicary.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
