@@ -51,19 +51,6 @@ freebsd0.cloud.gluster.org
 ansible_connection=saltstack
 
 [managed_over_salt]
-slave22.cloud.gluster.org
-slave23.cloud.gluster.org
-slave24.cloud.gluster.org
-slave25.cloud.gluster.org
-slave26.cloud.gluster.org
-slave27.cloud.gluster.org
-slave28.cloud.gluster.org
-slave32.cloud.gluster.org
-slave33.cloud.gluster.org
-slave34.cloud.gluster.org
-slave46.cloud.gluster.org
-slave47.cloud.gluster.org
-salt-master.gluster.org
 formicary.gluster.org
 
 [jenkins_builders_rackspace:vars]
