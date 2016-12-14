@@ -25,6 +25,6 @@
     website_domain: build.proxy.gluster.org
     use_letsencrypt: True
     force_tls: True
-    reverse_proxy: https://8.43.85.172/
+    reverse_proxy: http://8.43.85.172/
     # needed for letsencrypt, otherwise it complain about invalid email
     mail_domain: gluster.org
