@@ -28,3 +28,5 @@
     reverse_proxy: http://8.43.85.172/
     # needed for letsencrypt, otherwise it complain about invalid email
     mail_domain: gluster.org
+    use_mod_sec: True
+    mod_sec_detection_only: True
