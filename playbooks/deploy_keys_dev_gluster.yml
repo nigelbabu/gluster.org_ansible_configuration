@@ -1,0 +1,4 @@
+# to deploy ssh keys
+- hosts: dev.gluster.org
+  roles:
+  - base
