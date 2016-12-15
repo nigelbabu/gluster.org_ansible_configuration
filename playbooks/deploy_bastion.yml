@@ -17,16 +17,6 @@
       nameservers:
       - 192.168.122.1
 
-- hosts: all
-  tasks:
-  - group_by: key={{ 'salt_transport' if ansible_connection == 'salt_stack' else 'ssh_transport' }}
-    changed_when: False
-
-- hosts: salt_transport
-  roles:
-  - role: salt
-    salt_master: salt-master.gluster.org
-
 - hosts: bastion
   roles:
   - role: bastion
@@ -34,7 +24,3 @@
     ansible_committers_group: admins
     remotes:
     - { name: 'github', url: 'git@github.com:gluster/gluster.org_ansible_configuration.git'}
-
-- hosts: salt-master.gluster.org
-  roles:
-  - role: salt_transport
