@@ -84,7 +84,7 @@ jenkins_builders_rackspace
 dev.gluster.org
 
 [gerrit]
-dev.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 172.20.2.7:21 root@formicary.gluster.org"'
+dev.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:21 root@myrmicinae.rht.gluster.org"'
 
 
 [jenkins_master]
