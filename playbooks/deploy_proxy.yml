@@ -32,10 +32,10 @@
     mod_sec_detection_only: True
 
   - role: httpd
-    website_domain: dev.proxy.gluster.org
+    website_domain: review.proxy.gluster.org
     use_letsencrypt: True
     force_tls: True
-    reverse_proxy: http://8.43.85.171/
+    reverse_proxy: http://gerrit.rht.gluster.org/
     # needed for letsencrypt, otherwise it complain about invalid email
     mail_domain: gluster.org
     use_mod_sec: True
