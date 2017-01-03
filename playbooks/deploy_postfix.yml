@@ -17,6 +17,7 @@
     - packaging
     - social-media
     - heketi-devel
+    - integration
   roles:
   - postgrey
   # temporary role
