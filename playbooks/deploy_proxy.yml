@@ -40,3 +40,12 @@
     mail_domain: gluster.org
     use_mod_sec: True
     mod_sec_detection_only: True
+
+  - role: httpd
+    website_domain: fstat.gluster.org
+    use_letsencrypt: True
+    force_tls: True
+    reverse_proxy: http://fstat.rht.gluster.org/
+    # needed for letsencrypt, otherwise it complain about invalid email
+    mail_domain: gluster.org
+
