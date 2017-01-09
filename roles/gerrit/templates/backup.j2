@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# create the folders
+BACKUP_ROOT="{{gerrit_user_home}}/backup"
+BACKUP_NAME="$(date +%Y-%m-%d)"
+BACKUP_FOLDER="$BACKUP_ROOT/$BACKUP_NAME"
+mkdir -p "$BACKUP_FOLDER"
+
+# Delete old backups
+find $BACKUP_ROOT -mtime +1 -exec rm {} \;
+
+# copy the files for backup
+cp -r {{gerrit_user_home}}/{{gerrit_home}} $BACKUP_FOLDER
+
+# delete logs
+rm -rf $BACKUP_FOLDER/logs/*
+
+# dump the database
+pg_dump -h {{gerrit_db_host}} -U {{gerrit_db_user}} {{gerrit_db_name}} > $BACKUP_FOLDER/db.sql
+
+# tar the whole thing
+cd "$BACKUP_ROOT"
+tar -cjvf "$BACKUP_NAME.tar.bz2" "$BACKUP_NAME"
+
+# Delete the uncompressed folder
+rm -rf "$BACKUP_NAME"
+
+#TODO Copy to backup server

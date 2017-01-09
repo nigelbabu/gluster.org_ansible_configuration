@@ -1,0 +1,7 @@
+{% for repo in gerrit_replication %}
+[remote "github-{{repo.repo}}"]
+    push = +refs/heads/*:refs/heads/*
+    push = +refs/tags/*:refs/tags/*
+    url = ssh://git@{{repo.repo}}.github.com/{{repo.github_user}}/${name}.git
+    projects = {{repo.repo}}
+{% endfor %}

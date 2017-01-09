@@ -1,0 +1,65 @@
+## {{ ansible_managed }}
+
+[gerrit]
+        basePath = git
+        canonicalWebUrl = https://{{ gerrit_domain }}/
+        canonicalGitUrl = git://{{ gerrit_domain }}/
+[database]
+        type = postgresql
+        hostname = {{ gerrit_db_host }}
+        database = {{ gerrit_db_name }}
+        username = {{ gerrit_db_user }}
+        password = {{ gerrit_db_pass }}
+[auth]
+        type = HTTP
+        contributorAgreements = yes
+        httpHeader = GITHUB_USER
+        loginUrl = /login
+        loginText = Sign-in with GitHub
+        gitBasicAuth = yes
+[user]
+        email = {{ gerrit_email }}
+[sendemail]
+        smtpServer = localhost
+[container]
+        user = {{ gerrit_user }}
+        javaHome = /etc/alternatives/jre
+[sshd]
+        advertisedaddress = {{ gerrit_domain }}
+        listenAddress = *:29418
+        reuseAddress = true
+[httpd]
+        listenUrl = proxy-https://127.0.0.1:8081/
+        filterClass = com.googlesource.gerrit.plugins.github.oauth.OAuthFilter
+[cache]
+        directory = cache
+[download]
+        scheme = ssh
+        scheme = http
+        scheme = anon_http
+        scheme = anon_git
+[index]
+        type = LUCENE
+[github]
+        url = https://github.com
+        clientId = {{ github_client_id }}
+        clientSecret = {{ github_client_secret }}
+        apiUrl = https://api.github.com
+        scopes = USER_EMAIL,PUBLIC_REPO,READ_ORG
+[commentlink "bugzilla"]
+        match = ([Bb][Uu][Gg]:\\s+)(\\d+)
+        html = $1<a href=\"https://bugzilla.redhat.com/show_bug.cgi?id=$2\">$2</a>
+[gc]
+        startTime = Sun 17:30
+        interval = 1 week
+[commentlink "changeid"]
+        match = (I[0-9a-f]{8,40})
+        link = "#/q/$1"
+[cache "web_sessions"]
+        maxAge = 1 y
+[receive]
+        enableSignedPush = false
+[gitweb]
+        cgi = /var/www/cgi-bin/cgit
+        url = http://git.gluster.org/cgit/
+        type = cgit

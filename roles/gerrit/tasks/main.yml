@@ -1,0 +1,73 @@
+---
+- name: Install Java and python-bugzilla
+  package:
+    state: present
+    name: "{{ item }}"
+  with_items:
+  - java-1.8.0-openjdk
+  - python-bugzilla
+  - postgresql
+  - git
+
+- name: Create a user for review
+  user:
+    name: "{{gerrit_user}}"
+    home: "{{gerrit_user_home}}"
+
+- name: Setup the selinux boolean for proxying
+  seboolean:
+    name: httpd_can_network_connect
+    state: yes
+    persistent: yes
+
+- name: Check if Gerrit is installed
+  stat:
+    path: "{{gerrit_user_home}}/{{gerrit_home}}"
+  register: gerrit_status
+
+- name: "Fail when Gerrit is not setup"
+  fail:
+    msg: "Please setup Gerrit at {{gerrit_user_home}}/{{gerrit_home}}"
+  when: gerrit_status.stat.exists == False
+
+- name: Setup the gerrit.config file
+  template:
+    src: gerrit.config.j2
+    dest: "{{gerrit_user_home}}/{{gerrit_home}}/etc/gerrit.config"
+    owner: "{{gerrit_user}}"
+    mode: 0644
+  notify: restart gerrit
+
+- name: Setup the apache config file
+  template:
+    src: reverse_proxy.conf.j2
+    dest: "/etc/httpd/conf.d/{{website_domain}}.conf.d/reverse_proxy.conf"
+    mode: 0644
+  notify: verify config and restart httpd
+
+- include: replication.yml
+  when: gerrit_replication is defined
+
+- name: Cron to delete old log files
+  cron:
+    name: "Clean logs"
+    special_time: "weekly"
+    job: "find {{gerrit_user_home}}/{{gerrit_home}}/logs -mtime +15 -delete"
+    user: "{{gerrit_user}}"
+
+- name: Setup python-bugzilla
+  command: "bugzilla login {{bugzilla_user}} {{bugzilla_pass}}"
+  args:
+    creates: "{{gerrit_user_home}}/.bugzillacookies"
+  when: bugzilla_user is defined
+  no_log: True
+
+- name: Setup the hooks
+  copy:
+    src: "{{item}}"
+    dest: "{{gerrit_user_home}}/{{gerrit_home}}/hooks/{{item}}"
+    owner: "{{gerrit_user}}"
+    mode: 0755
+  with_items:
+  - patchset-created
+  - change-merged

@@ -5,16 +5,19 @@
   with_items:
   - cgit
 
-- lineinfile:
+- name: Include cgitrepos file
+  lineinfile:
     dest: /etc/cgitrc
     line: "include=/etc/cgitrepos"
 
-- template:
+- name: Template the /etc/cgitrepos file
+  template:
     mode: 0644
     src: cgitrepos
     dest: /etc/cgitrepos
 
-- template:
+- name: Template the apache config file
+  template:
     mode: 0644
     src: cgit.httpd.conf
     dest: /etc/httpd/conf.d/cgit.conf

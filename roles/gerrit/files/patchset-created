@@ -1,0 +1,75 @@
+#!/bin/bash
+
+set -x
+
+exec 2>/tmp/bugzilla.log
+
+function cmdline_parse()
+{
+    while [ $# -ne 0 ]; do
+	case "$1" in
+	    "--change")
+		shift;
+		CHANGE="$1";
+		;;
+	    "--change-url")
+		shift;
+		CHANGE_URL="$1";
+		;;
+	    "--project")
+		shift;
+		PROJECT="$1";
+		;;
+	    "--branch")
+		shift;
+		BRANCH="$1";
+		;;
+	    "--uploader")
+		shift;
+		UPLOADER="$1";
+		;;
+	    "--commit")
+		shift;
+		COMMIT="$1";
+                ;;
+            "--patchset")
+                shift;
+                PATCHSET="$1";
+                ;;
+	esac
+	shift;
+    done
+}
+
+
+function update_bugzilla()
+{
+        patchdesc=$(git --git-dir=/review/review.gluster.org/git/glusterfs.git show --format='%s' $COMMIT | head -n 1);
+	bugid=$(git --git-dir=/review/review.gluster.org/git/glusterfs.git show --format='%b' $COMMIT | grep -i '^bug: ' | awk '{print $2}');
+
+        [ -z "$bugid" ] && return;
+        product=$(bugzilla query -b $bugid --outputformat='%{product}');
+	if [ "x$product" != "xGlusterFS" ]; then
+	    echo "Wrong product: $product" >&2;
+	    return 1;
+	fi
+
+        bugzilla modify  --comment="REVIEW: $CHANGE_URL ($patchdesc) posted (#$PATCHSET) for review on $BRANCH by $UPLOADER" $bugid;
+
+        true
+}
+
+
+function main()
+{
+    cmdline_parse "$@";
+
+    if [ "$PROJECT" != "glusterfs" ]; then
+	return;
+    fi
+
+    update_bugzilla;
+}
+
+
+main "$@";

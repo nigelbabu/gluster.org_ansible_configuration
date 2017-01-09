@@ -1,0 +1,20 @@
+- hosts: gerrit-stage.rht.gluster.org
+  roles:
+  - role: cgit
+    git_repositories_dir: /review/review.gluster.org/git/
+    scan_path: true
+  - role: xinetd_git_daemon
+    base_path: /review/review.gluster.org/git
+  - role: gerrit
+    gerrit_domain: gerrit-stage.rht.gluster.org
+    gerrit_email: review@gerrit-stage.rht.gluster.org
+    gerrit_home: review.gluster.org
+    use_letsencrypt: True
+    mail_domain: gluster.org
+    website_domain: gerrit-stage.rht.gluster.org
+    reverse_proxy: http://127.0.0.1:8081/
+    gerrit_replication:
+    - repo: gluster-test
+      github_user: gluster
+      keyfile: gluster-test
+
