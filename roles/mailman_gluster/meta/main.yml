@@ -1,3 +1,7 @@
 ---
 dependencies:
-- {role: httpd }
+- role: httpd
+  redirects:
+  - src: '^/$'
+    target: '/mailman/listinfo'
+    match: True
