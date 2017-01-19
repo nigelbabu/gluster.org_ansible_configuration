@@ -1,0 +1,16 @@
+---
+- hosts: myrmicinae.rht.gluster.org
+  roles:
+  - role: guest_virt_install
+    name: nightly.rht.gluster.org
+    volgroup: myrmicinae
+    system_disk_size: 10
+    data_disk_size: 30
+    mem_size: 1024
+    num_cpus: 1
+    distribution: Centos
+    version: 7
+    bridge: virbr0
+    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    network:
+      bootproto: dhcp
