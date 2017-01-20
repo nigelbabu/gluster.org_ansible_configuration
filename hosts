@@ -36,6 +36,7 @@ builder1.rht.gluster.org
 builder2.rht.gluster.org
 build.gluster.org
 dev.gluster.org
+gerrit-new.rht.gluster.org
 
 [munin]
 munin.gluster.org
