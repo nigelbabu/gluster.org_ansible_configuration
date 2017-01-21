@@ -1,9 +1,12 @@
 - hosts: all:!rhel5
   roles:
   - base
-  - openssh
-  - { role: selinux, when: ansible_system == 'Linux'}
+  - role: openssh
+    when: ansible_fqdn != 'gerrit-new.rht.gluster.org'
+  - role: selinux
+    when: ansible_system == 'Linux'}
   - ntp
-  - { role: shell_timeout, when: ansible_system == 'Linux'}
+  - role: shell_timeout
+    when: ansible_system == 'Linux'}
   - unattended_updates
   - ssh_keys_bastion
