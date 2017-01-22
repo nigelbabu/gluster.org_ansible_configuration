@@ -1,0 +1,21 @@
+- name: Listen on a different port
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^Port"
+    line: "Port {{ ssh_port }}"
+    state: present
+  notify: verify config and restart sshd
+
+- name: Configure SELinux for the ssh port
+  seport:
+    ports: "{{ ssh_port }}"
+    proto: tcp
+    state: present
+    setype: ssh_port_t
+
+- name: Make sure the firewall is open
+  firewalld:
+    port: "{{ ssh_port }}/tcp"
+    permanent: true
+    state: enabled
+    immediate: yes
