@@ -1,0 +1,18 @@
+---
+- name: Make sure git-daemon is installed
+  package:
+    name: git-daemon
+    state: installed
+
+- name: "Deploy config for git_daemon"
+  template:
+    src: git.conf
+    dest: "/etc/xinetd.d/git"
+  notify: Restart xinetd
+
+- name: Open the firewall for git using firewalld
+  firewalld:
+    port: 9418/tcp
+    permanent: True
+    state: enabled
+    immediate: True
