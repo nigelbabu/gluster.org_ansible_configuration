@@ -8,8 +8,8 @@
     data_disk_size: 120 
     mem_size: 2048
     num_cpus: 1
-    distribution: Fedora
-    version: 25
+    distribution: Centos
+    version: 7
     bridge: virbr0
     sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
     network:

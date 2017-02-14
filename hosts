@@ -114,3 +114,7 @@ proxy.rht.gluster.org
 
 [signer]
 signer.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168.122.225:22 root@myrmicinae.rht.gluster.org"'
+
+[aide]
+aide.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168.122.112:22 root@myrmicinae.rht.gluster.org"'
+
