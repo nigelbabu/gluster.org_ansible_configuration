@@ -1,8 +1,0 @@
----
-- hosts: bastion
-  roles:
-  - role: systemd_container
-    distro: Fedora
-    name: openstack_client
-    version: 23
-
