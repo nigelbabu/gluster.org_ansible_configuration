@@ -1,13 +1,23 @@
 ---
-- package: name={{ item }} state=installed
+- package:
+    name: "{{ item }}"
+    state: installed
   with_items:
   - cgit
 
-- lineinfile: dest=/etc/cgitrc line=include=/etc/cgitrepos
+- lineinfile:
+    dest: /etc/cgitrc
+    line: "include=/etc/cgitrepos"
 
-- template: mode=0644 src=cgitrepos  dest=/etc/cgitrepos
+- template:
+    mode: 0644
+    src: cgitrepos
+    dest: /etc/cgitrepos
 
-- copy: mode=0644 src=cgit.httpd.conf  dest=/etc/httpd/conf.d/cgit.conf
+- template:
+    mode: 0644
+    src: cgit.httpd.conf
+    dest: /etc/httpd/conf.d/cgit.conf
   notify: verify config and restart httpd
 
 # specific config for dev.gluster.org
