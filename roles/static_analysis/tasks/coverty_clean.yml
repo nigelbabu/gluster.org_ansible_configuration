@@ -1,0 +1,13 @@
+- name: Add script to clean coverty
+  copy:
+    dest: /usr/local/bin/clean_coverty.sh
+    src: clean_coverty.sh
+    mode: 0755
+
+- name: Add cron to clean coverty
+  cron:
+    hour: 0
+    minute: 15
+    job: /usr/local/bin/clean_coverty.sh
+    name: Clean coverty
+    user: "{{ user }}"
