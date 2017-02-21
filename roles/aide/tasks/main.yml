@@ -1,0 +1,27 @@
+---
+- name: Install aide
+  package:
+    state: present
+    name: aide
+
+- name: Install aide configuration
+  template:
+    dest: /etc/aide_mirror.conf
+    src: aide_mirror.conf
+
+- name: Deploy cron job script
+  template: 
+    dest: /usr/local/sbin/cron_aide.sh
+    src: cron_aide.sh
+    mode: 0755
+
+- name: Setup cron job for aide
+  cron:
+    user: root
+    minute: '0'
+    hour: '*/6'
+    job: /usr/local/sbin/cron_aide.sh
+    name: Cronjob for aide
+
+- include: rsync.yml
+- include: part_disk.yml

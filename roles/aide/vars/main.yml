@@ -1,0 +1,2 @@
+local_mirror: /srv/mirror
+user: rsync_aide

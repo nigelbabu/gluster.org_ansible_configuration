@@ -1,0 +1,49 @@
+- name: Install rsync
+  package:
+    state: present
+    name: rsync
+
+- name: Gather facts
+  setup:
+  delegate_to: "{{ remote_server }}"
+
+- name: Install rsync remotely
+  package:
+    state: present
+    name: rsync
+  delegate_to: "{{ remote_server }}"
+
+- name: Create local user
+  user:
+    name: "{{ user }}"
+    state: present
+    comment: "User for rsync from aide server"
+  delegate_to: "{{ remote_server }}"
+
+- name: Create remote user
+  user: 
+    name: "{{ user }}"
+    state: present
+    generate_ssh_key: yes
+  register: local_user
+
+- name: Add ssh keys to sync
+  authorized_key:
+    user: "{{ user }}"
+    key: "{{ local_user.ssh_public_key }}"
+    key_options: "command=\"rsync --server --sender -vlogDtprze.Lsf . {{ remote_dir }}\",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty"
+  delegate_to: "{{ remote_server }}"
+
+- name: Deploy the sync script
+  template:
+    src: rsync_mirror.sh
+    dest: /usr/local/sbin/rsync_mirror.sh
+    mode: 0755
+
+- name: Run the script on a regular basis
+  cron:
+    user: "{{ user }}"
+    minute: '30'
+    hour: '1,7,13,19'
+    job: /usr/local/sbin/rsync_mirror.sh
+    name: Cronjob for rsync

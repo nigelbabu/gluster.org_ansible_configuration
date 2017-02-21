@@ -1,0 +1,28 @@
+- stat:
+    path: "{{ local_disk }}"
+  register: drive
+
+- fail:
+    msg: "{{ local_disk }} does not exist or is not a disk"
+  when: drive.stat.isblk is not defined or drive.stat.isblk == False
+
+#- stat:
+#    path: /dev/mapper/
+
+#TODO finish once https://github.com/ansible/ansible/pull/21620 is merged
+# lvcreate vg_data_aide.rht.gluster.org/mirror -L 115G
+- filesystem:
+    dev: /dev/mapper/vg_data_aide.rht.gluster.org-mirror
+    type: xfs
+
+- mount:
+    name: /srv/
+    fstype: xfs
+    src: /dev/mapper/vg_data_aide.rht.gluster.org-mirror
+    state: present
+
+- file:
+    path: "{{ local_mirror }}"
+    state: directory
+    owner: "{{ user }}"
+
