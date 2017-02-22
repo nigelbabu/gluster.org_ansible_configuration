@@ -7,7 +7,6 @@ dependencies:
   mem_size: 2048
   num_cpus: 2
   distribution: Centos
-  version: 6
   bridge: virbr1
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   network:
