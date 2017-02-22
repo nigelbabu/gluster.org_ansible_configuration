@@ -46,14 +46,6 @@
   - clang-analyzer
   # needed to make rpm
   - rpm-build
-  # needed for REST APIs and Eventing
-  - golang
-  - golang-github-gorilla-mux-devel
-# still in testing, https://bodhi.fedoraproject.org/updates/FEDORA-EPEL-2015-8108
-#  - golang-github-gorilla-handlers-devel
-  - golang-github-gorilla-websocket-devel
-  - golang-github-dgrijalva-jwt-go-devel
-  - golang-github-Sirupsen-logrus-devel
   - xfsprogs
 # used for testing eventing
   - python-requests
