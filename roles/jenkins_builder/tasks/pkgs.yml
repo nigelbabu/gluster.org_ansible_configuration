@@ -1,23 +1,31 @@
 ---
-- package: state=present name={{ item }}
+- package:
+    state: present
+    name: "{{ item }}"
   name: Install jenkins builder standard packages
   with_items:
   - git
   - dbench
   - yajl
 
-- package: state=present name=centos-release-scl
+- package:
+    state: present
+    name: centos-release-scl
   name: Enable SCL
   when: '"jenkins_builders_rht" in group_names'
 
-- package: state=present name={{item}}
+- package:
+    state: present
+    name: "{{item}}"
   name: Add packages specific to rht builders
   with_items:
   - python27
   - python-libcloud
   when: '"jenkins_builders_rht" in group_names'
 
-- package: state=present name={{ item }}
+- package:
+    state: present
+    name: "{{ item }}"
   name: Install jenkins builder Linux packages
   when: ansible_system == 'Linux'
   with_items:
@@ -57,7 +65,9 @@
 # used for utils/create-files.py
   - pyxattr
 
-- package: state=present name={{ item }}
+- package:
+    state: present
+    name: "{{ item }}"
   name: Install jenkins builder FreeBSD packages
   when: ansible_system == 'FreeBSD'
   with_items:
@@ -66,19 +76,25 @@
   - openjdk8-jre
   - sqlite3
 
-- package: state=present name={{ item }}
+- package:
+    state: present
+    name: "{{ item }}"
   name: Install jenkins builder jdk for RHEL/Centos
   when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS'
   with_items:
   - java-1.7.0-openjdk
 
-- package: state=present name={{ item }}
+- package:
+    state: present
+    name: "{{ item }}"
   name: Install jenkins builder jdk for RHEL/Centos
   when: ansible_distribution == 'Fedora'
   with_items:
   - java-1.8.0-openjdk
 
-- package: state=absent name={{ item }}
+- package:
+    state: absent
+    name: "{{ item }}"
   name: Remove package that cause trouble with the regression suite
   with_items:
   - qemu-img
