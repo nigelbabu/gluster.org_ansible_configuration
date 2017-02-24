@@ -1,1 +1,25 @@
 - include: coverty_clean.yml
+
+- name: Create the user to upload
+  user:
+    name: "{{ user }}"
+
+- name: Add authorized keys for the upload user
+  authorized_keys:
+    exclusive: True
+    key: "{{ ssh_key }}"
+    user: "{{ user }}"
+
+- name: Deploy httpd configuration
+  copy:
+    dest: /etc/httpd/conf.d/{{ _website_domain }}.conf.d/root.conf
+    content: "DocumentRoot {{ path }}"
+  notify: verify config and restart httpd
+
+- name: Create the directory to hold reports
+  file:
+    path: "{{ path }}"
+    state: directory
+    owner: "{{ user }}"
+    group: apache
+    mode: 0755
