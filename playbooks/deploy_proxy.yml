@@ -21,39 +21,22 @@
 
 - hosts: proxy.rht.gluster.org
   roles:
-  - role: httpd
+  - role: httpd_proxy
     website_domain: build.proxy.gluster.org
-    use_letsencrypt: True
-    force_tls: True
     reverse_proxy: http://8.43.85.172/
-    # needed for letsencrypt, otherwise it complain about invalid email
-    mail_domain: gluster.org
     use_mod_sec: True
     mod_sec_detection_only: True
 
-  - role: httpd
+  - role: httpd_proxy
     website_domain: review.proxy.gluster.org
-    use_letsencrypt: True
-    force_tls: True
     reverse_proxy: http://gerrit.rht.gluster.org/
-    # needed for letsencrypt, otherwise it complain about invalid email
-    mail_domain: gluster.org
     use_mod_sec: True
     mod_sec_detection_only: True
 
-  - role: httpd
+  - role: httpd_proxy
     website_domain: fstat.gluster.org
-    use_letsencrypt: True
-    force_tls: True
     reverse_proxy: http://fstat.rht.gluster.org/
-    # needed for letsencrypt, otherwise it complain about invalid email
-    mail_domain: gluster.org
 
-  - role: httpd
+  - role: httpd_proxy
     website_domain: analysis.gluster.org
-    use_letsencrypt: True
-    force_tls: True
     reverse_proxy: http://analysis.rht.gluster.org/
-    # needed for letsencrypt, otherwise it complain about invalid email
-    mail_domain: gluster.org
-  

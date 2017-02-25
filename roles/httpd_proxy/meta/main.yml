@@ -1,0 +1,7 @@
+---
+dependencies:
+- role: httpd
+  use_letsencrypt: True
+  force_tls: True
+  # needed for letsencrypt, otherwise it complain about invalid email
+  mail_domain: gluster.org
