@@ -5,7 +5,7 @@
     name: "{{ user }}"
 
 - name: Add authorized keys for the upload user
-  authorized_keys:
+  authorized_key:
     exclusive: True
     key: "{{ ssh_key }}"
     user: "{{ user }}"
