@@ -1,0 +1,16 @@
+# {{ ansible_managed }}
+[Unit]
+Description=Fstat backend server
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/run/fstat/fstat.pid
+WorkingDirectory=/fstat/code/
+ExecStart=/fstat/env/bin/gunicorn --pid /run/fstat/fstat.pid -w 4 fstat:app
+User={{ user }}
+
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

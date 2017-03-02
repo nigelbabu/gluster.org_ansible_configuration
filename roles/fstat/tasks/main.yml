@@ -7,3 +7,27 @@
   - python-virtualenv
   - gcc
   - git
+
+# TODO create the directory /fstat, do the git checkout
+# automate update
+# set configuration file, and database creation
+# and selinux boolean
+- name: Add tmpfiles snippet
+  template:
+    dest: /etc/tmpfiles.d/fstat.conf
+    src: fstat.tmpfiles.conf
+  notify: Create fstat systemd tmpfile
+
+- name: Add gunicorn systemd service
+  template:
+    dest: /etc/systemd/system/fstat.service
+    src: fstat.service
+  notify: Reload systemd
+
+- meta: flush_handlers
+
+- name: Start the fstat service
+  service:
+    name: fstat
+    enabled: True
+    state: started
