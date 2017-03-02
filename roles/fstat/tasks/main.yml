@@ -1,0 +1,9 @@
+---
+- name: Install required packages
+  package:
+    state: present
+    name: "{{ item }}"
+  with_items:
+  - python-virtualenv
+  - gcc
+  - git
