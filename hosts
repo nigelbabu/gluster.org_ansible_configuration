@@ -31,12 +31,12 @@ myrmicinae.rht.gluster.org
 fstat.rht.gluster.org
 postgresql.rht.gluster.org
 proxy.rht.gluster.org
-gerrit-stage.rht.gluster.org
+gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:2222 root@myrmicinae.rht.gluster.org"'
 builder1.rht.gluster.org
 builder2.rht.gluster.org
 build.gluster.org
 dev.gluster.org
-gerrit-new.rht.gluster.org
+gerrit-new.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
 
 [munin]
 munin.gluster.org
