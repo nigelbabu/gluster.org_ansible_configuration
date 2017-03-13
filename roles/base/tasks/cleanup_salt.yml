@@ -1,9 +1,0 @@
----
-- name: Remove salt packages
-  package:
-    state: absent
-    name: "{{ item }}"
-  with_items:
-  - py27-salt
-  - salt-minion
-  - salt-master
