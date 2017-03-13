@@ -1,4 +1,4 @@
-.*.swp
+*.swp
 *.retry
 roles/bastion
 roles/salt_transport
