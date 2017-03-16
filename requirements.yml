@@ -7,9 +7,8 @@
   name: tor
 - src: git+https://gitlab.com/misc/ansible-role-shell_timeout.git
   name: shell_timeout
-- src: https://github.com/mscherer/ansible-role-httpd
+- src: https://github.com/OSAS/ansible-role-httpd
   name: httpd
-  version: fix_corner_case
 - src: https://github.com/OSAS/ansible-role-freeipa
   name: freeipa
 - src: https://github.com/OSAS/ansible-role-openssh
@@ -34,9 +33,8 @@
   name: memcached
 - src: git+https://gitlab.com/osas/ansible-role-pf_firewall.git
   name: pf_firewall
-- src: git+https://gitlab.com/misc/ansible-role-unattended_updates.git
+- src: git+https://gitlab.com/osas/ansible-role-unattended_updates.git
   name: unattended_updates
-  version: fix_yum_cron
 - src: git+https://gitlab.com/osas/ansible-role-salt.git
   name: salt
 - src: git+https://gitlab.com/osas/ansible-role-postgrey.git
