@@ -68,7 +68,6 @@ slave27.cloud.gluster.org
 slave28.cloud.gluster.org
 slave32.cloud.gluster.org
 slave33.cloud.gluster.org
-slave34.cloud.gluster.org
 
 [jenkins_builders_rht]
 builder0.rht.gluster.org
