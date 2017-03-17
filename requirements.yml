@@ -1,11 +1,9 @@
 ---
 - src: https://github.com/OSAS/ansible-role-ansible_bastion
   name: bastion
-- src: https://github.com/OSAS/ansible-role-salt_transport
-  name: salt_transport
 - src: git+https://gitlab.com/OSAS/ansible-role-tor.git
   name: tor
-- src: git+https://gitlab.com/misc/ansible-role-shell_timeout.git
+- src: git+https://gitlab.com/OSAS/ansible-role-shell_timeout.git
   name: shell_timeout
 - src: https://github.com/OSAS/ansible-role-httpd
   name: httpd
@@ -21,8 +19,6 @@
   name: builder
 - src: git+https://gitlab.com/osas/ansible-role-ntp.git
   name: ntp
-- src: git+https://gitlab.com/misc/ansible-role-systemd_container.git
-  name: systemd_container
 - src: git+https://gitlab.com/osas/ansible-role-libvirt.git
   name: libvirt
 - src: git+https://gitlab.com/osas/ansible-role-munin.git
@@ -35,8 +31,6 @@
   name: pf_firewall
 - src: git+https://gitlab.com/osas/ansible-role-unattended_updates.git
   name: unattended_updates
-- src: git+https://gitlab.com/osas/ansible-role-salt.git
-  name: salt
 - src: git+https://gitlab.com/osas/ansible-role-postgrey.git
   name: postgrey
 - src: git+https://gitlab.com/osas/ansible-role-guest_virt_install.git
