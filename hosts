@@ -86,9 +86,6 @@ builder9.rht.gluster.org
 jenkins_builders_rht
 jenkins_builders_rackspace
 
-[rhel5]
-dev.gluster.org
-
 [gerrit]
 #dev.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:21 root@myrmicinae.rht.gluster.org"'
 

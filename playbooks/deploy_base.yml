@@ -1,4 +1,4 @@
-- hosts: all:!rhel5
+- hosts: all
   roles:
   - base
   - role: openssh
