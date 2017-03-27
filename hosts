@@ -28,14 +28,28 @@ pleometrosis.rht.gluster.org
 haplometrosis.rht.gluster.org
 pleometrosis.rht.gluster.org
 myrmicinae.rht.gluster.org
+formicary.rht.gluster.org
+
 fstat.rht.gluster.org
 postgresql.rht.gluster.org
 proxy.rht.gluster.org
 gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:2222 root@myrmicinae.rht.gluster.org"'
+builder0.rht.gluster.org
 builder1.rht.gluster.org
 builder2.rht.gluster.org
+builder3.rht.gluster.org
+builder4.rht.gluster.org
+builder5.rht.gluster.org
+builder6.rht.gluster.org
+builder7.rht.gluster.org
+builder8.rht.gluster.org
+builder9.rht.gluster.org
+jenkins-stage.rht.gluster.org
+signer.rht.gluster.org
+aide.rht.gluster.org
+bugziller.rht.gluster.org
+
 build.gluster.org
-dev.gluster.org
 gerrit-new.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
 
 [munin]
