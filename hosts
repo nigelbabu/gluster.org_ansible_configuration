@@ -92,6 +92,7 @@ jenkins_builders_rackspace
 
 [jenkins_master]
 build.gluster.org
+jenkins-stage.rht.gluster.org
 
 [download]
 download01.rax.gluster.org
