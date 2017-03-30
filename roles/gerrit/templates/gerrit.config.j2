@@ -1,5 +1,4 @@
 ## {{ ansible_managed }}
-
 [gerrit]
         basePath = git
         canonicalWebUrl = https://{{ gerrit_domain }}/
@@ -45,7 +44,7 @@
         clientId = {{ github_client_id }}
         clientSecret = {{ github_client_secret }}
         apiUrl = https://api.github.com
-        scopes = USER_EMAIL,PUBLIC_REPO,READ_ORG
+        scopes = USER_EMAIL
 [commentlink "bugzilla"]
         match = ([Bb][Uu][Gg]:\\s+)(\\d+)
         html = $1<a href=\"https://bugzilla.redhat.com/show_bug.cgi?id=$2\">$2</a>
