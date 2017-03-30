@@ -5,6 +5,8 @@
     scan_path: true
   - role: xinetd_git_daemon
     base_path: /review/review.gluster.org/git
+  - role: openssh_different_port
+    ssh_port: 2222
   - role: gerrit
     gerrit_domain: gerrit-stage.rht.gluster.org
     gerrit_email: review@gerrit-stage.rht.gluster.org

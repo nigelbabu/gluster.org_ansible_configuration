@@ -71,3 +71,9 @@
   with_items:
   - patchset-created
   - change-merged
+
+- name: Set the SELinux policy for cgit
+  sefcontext:
+    target: "{{gerrit_user_home}}/{{gerrit_home}}/git"
+    setype: git_sys_content_t
+    state: present
