@@ -1,0 +1,3 @@
+- hosts: bugziller.rht.gluster.org
+  roles:
+  - role: bugziller

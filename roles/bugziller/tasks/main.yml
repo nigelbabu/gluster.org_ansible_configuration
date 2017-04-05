@@ -1,0 +1,12 @@
+---
+- name: Install python-bugzilla
+  package: name=python-bugzilla state=latest
+
+- name: Setup python-bugzilla
+  command: "bugzilla login {{bugzilla_user}} {{bugzilla_pass}}"
+  args:
+    creates: "/home/jenkins/.bugzillacookies"
+  when: bugzilla_user is defined
+  no_log: True
+  become: yes
+  become_user: jenkins
