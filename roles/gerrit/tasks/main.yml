@@ -1,4 +1,6 @@
 ---
+- include: fix_httpd.yml
+
 - name: Install Java and python-bugzilla
   package:
     state: present
