@@ -1,9 +1,0 @@
-ProxyPreserveHost On
-ProxyRequests Off
-ProxyVia Off
-<Proxy *>
-        Require all granted
-</Proxy>
-AllowEncodedSlashes On
-ProxyPass / {{reverse_proxy}} nocanon
-ProxyPassReverse / {{reverse_proxy}}

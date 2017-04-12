@@ -40,13 +40,6 @@
     mode: 0644
   notify: restart gerrit
 
-- name: Setup the apache config file
-  template:
-    src: reverse_proxy.conf.j2
-    dest: "/etc/httpd/conf.d/{{website_domain}}.conf.d/reverse_proxy.conf"
-    mode: 0644
-  notify: verify config and restart httpd
-
 - include: replication.yml
   when: gerrit_replication is defined
 
