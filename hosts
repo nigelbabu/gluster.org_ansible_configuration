@@ -48,6 +48,7 @@ jenkins-stage.rht.gluster.org
 signer.rht.gluster.org
 aide.rht.gluster.org
 bugziller.rht.gluster.org
+analysis.rht.gluster.org
 
 build.gluster.org
 gerrit-new.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:2222 root@myrmicinae.rht.gluster.org"'
