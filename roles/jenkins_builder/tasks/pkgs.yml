@@ -21,6 +21,9 @@
   with_items:
   - python27
   - python-libcloud
+  - cppcheck
+  - clang
+  - clang-analyzer
   when: '"jenkins_builders_rht" in group_names'
 
 - package:
