@@ -14,7 +14,7 @@
     use_letsencrypt: True
     mail_domain: gluster.org
     website_domain: gerrit-stage.rht.gluster.org
-    reverse_proxy: http://127.0.0.1:8081/
+    reverse_proxy: http://127.0.0.1:8081
     gerrit_replication:
     - repo: gluster-test
       github_user: gluster
