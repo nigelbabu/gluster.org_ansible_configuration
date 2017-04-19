@@ -5,7 +5,7 @@
     name: jenkins-stage.rht.gluster.org
     volgroup: myrmicinae
     system_disk_size: 10
-    data_disk_size: 100
+    data_disk_size: 150
     mem_size: 4096
     num_cpus: 1
     distribution: Centos
