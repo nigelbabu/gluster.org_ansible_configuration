@@ -1,7 +1,7 @@
 ---
 - name: Deploy gerrit specific config for proxy
   copy:
-    dest: "/etc/httpd/conf.d/gerrit_workaround.conf"
+    dest: "/etc/httpd/conf.d/allow_encoded_slashes_workaround.conf"
     content: "AllowEncodedSlashes on"
     mode: 0644
   notify: verify config and restart httpd
