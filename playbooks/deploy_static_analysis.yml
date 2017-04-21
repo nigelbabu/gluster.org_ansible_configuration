@@ -4,7 +4,7 @@
   - role: guest_virt_install
     name: analysis.rht.gluster.org
     volgroup: myrmicinae
-    system_disk_size: 5
+    system_disk_size: 6
     data_disk_size: 20
     mem_size: 1024
     num_cpus: 1
