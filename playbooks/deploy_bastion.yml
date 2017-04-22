@@ -3,7 +3,7 @@
   - role: guest_virt_install
     name: ant-queen.rht.gluster.org
     volgroup: myrmicinae
-    disk_size: 10
+    system_disk_size: 10
     mem_size: 1024
     num_cpus: 1
     distribution: Centos
