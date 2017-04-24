@@ -13,5 +13,5 @@
     mail_domain: gluster.org
     force_tls: True
   - rsync_bitergia
-  - role: static_analysis
-    website_domain: download.gluster.org
+#  - role: static_analysis
+#    website_domain: download.gluster.org
