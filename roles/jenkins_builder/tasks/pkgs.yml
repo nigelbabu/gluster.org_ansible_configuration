@@ -12,7 +12,7 @@
     state: present
     name: centos-release-scl
   name: Enable SCL
-  when: '"jenkins_builders_rht" in group_names'
+  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS"'
 
 - package:
     state: present
@@ -24,7 +24,7 @@
   - cppcheck
   - clang
   - clang-analyzer
-  when: '"jenkins_builders_rht" in group_names'
+  when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS"'
 
 - package:
     state: present
