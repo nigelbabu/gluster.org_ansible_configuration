@@ -52,6 +52,7 @@ analysis.rht.gluster.org
 
 build.gluster.org
 gerrit-new.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:2222 root@myrmicinae.rht.gluster.org"'
+freebsd10.3.rht.gluster.org
 
 [munin]
 munin.gluster.org
@@ -62,6 +63,7 @@ ansible_python_interpreter=/usr/local/bin/python
 
 [freebsd]
 freebsd0.cloud.gluster.org
+freebsd10.3.rht.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
@@ -95,6 +97,7 @@ builder6.rht.gluster.org
 builder7.rht.gluster.org
 builder8.rht.gluster.org
 builder9.rht.gluster.org
+freebsd10.3.rht.gluster.org
 
 
 [jenkins_builders:children]
