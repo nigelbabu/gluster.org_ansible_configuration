@@ -3,7 +3,7 @@
   roles:
   - role: guest_virt_install
     name: backups.rht.gluster.org
-    volgroup: myrmicinae
+    volgroup: centos
     system_disk_size: 10
     # 1G for pgsql
     # 60G for binary
