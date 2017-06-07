@@ -1,0 +1,20 @@
+---
+- hosts: formicary.rht.gluster.org
+  roles:
+  - role: guest_virt_install
+    name: backups.rht.gluster.org
+    volgroup: myrmicinae
+    system_disk_size: 10
+    # 1G for pgsql
+    # 60G for binary
+    # 6G for mls
+    # 1G for mysql/wordpress
+    data_disk_size: 75
+    mem_size: 1024
+    num_cpus: 1
+    distribution: Centos
+    version: 7
+    bridge: virbr0
+    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    network:
+      bootproto: dhcp
