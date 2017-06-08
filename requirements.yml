@@ -47,3 +47,5 @@
   version: fix_misc
 - src: https://github.com/OSAS/ansible-role-swap_file
   name: swap_file
+- src: https://github.com/OSAS/ansible-role-polyinst_tmp
+  name: polyinst_tmp
