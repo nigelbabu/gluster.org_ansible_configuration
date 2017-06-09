@@ -1,0 +1,20 @@
+- name: Install rdiff-backup
+  package:
+    state: installed
+    name: rdiff-backup
+
+- name: Create local user to make backups
+  user:
+    name: "{{ backups_user }}"
+    home: "{{ backups_dir }}"
+    generate_ssh_key: True
+  register: backups_user_info
+
+- include: backup_job.yml
+  vars:
+    remote_directory: "{{ item.directory }}"
+    remote_user: "{{ item.user }}"
+    remote_server: "{{ item.server }}"
+    size: "{{ item.size }}"
+    age_max: "{{ item.age_max }}"
+  with_items: "{{ backups }}"

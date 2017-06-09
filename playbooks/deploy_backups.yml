@@ -1,0 +1,14 @@
+# needed later for package
+- hosts: all
+
+- hosts: backups
+  roles:
+  - role: backups
+    vg_root: vg_data_backups.rht.gluster.org
+    backups:
+    - directory: /var/lib/mailman/ 
+      age_max: "10D"
+      size: "6G" 
+      server: "supercolony.gluster.org"
+      user: root
+

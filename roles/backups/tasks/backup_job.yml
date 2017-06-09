@@ -1,0 +1,92 @@
+# TODO
+# add optional exclude 
+# add setting for the hour of cron
+- set_fact:
+    job_name: "{{ remote_server }}_{{ remote_directory |replace('/', '_') }}"
+
+# need to be separate, since they use job_name
+- set_fact:
+    lv_name: "backups-{{ job_name }}"
+    dev_name: "/dev/mapper/{{ vg_root }}-backups--{{ job_name }}"
+
+- name: Create the logical volume for backups
+  lvol:
+    vg: "{{ vg_root }}" 
+    lv: "{{ lv_name }}"
+    size: "{{ size }}"
+
+- name: Create the filesystem
+  filesystem:
+    dev: "{{ dev_name }}"
+    fstype: "{{ backups_fs }}"
+
+- name: Mount it to the right place
+  mount:
+    name: "{{ backups_dir }}/{{ job_name }}"
+    fstype: "{{ backups_fs }}"
+    state: mounted
+    src: "{{ dev_name }}"
+
+- name: Ensure permission to backup user
+  file:
+    state: directory
+    owner: "{{ backups_user }}"
+    path: "{{ backups_dir }}/{{ job_name }}"
+
+- set_fact:
+    keys_format:
+      rsa: "ssh-rsa"
+      ecdsa: "ecdsa-sha2-nistp256"
+      ed25519: "ssh-ed25519"
+
+# this doesn't work well with Netbsd, who use a different curve for ecdsa
+- name: Add the ssh key
+  known_hosts:
+    name: "{{ remote_server }}"
+    key: "{{ remote_server }} {{ keys_format[key_type] + ' ' + hostvars[remote_server]['ansible_ssh_host_key_' + key_type + '_public'] }}"
+  when: hostvars[remote_server]['ansible_ssh_host_key_' + key_type + '_public'] is defined
+  with_items:
+  - rsa
+  - ecdsa
+  - ed25519  
+  loop_control:
+    loop_var: key_type
+  become_user: "{{ backups_user }}"
+  become: True
+  become_method: "su"
+
+# TODO deploy the ssh key remotely limited by ip ? (how ?)
+- name: 
+  authorized_key:
+    key: "{{ backups_user_info.ssh_public_key }}"
+    key_options: "command=\"rdiff-backup --server --restrict-read-only {{ remote_directory }}\",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty"
+    user: "{{ remote_user }}"
+  delegate_to: "{{ remote_server }}"
+
+- name: Detect the package manager
+  setup:
+  delegate_to: "{{ remote_server }}"
+
+- name: Install rdiff-backup remotely
+  package:
+    state: installed
+    name: rdiff-backup
+  delegate_to: "{{ remote_server }}"
+
+- name: Create cronjob for {{ job_name }} backup
+  cron:
+    name: "Backup {{ job_name }}"
+    minute: "0"
+    hour: "3"
+    job: "rdiff-backup --exclude-special-files {{ remote_user }}@{{ remote_server }}::{{ remote_directory }}/ ::{{ backups_dir }}/{{ job_name }}/"
+    user: "{{ backups_user }}"
+
+- name: Create cronjob for {{ job_name }} cleanup 
+  cron:
+    name: "Cleanup for {{ job_name }}"
+    minute: "0"
+    hour: "7"
+    job: "rdiff-backup --remove-older-than {{ age_max }} {{ backups_dir }}/{{ job_name }}/"
+    user: "{{ backups_user }}"
+
+

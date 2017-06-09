@@ -1,0 +1,4 @@
+backups_dir: /srv/backups/
+backups_user: _backups
+backups_fs: xfs
+
