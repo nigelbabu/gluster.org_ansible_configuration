@@ -3,6 +3,7 @@
   copy:
     src: backup-all-postgresql-databases.sh
     dest: /usr/local/bin/backup-all-postgresql-databases
+    mode: 0755
 
 - name: Add the cron to dump all databases
   cron:
