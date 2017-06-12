@@ -11,4 +11,8 @@
       size: "6G" 
       server: "supercolony.gluster.org"
       user: root
-
+    - directory: /var/lib/jenkins/
+      age_max: "20D"
+      size: "1G"
+      server: "build.gluster.org"
+      user: "root"
