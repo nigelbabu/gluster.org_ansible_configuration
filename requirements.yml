@@ -40,11 +40,8 @@
 - src: git+https://gitlab.com/misc/ansible-role-postgresql.git
   name: postgresql
   version: open_network
-# move to OSAS once https://github.com/OSAS/ansible-role-mariadb/pull/2 is merged
-# and https://github.com/OSAS/ansible-role-mariadb/pull/3
-- src: https://github.com/mscherer/ansible-role-mariadb
+- src: https://github.com/OSAS/ansible-role-mariadb
   name: mariadb
-  version: fix_misc
 - src: https://github.com/OSAS/ansible-role-swap_file
   name: swap_file
 - src: https://github.com/OSAS/ansible-role-polyinst_tmp
