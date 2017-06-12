@@ -26,3 +26,8 @@
       size: "1G"
       server: "supercolony.gluster.org"
       user: root
+    - directory: /var/www/html
+      age_max: "60D"
+      size: "1G"
+      server: "supercolony.gluster.org"
+      user: root     
