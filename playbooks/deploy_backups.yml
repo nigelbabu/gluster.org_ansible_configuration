@@ -16,3 +16,8 @@
       size: "1G"
       server: "build.gluster.org"
       user: "root"
+    - directory: /var/backups/postgresql
+      age_max: "10D"
+      size: "1G"
+      server: "postgresql.rht.gluster.org"
+      user: root
