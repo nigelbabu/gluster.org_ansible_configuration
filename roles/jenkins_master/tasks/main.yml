@@ -6,6 +6,7 @@
   when: ansible_distribution_major_version == '6' and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
 
 - name: Add the jenkins repository
+  yum_repository:
     name: jenkins
     description: Jenkins stable
     baseurl: https://pkg.jenkins.io/redhat-stable
