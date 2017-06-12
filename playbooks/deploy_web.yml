@@ -1,9 +1,5 @@
 - hosts: web
   roles:
-  # used for wordpress
-  - memcached
-  - mariadb
-
   - role: httpd
     website_domain: supercolony.gluster.org
     redirect:    https://supercolony.gluster.org/
