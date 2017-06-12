@@ -1,0 +1,12 @@
+---
+- name: Install the backup script
+  copy:
+    src: backup-all-postgresql-databases.sh
+    dest: /usr/local/bin/backup-all-postgresql-databases
+
+- name: Add the cron to dump all databases
+  cron:
+    name: Dump all databases
+    user: postgres
+    special_time: daily
+    job: "/usr/local/bin/backup-all-postgresql-databases /var/backups/postgresql"
