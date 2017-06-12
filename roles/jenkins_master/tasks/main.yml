@@ -12,3 +12,14 @@
     baseurl: https://pkg.jenkins.io/redhat-stable
     gpgkey: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
     gpgcheck: yes
+
+- name: Install Jenkins
+  package:
+    name: jenkins
+    state: installed
+
+- name: Make sure Jenkins service is activated
+  service:
+    name: jenkins
+    status: started
+    enabled: True
