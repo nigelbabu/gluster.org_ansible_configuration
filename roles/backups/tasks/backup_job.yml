@@ -55,10 +55,28 @@
   become: True
   become_method: "su"
 
+# use RSA for compatibility
+- name: Generate a specific key
+  command: "ssh-keygen -q -t rsa -b 2048 -N '' -f ~/.ssh/{{ job_name }}"
+  args:
+    creates: "~/.ssh/{{ job_name }}"
+  become_user: "{{ backups_user }}"
+  become: True
+  become_method: "su"
+
+
+- name: Read the key
+  #command: "awk '{print $2}' ~/.ssh/{{ job_name }}.pub"
+  command: "cat ~/.ssh/{{ job_name }}.pub"
+  become_user: "{{ backups_user }}"
+  become: True
+  become_method: "su"
+  register: ssh_public_key
+
 # TODO deploy the ssh key remotely limited by ip ? (how ?)
 - name: 
   authorized_key:
-    key: "{{ backups_user_info.ssh_public_key }}"
+    key: "{{ ssh_public_key.stdout }}"
     key_options: "command=\"rdiff-backup --server --restrict-read-only {{ remote_directory }}\",no-port-forwarding,no-agent-forwarding,no-X11-forwarding,no-pty"
     user: "{{ remote_user }}"
   delegate_to: "{{ remote_server }}"
@@ -78,7 +96,7 @@
     name: "Backup {{ job_name }}"
     minute: "0"
     hour: "3"
-    job: "rdiff-backup --exclude-special-files {{ remote_user }}@{{ remote_server }}::{{ remote_directory }}/ ::{{ backups_dir }}/{{ job_name }}/"
+    job: "rdiff-backup --exclude-special-files --remote-schema 'ssh -i ~/.ssh/{{ job_name }} -C %s rdiff-backup --server' {{ remote_user }}@{{ remote_server }}::{{ remote_directory }}/ ::{{ backups_dir }}/{{ job_name }}/"
     user: "{{ backups_user }}"
 
 - name: Create cronjob for {{ job_name }} cleanup 
