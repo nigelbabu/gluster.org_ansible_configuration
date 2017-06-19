@@ -5,3 +5,6 @@
 - include: root_ssh_keys.yml
 # for now, the code only work on Linux
 - include: timezone.yml
+
+- include: freebsd.yml
+  when: ansible_system == 'FreeBSD'
