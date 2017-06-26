@@ -86,16 +86,8 @@
 - package:
     state: present
     name: "{{ item }}"
-  name: Install jenkins builder jdk for RHEL/Centos
-  when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS'
-  with_items:
-  - java-1.7.0-openjdk
-
-- package:
-    state: present
-    name: "{{ item }}"
-  name: Install jenkins builder jdk for RHEL/Centos
-  when: ansible_distribution == 'Fedora'
+  name: Install jenkins builder jdk for RHEL/Centos/Fedora
+  when: ansible_distribution == 'RedHat' or ansible_distribution == 'CentOS' or ansible_distribution == 'Fedora'
   with_items:
   - java-1.8.0-openjdk
 
