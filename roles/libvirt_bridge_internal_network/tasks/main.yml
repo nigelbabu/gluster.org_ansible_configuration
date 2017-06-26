@@ -5,3 +5,4 @@
     state: present
     name: internal
     xml: '{{ lookup("template", "internal.xml") }}'
+  notify: Reload libvirt
