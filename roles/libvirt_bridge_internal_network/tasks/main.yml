@@ -1,0 +1,7 @@
+---
+- name: Define libvirt network for internal
+  virt_net:
+    command: define
+    state: present
+    name: internal
+    xml: '{{ lookup("template", "internal.xml") }}'

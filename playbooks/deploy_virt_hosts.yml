@@ -1,4 +1,6 @@
 ---
 - hosts: virt_hosts
   roles:
-  - libvirt 
+  - libvirt
+  - role: libvirt_bridge_internal_network
+    when: internal_bridge is defined
