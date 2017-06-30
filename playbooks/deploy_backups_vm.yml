@@ -18,6 +18,9 @@
     sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
     network:
       bootproto: dhcp
+  - role: guest_add_bridge
+    name: backups.rht.gluster.org
+    bridge: "{{ internal_bridge }}"
 
 - hosts: backups.rht.gluster.org
   tasks:
