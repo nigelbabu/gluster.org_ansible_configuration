@@ -1,0 +1,4 @@
+---
+- guest_add_bridge:
+    name: "{{ name }}"
+    bridge: "{{ bridge }}"
