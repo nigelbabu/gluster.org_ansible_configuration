@@ -66,6 +66,13 @@ ansible_python_interpreter=/usr/local/bin/python
 freebsd0.cloud.gluster.org
 freebsd10.3.rht.gluster.org
 
+[python3:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[python3]
+masa.rht.gluster.org
+mune.rht.gluster.org
+
 [jenkins_builders_rackspace:vars]
 location=rackspace
 
