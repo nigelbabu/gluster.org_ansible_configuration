@@ -11,4 +11,4 @@ dependencies:
   version: 25
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 - role: guest_add_bridge
-  bridge: "{{ bridge_internal }}" 
+  bridge: "{{ bridge_common }}" 
