@@ -11,3 +11,5 @@
       common:
         interface: eth1
         address: 172.24.1.181
+  - role: conntrackd
+    sync_interface: eth1
