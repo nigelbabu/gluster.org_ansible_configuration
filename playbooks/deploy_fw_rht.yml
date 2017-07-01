@@ -1,0 +1,13 @@
+---
+- hosts: firewall_rht
+  roles:
+  - role: firewall_rht_network 
+  - role: keepalived
+    master: masa
+    vip:
+      public:
+        interface: eth0
+        address: 8.43.85.181
+      common:
+        interface: eth1
+        address: 172.24.1.181

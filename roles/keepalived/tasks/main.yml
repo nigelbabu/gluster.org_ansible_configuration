@@ -1,0 +1,35 @@
+---
+- name: See if we are the master
+  set_fact:
+    is_master: "{{ ansible_hostname == master }}"
+
+- name: Generate a random password
+  set_fact:
+    password: "{{ lookup('password', '~/keepalived_pass length=6') }}"
+
+- name: Install keepalived
+  package:
+    name: keepalived
+    state: installed
+
+- name: Deploy configuration
+  template:
+    dest: /etc/keepalived/keepalived.conf
+    src: keepalived.conf
+  notify: Restart keepalived
+
+- name: Open vrrp for firewalld 
+  firewalld:
+    rich_rule: 'rule family=ipv4 protocol value="vrrp" destination address="224.0.0.18" accept'
+    permanent: True
+    state: enabled
+    immediate: True
+
+- name: Start service
+  service:
+    name: keepalived
+    enabled: True
+    state: started
+
+# net.ipv4.ip_nonlocal_bind = 1 => sysctl, required for starting service on non existing ip
+
