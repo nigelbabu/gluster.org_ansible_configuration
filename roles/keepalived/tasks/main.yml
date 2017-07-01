@@ -31,5 +31,7 @@
     enabled: True
     state: started
 
-# net.ipv4.ip_nonlocal_bind = 1 => sysctl, required for starting service on non existing ip
-
+- name: Make sure services can start and listen to the floating ips
+  sysctl:
+    name: net.ipv4.ip_nonlocal_bind
+    value: 1
