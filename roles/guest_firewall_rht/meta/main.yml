@@ -1,0 +1,14 @@
+---
+dependencies:
+- role: guest_virt_install
+  disk_size: 30
+  bridge: "{{ bridge_public }}"
+  volgroup: "{{ vm_storage_vg  }}"
+  system_disk_size: 10
+  mem_size: 1024
+  num_cpus: 1
+  distribution: Fedora
+  version: 25
+  sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+- role: guest_add_bridge
+  bridge: "{{ bridge_internal }}" 
