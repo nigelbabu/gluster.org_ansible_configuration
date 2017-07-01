@@ -1,0 +1,2 @@
+bridge_common: virbr3
+bridge_public: virbr1
