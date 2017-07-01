@@ -1,0 +1,16 @@
+---
+# looking at the code of the module, this is not needed
+# but looking at the code also make me cry inside so
+# fix will wait for later
+- name: Install needed package for nmcli
+  package:
+    name: NetworkManager-glib
+    state: present
+
+- name: Setup common network setup
+  nmcli:
+    type: ethernet
+    conn_name: "{{ common_interface }}"
+    ifname: "{{ common_interface }}"
+    ip4: "{{ common_ip }}/24"
+    state: present
