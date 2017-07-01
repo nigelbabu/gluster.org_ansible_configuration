@@ -142,3 +142,7 @@ aide.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168
 
 [bugziller]
 bugziller.rht.gluster.org
+
+[firewall_rht]
+masa.rht.gluster.org
+mune.rht.gluster.org
