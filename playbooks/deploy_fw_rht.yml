@@ -8,8 +8,10 @@
       public:
         interface: eth0
         address: 8.43.85.181
+        prefix: 24
       common:
         interface: eth1
         address: 172.24.1.181
+        prefix: 24
   - role: conntrackd
     sync_interface: eth1
