@@ -56,6 +56,8 @@ def main():
 
     if permanent:
         fw = FirewallClient().config().direct()
+    else:
+        fw = FirewallClient()
     rules = fw.getRules(ipv=address_type, table=table, chain=chain)
 
     changed = False
