@@ -21,4 +21,9 @@
   - rsync
   when: ansible_system == 'Linux'
 
-
+- package:
+    state: present
+    name: '{{ item }}'
+  with_items:
+  - policycoreutils-python-utils
+  when: ansible_distribution == 'Fedora'
