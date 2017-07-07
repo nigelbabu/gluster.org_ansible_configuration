@@ -1,2 +1,3 @@
 bridge_common: virbr3
 bridge_public: virbr1
+bridge_interco_fw: em2
