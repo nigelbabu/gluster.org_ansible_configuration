@@ -14,5 +14,5 @@
         address: 172.24.1.181
         prefix: 24
   - role: conntrackd
-    sync_interface: eth1
+    sync_interface: eth2
   - role: firewall_cage
