@@ -1,7 +1,6 @@
 ---
 dependencies:
 - role: guest_virt_install
-  disk_size: 30
   bridge: "{{ bridge_public }}"
   volgroup: "{{ vm_storage_vg  }}"
   system_disk_size: 10
