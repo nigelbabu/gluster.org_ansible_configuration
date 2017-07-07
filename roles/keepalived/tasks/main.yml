@@ -20,7 +20,7 @@
 
 - name: Deploy the script to sync conntrack
   copy:
-    dest: /etc/keepalived/wrapper_conntrackd.sh
+    dest: /usr/libexec/keepalived/wrapper_conntrackd.sh
     src: wrapper_conntrackd.sh
     mode: 0755
 
