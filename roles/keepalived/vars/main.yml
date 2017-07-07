@@ -1,0 +1,2 @@
+# NOC asked to not use 224.0.0.0/23
+multicast_ipv4: 224.0.2.18
