@@ -18,6 +18,12 @@
     src: keepalived.conf
   notify: Restart keepalived
 
+- name: Deploy the script to sync conntrack
+  copy:
+    dest: /etc/keepalived/wrapper_conntrackd.sh
+    src: wrapper_conntrackd.sh
+    mode: 0755
+
 - name: Open vrrp for firewalld 
   firewalld:
     rich_rule: 'rule family=ipv4 protocol value="vrrp" destination address="224.0.0.18" accept'
