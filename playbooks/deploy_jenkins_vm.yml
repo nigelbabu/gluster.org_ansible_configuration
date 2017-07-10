@@ -19,6 +19,9 @@
       nameservers:
       - 8.8.8.8
       - 8.8.4.4
+  - role: guest_add_bridge
+    bridge: "{{ bridge_common }}"
+    name: jenkins-stage.rht.gluster.org
 
 - hosts: jenkins-stage.rht.gluster.org
   tasks:
@@ -42,6 +45,3 @@
       src: /dev/mapper/vg_data_jenkins--stage.rht.gluster.org-var_lib_jenkins
       fstype: xfs
       state: present
-  roles:
-  - role: guest_add_bridge
-    bridge: "{{ bridge_common }}"
