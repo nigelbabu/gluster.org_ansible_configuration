@@ -42,3 +42,6 @@
       src: /dev/mapper/vg_data_jenkins--stage.rht.gluster.org-var_lib_jenkins
       fstype: xfs
       state: present
+  roles:
+  - role: guest_add_bridge
+    bridge: "{{ bridge_common }}"
