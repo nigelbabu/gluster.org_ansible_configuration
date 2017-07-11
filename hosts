@@ -64,7 +64,7 @@ ansible_python_interpreter=/usr/local/bin/python
 
 [freebsd]
 freebsd0.cloud.gluster.org
-freebsd10.3.rht.gluster.org
+freebsd10.3.int.rht.gluster.org
 
 [python3:vars]
 ansible_python_interpreter=/usr/bin/python3
@@ -142,7 +142,7 @@ fstat.rht.gluster.org
 proxy.rht.gluster.org
 
 [signer]
-signer.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168.122.225:22 root@myrmicinae.rht.gluster.org"'
+signer.int.rht.gluster.org
 
 [aide]
 aide.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168.122.112:22 root@myrmicinae.rht.gluster.org"'
@@ -153,3 +153,10 @@ bugziller.rht.gluster.org
 [firewall_rht]
 masa.rht.gluster.org
 mune.rht.gluster.org
+
+[int_rht_gluster_org]
+signer.int.rht.gluster.org
+freebsd10.3.int.rht.gluster.org
+
+[int_rht_gluster_org:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
