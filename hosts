@@ -46,14 +46,16 @@ builder7.rht.gluster.org
 builder8.rht.gluster.org
 builder9.rht.gluster.org
 jenkins-stage.rht.gluster.org
-signer.rht.gluster.org
 aide.rht.gluster.org
 bugziller.rht.gluster.org
 analysis.rht.gluster.org
 
 build.gluster.org
 gerrit-new.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:2222 root@myrmicinae.rht.gluster.org"'
-freebsd10.3.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 172.24.1.150:22 root@formicary.rht.gluster.org"'
+signer.int.rht.gluster.org
+freebsd10.3.int.rht.gluster.org
+
+
 
 [munin]
 munin.gluster.org
