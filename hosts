@@ -107,7 +107,7 @@ builder6.rht.gluster.org
 builder7.rht.gluster.org
 builder8.rht.gluster.org
 builder9.rht.gluster.org
-freebsd10.3.rht.gluster.org
+freebsd10.3.int.rht.gluster.org
 
 
 [jenkins_builders:children]
