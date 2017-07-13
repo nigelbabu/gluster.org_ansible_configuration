@@ -71,6 +71,8 @@
 # used for cli
   - ncurses-devel
   - readline-devel
+# tmpwatch to clean /tmp
+  - tmpwatch
 
 - package:
     state: present
