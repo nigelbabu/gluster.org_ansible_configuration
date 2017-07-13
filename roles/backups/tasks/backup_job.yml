@@ -72,6 +72,7 @@
   become: True
   become_method: "su"
   register: ssh_public_key
+  changed_when: False
 
 # TODO deploy the ssh key remotely limited by ip ? (how ?)
 - name: 
