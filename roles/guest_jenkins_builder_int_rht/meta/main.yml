@@ -12,7 +12,7 @@ dependencies:
   network:
     bootproto: static
     ip: 172.24.1.{{ 140 + number }}/24
-    gateway: 172.24.1.181
+    gateway: 172.24.1.254
     nameservers:
     - 8.8.8.8
     - 8.8.4.4
