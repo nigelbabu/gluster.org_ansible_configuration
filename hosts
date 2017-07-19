@@ -108,6 +108,16 @@ builder7.rht.gluster.org
 builder8.rht.gluster.org
 builder9.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
+builder0.int.rht.gluster.org
+builder1.int.rht.gluster.org
+builder2.int.rht.gluster.org
+builder3.int.rht.gluster.org
+builder4.int.rht.gluster.org
+builder5.int.rht.gluster.org
+builder6.int.rht.gluster.org
+builder7.int.rht.gluster.org
+builder8.int.rht.gluster.org
+builder9.int.rht.gluster.org
 
 
 [jenkins_builders:children]
@@ -159,6 +169,17 @@ mune.rht.gluster.org
 [int_rht_gluster_org]
 signer.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
+builder0.int.rht.gluster.org
+builder1.int.rht.gluster.org
+builder2.int.rht.gluster.org
+builder3.int.rht.gluster.org
+builder4.int.rht.gluster.org
+builder5.int.rht.gluster.org
+builder6.int.rht.gluster.org
+builder7.int.rht.gluster.org
+builder8.int.rht.gluster.org
+builder9.int.rht.gluster.org
+
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
