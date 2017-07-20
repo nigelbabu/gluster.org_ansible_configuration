@@ -5,7 +5,7 @@
 
 - name: Generate a random password
   set_fact:
-    password: "{{ lookup('password', '~/keepalived_pass length=6') }}"
+    password: "{{ lookup('password', '~/keepalived_pass' + master + 'length=6') }}"
 
 - name: Install keepalived
   package:
