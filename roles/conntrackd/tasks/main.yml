@@ -10,6 +10,27 @@
     dest: /etc/conntrackd/conntrackd.conf
   notify: Restart conntrackd
 
+- name: Make sure there is a zone for the interco
+  firewalld_zone:
+    name: interco_fw
+    state: present
+
+- name: Set interco interface to the interco zone
+  firewalld:
+    zone: interco_fw
+    interface: "{{ sync_interface }}"
+    permanent: True
+    immediate: True
+    state: enabled
+
+- name: Open the interco port
+  firewalld:
+    zone: interco_fw
+    permanent: True
+    immediate: True
+    state: enabled
+    port: 3780/udp
+
 #TODO open the firewall
 - name: Make sure the service is started
   service:
