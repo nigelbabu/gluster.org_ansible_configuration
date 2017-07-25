@@ -1,22 +1,6 @@
 ---
-- hosts: myrmicinae.rht.gluster.org
-  roles:
-  - role: guest_virt_install
-    name: aide.rht.gluster.org
-    volgroup: myrmicinae
-    system_disk_size: 8
-    data_disk_size: 120 
-    mem_size: 2048
-    num_cpus: 1
-    distribution: Centos
-    version: 7
-    bridge: virbr0
-    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-    network:
-      bootproto: dhcp
-
 - hosts: download01.rax.gluster.org
-- hosts: aide.rht.gluster.org
+- hosts: aide.int.rht.gluster.org
   roles:
   - role: aide
     remote_server: download01.rax.gluster.org
