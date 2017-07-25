@@ -45,7 +45,6 @@ builder7.rht.gluster.org
 builder8.rht.gluster.org
 builder9.rht.gluster.org
 jenkins-stage.rht.gluster.org
-aide.rht.gluster.org
 bugziller.rht.gluster.org
 analysis.rht.gluster.org
 
@@ -156,7 +155,7 @@ proxy.rht.gluster.org
 signer.int.rht.gluster.org
 
 [aide]
-aide.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168.122.112:22 root@myrmicinae.rht.gluster.org"'
+aide.int.rht.gluster.org
 
 [bugziller]
 bugziller.rht.gluster.org
@@ -179,6 +178,7 @@ builder7.int.rht.gluster.org
 builder8.int.rht.gluster.org
 builder9.int.rht.gluster.org
 backups.int.rht.gluster.org
+aide.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
