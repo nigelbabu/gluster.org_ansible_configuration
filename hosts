@@ -7,8 +7,7 @@ salt-master.gluster.org
 ant-queen.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168.122.10:22 root@myrmicinae.rht.gluster.org"'
 
 [backups]
-#backups.cloud.gluster.org
-backups.int.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W backups.int.rht.gluster.org:22 root@formicary.rht.gluster.org"'
+backups.int.rht.gluster.org
 
 [freeipa]
 freeipa01.rax.gluster.org
@@ -179,7 +178,7 @@ builder6.int.rht.gluster.org
 builder7.int.rht.gluster.org
 builder8.int.rht.gluster.org
 builder9.int.rht.gluster.org
-
+backups.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
