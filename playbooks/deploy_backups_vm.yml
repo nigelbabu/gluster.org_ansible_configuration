@@ -2,7 +2,7 @@
 - hosts: formicary.rht.gluster.org
   roles:
   - role: guest_virt_install
-    name: backups.rht.gluster.org
+    name: backups.int.rht.gluster.org
     volgroup: centos
     system_disk_size: 10
     # 1G for pgsql
@@ -14,15 +14,20 @@
     num_cpus: 1
     distribution: Centos
     version: 7
-    bridge: virbr0
+    bridge: "{{ bridge_common }}"
     sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
     network:
-      bootproto: dhcp
+      bootproto: static
+      ip: 172.24.1.51
+      gateway: 172.24.1.181
+      nameservers:
+      - 8.8.8.8
+      - 8.8.4.4
   - role: guest_add_bridge
-    name: backups.rht.gluster.org
+    name: backups.int.rht.gluster.org
     bridge: "{{ internal_bridge }}"
 
-- hosts: backups.rht.gluster.org
+- hosts: backups.int.rht.gluster.org
   tasks:
   # uncomment once https://github.com/ansible/ansible/pull/21620 is merged
   #- filesystem:
