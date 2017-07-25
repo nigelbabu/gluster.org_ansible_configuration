@@ -25,6 +25,7 @@
   - cppcheck
   - clang
   - clang-analyzer
+  - python-docopt
   when: '"jenkins_builders_rht" in group_names and ansible_distribution == "CentOS"'
 
 - package:
