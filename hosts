@@ -8,7 +8,7 @@ ant-queen.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.16
 
 [backups]
 #backups.cloud.gluster.org
-backups.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 192.168.122.94:22 root@formicary.rht.gluster.org"'
+backups.int.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W backups.int.rht.gluster.org:22 root@formicary.rht.gluster.org"'
 
 [freeipa]
 freeipa01.rax.gluster.org
