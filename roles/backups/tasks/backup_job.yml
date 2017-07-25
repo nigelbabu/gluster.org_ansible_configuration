@@ -2,7 +2,7 @@
 # add optional exclude 
 # add setting for the hour of cron
 - set_fact:
-    job_name: "{{ remote_server }}_{{ remote_directory |replace('/', '_') }}"
+    job_name: "{{ remote_server }}_{{ remote_directory |replace('/', '_') | regexp_replace('_$', '') }}"
 
 # need to be separate, since they use job_name
 - set_fact:
