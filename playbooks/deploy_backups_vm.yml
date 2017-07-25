@@ -23,9 +23,6 @@
       nameservers:
       - 8.8.8.8
       - 8.8.4.4
-  - role: guest_add_bridge
-    name: backups.int.rht.gluster.org
-    bridge: "{{ internal_bridge }}"
 
 - hosts: backups.int.rht.gluster.org
   tasks:
