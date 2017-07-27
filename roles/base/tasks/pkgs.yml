@@ -4,7 +4,9 @@
     name: epel-release
   when: ansible_distribution == 'CentOS'
 
-- package: state=present name={{ item }}
+- package:
+    state: present
+    name: "{{ item }}"
   with_items:
   - lsof
   - screen
@@ -12,18 +14,12 @@
   - nmap
   - socat
 
-- package: state=present name={{ item }}
+- package:
+    state: present
+    name: "{{ item }}"
   with_items:
   - strace
   - vim-enhanced
-  - libselinux-python
   - lshw
   - rsync
   when: ansible_system == 'Linux'
-
-- package:
-    state: present
-    name: '{{ item }}'
-  with_items:
-  - policycoreutils-python-utils
-  when: ansible_distribution == 'Fedora'
