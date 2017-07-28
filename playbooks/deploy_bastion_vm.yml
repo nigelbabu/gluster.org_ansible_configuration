@@ -19,15 +19,13 @@
       - 8.8.8.8
       - 8.8.4.4
 
-#- hosts: ant-queen.int.rht.gluster.org
-#  tasks:
-#  - filesystem:
-#      dev: /dev/vdb
-#      fstype: xfs
-#  - mount:
-#      path: /home/
-#      src: /dev/vdb
-#      fstype: xfs
-#      state: mounted
-#
-
+- hosts: ant-queen.int.rht.gluster.org
+  tasks:
+  - filesystem:
+      dev: /dev/vdb
+      fstype: xfs
+  - mount:
+      path: /home/
+      src: /dev/vdb
+      fstype: xfs
+      state: mounted
