@@ -3,7 +3,7 @@
   roles:
   - role: guest_virt_install
     name: nightly.rht.gluster.org
-    volgroup: myrmicinae
+    volgroup: "{{ vm_storage_vg }}"
     system_disk_size: 10
     data_disk_size: 30
     mem_size: 1024
