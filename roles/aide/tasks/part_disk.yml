@@ -12,17 +12,16 @@
 #TODO finish once https://github.com/ansible/ansible/pull/21620 is merged
 # lvcreate vg_data_aide.rht.gluster.org/mirror -L 115G
 - filesystem:
-    dev: /dev/mapper/vg_data_aide.rht.gluster.org-mirror
+    dev: "{{ fs_device }}"
     type: xfs
 
 - mount:
     name: /srv/
     fstype: xfs
-    src: /dev/mapper/vg_data_aide.rht.gluster.org-mirror
+    src: "{{ fs_device }}"
     state: present
 
 - file:
     path: "{{ local_mirror }}"
     state: directory
     owner: "{{ user }}"
-
