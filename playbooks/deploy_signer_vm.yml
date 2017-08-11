@@ -2,7 +2,7 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_virt_install
-    name: signer.rht.gluster.org
+    name: signer.int.rht.gluster.org
     volgroup: myrmicinae
     system_disk_size: 10
     data_disk_size: 3
@@ -13,4 +13,9 @@
     bridge: "{{ bridge_common }}"
     sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
     network:
-      bootproto: dhcp
+      bootproto: static
+      ip: 172.24.1.50/24
+      gateway: 172.24.1.181
+      nameservers:
+      - 8.8.8.8
+      - 8.8.4.4
