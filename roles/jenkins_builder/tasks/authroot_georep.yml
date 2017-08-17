@@ -9,6 +9,12 @@
   register: georep_pub_key
   changed_when: False
 
+- name: Link the key to the default key
+  file:
+    state: link
+    src: /root/.ssh/id_georep
+    dest: /root/.ssh/id_rsa
+ 
 - authorized_key:
     user: root
     key: "{{ georep_pub_key.stdout }}"
