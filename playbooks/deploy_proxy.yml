@@ -16,6 +16,8 @@
   - role: httpd_proxy
     website_domain: fstat.gluster.org
     reverse_proxy: http://fstat.rht.gluster.org/
+    server_aliases:
+    - failurestat.gluster.org
 
   - role: httpd_proxy
     website_domain: analysis.gluster.org
