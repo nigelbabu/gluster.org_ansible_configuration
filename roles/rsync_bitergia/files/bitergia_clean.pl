@@ -26,7 +26,8 @@ foreach (<$DIR/*>) {
         if ($md5sum_gz eq $md5sum) {
             unlink($_) or die "Couldn't remove $_";
         } else {
-            print "Something fishy happened on $_\n";
+            print "Something fishy happened on $_, removing for recompression\n";
+            unlink("$_.gz") or die "Couldn't remove $_";
         }
     } else {
         `gzip $_`;
