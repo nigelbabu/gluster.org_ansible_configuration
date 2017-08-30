@@ -25,6 +25,7 @@
     user: bitergia
     job: perl /usr/local/bin/bitergia_clean.pl
     hour: '5'
+    minute: '0'
 
 - name: Install cron to copy the file
   cron:
