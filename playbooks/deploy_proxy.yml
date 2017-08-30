@@ -19,7 +19,7 @@
       - 8.8.8.8
       - 8.8.4.4
 
-- hosts: proxy.rht.gluster.org
+- hosts: proxy
   roles:
   - role: httpd_proxy
     website_domain: build.proxy.gluster.org
