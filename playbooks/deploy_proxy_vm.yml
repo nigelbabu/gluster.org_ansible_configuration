@@ -11,4 +11,29 @@
       - 8.8.8.8
       - 8.8.4.4
 
+- hosts: myrmicinae.rht.gluster.org
+  roles:
+  - role: guest_proxy_rht
+    name: proxy01.rht.gluster.org
+    network:
+      bootproto: static
+      ip: 8.43.85.182/24
+      gateway: 8.43.85.254
+      nameservers:
+      - 8.8.8.8
+      - 8.8.4.4
+
+- hosts: formicary.rht.gluster.org
+  roles:
+  - role: guest_proxy_rht
+    name: proxy02.rht.gluster.org
+    network:
+      bootproto: static
+      ip: 8.43.85.183/24
+      gateway: 8.43.85.254
+      nameservers:
+      - 8.8.8.8
+      - 8.8.4.4
+
+
 
