@@ -4,14 +4,17 @@
     website_domain: supercolony.gluster.org
     redirect:    https://supercolony.gluster.org/
 
-  - role: httpd_www
-    website_domain: www.gluster.org
-    document_root: /srv/middleman_website/www/web/master/
-    sync_user: deploy_website 
+#  - role: httpd_www
+#    website_domain: www.gluster.org
+#    document_root: /srv/middleman_website/www/web/master/
+#    sync_user: deploy_website 
 
   - role: httpd
     website_domain: gluster.org
-    redirect:    https://www.gluster.org/
+    server_aliases:
+    - blog.gluster.org
+    - www.gluster.org
+    redirect:    https://gluster.wpengine.com/
 # disabled while the server is on EL6 (and no certbot)
 #    use_letsencrypt: True
 
