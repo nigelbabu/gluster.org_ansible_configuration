@@ -9,7 +9,7 @@
     num_cpus: 1
     distribution: Centos
     version: 7
-    bridge: "{{ bridge_public }}"
+    bridge: "{{ bridge_common }}"
     sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
     network:
       bootproto: static
