@@ -161,6 +161,7 @@ aide.int.rht.gluster.org
 
 [bugziller]
 bugziller.rht.gluster.org
+bugziller.int.rht.gluster.org
 
 [firewall_rht]
 masa.rht.gluster.org
