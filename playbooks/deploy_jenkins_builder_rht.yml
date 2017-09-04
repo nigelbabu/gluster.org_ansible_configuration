@@ -65,4 +65,17 @@
     number: 9
     version: 7
 
+- hosts: jenkins_builders_rht
+  tasks:
+  - name: Resize the disk of the builders
+    lvol:
+      vg: "vg_root_{{ ansible_hostname }}"
+      lv: root
+      size: 18G
+
+  - name: Make sure the filesystem is resized
+    filesystem:
+      fstype: ext4
+      dev: "/dev/mapper/vg_root_{{ ansible_hostname }}-root"
+      resizefs: True
 
