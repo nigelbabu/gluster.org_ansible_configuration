@@ -72,10 +72,11 @@
       vg: "vg_root_{{ ansible_fqdn }}"
       lv: root
       size: 18G
-
+    when: ansible_system == 'Linux'
   - name: Make sure the filesystem is resized
     filesystem:
       fstype: ext4
       dev: "/dev/mapper/vg_root_{{ ansible_fqdn }}-root"
       resizefs: True
+    when: ansible_system == 'Linux'
 
