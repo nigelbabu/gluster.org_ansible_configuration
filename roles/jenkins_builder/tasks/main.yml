@@ -63,6 +63,7 @@
   - /d/build
   - /d/logs
   - /home/jenkins/root
+  - /home/jenkins/root/workspace
   - /archives/archived_builds
   - /archives/log
   - /archives/logs
