@@ -93,6 +93,7 @@ builder6.int.rht.gluster.org
 builder7.int.rht.gluster.org
 builder8.int.rht.gluster.org
 builder9.int.rht.gluster.org
+bugziller
 
 builder10.int.rht.gluster.org
 builder11.int.rht.gluster.org
@@ -130,7 +131,6 @@ builder39.int.rht.gluster.org
 [jenkins_builders:children]
 jenkins_builders_rht
 jenkins_builders_rackspace
-bugziller
 
 [gerrit]
 #dev.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:21 root@myrmicinae.rht.gluster.org"'
