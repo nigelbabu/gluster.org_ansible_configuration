@@ -11,6 +11,7 @@
   - automake
   - autoconf
   - libtool
+  - bison
 
 - package:
     state: present
@@ -44,7 +45,6 @@
   - libacl-devel
   - nfs-utils
   - flex
-  - bison
   - cmockery2-devel
   - perl-Test-Harness
   - openssl-devel
@@ -85,6 +85,8 @@
   - perl5
   - openjdk8-jre
   - sqlite3
+  - pkgconf
+  - liburcu
 
 - package:
     state: present
