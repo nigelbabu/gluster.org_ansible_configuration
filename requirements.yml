@@ -15,7 +15,7 @@
   name: selinux
 - src: https://github.com/OSAS/ansible-role-rsyslog
   name: rsyslog
-- src: https://github.com/OSAS/ansible-role-middleman_builder
+- src: https://github.com/OSAS/ansible-role-web_builder
   name: builder
 - src: git+https://gitlab.com/osas/ansible-role-ntp.git
   name: ntp
