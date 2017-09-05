@@ -1,4 +1,5 @@
-# disabled until 2.2
+# enable for FreeBSD when 2.4 is out, error fixed
+# with commit 4fb5221b5 on ansible repo
 - name: Set timezone to UTC on Linux
   timezone:
     name: UTC
