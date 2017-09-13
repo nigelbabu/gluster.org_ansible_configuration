@@ -4,7 +4,7 @@
   - memcached
   - mariadb
   - role: httpd_blog
-    website_domain: blog.gluster.org
+    website_domain: oldblog.gluster.org
     document_root: /var/www/html
 
  
