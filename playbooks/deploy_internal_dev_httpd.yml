@@ -1,0 +1,25 @@
+---
+- hosts: formicary.rht.gluster.org
+  roles:
+  - role: guest_virt_install
+    name: http.int.rht.gluster.org
+    volgroup: "{{ vm_storage_vg }}"
+    system_disk_size: 8
+    data_disk_size: 30
+    mem_size: 1024
+    num_cpus: 1
+    distribution: Centos
+    version: 7
+    bridge: "{{ bridge_common }}"
+    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    network:
+      bootproto: static
+      ip: 172.24.1.55/24
+      gateway: 172.24.1.181
+      nameservers:
+      - 8.8.8.8
+      - 8.8.4.4
+
+#- hosts: analysis.rht.gluster.org
+#  roles:
+#  - role: static_analysis
