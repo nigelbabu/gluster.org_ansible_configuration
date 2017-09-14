@@ -1,5 +1,5 @@
 ---
-- hosts: formicary.rht.gluster.org
+- hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_virt_install
     name: http.int.rht.gluster.org
