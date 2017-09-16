@@ -1,5 +1,8 @@
-- name: Deploy a ban command
+- name: Deploy ban commands
   copy:
-    src: ban.py
-    dest: /usr/lib/mailman/bin/ban.py
+    src: "{{ item }}.py"
+    dest: "/usr/lib/mailman/bin/{{ item }}.py"
     mode: 0755
+  with_items:
+  - ban
+  - unban
