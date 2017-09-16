@@ -1,0 +1,5 @@
+- name: Deploy a ban command
+  copy:
+    src: ban.py
+    dest: /usr/lib/mailman/bin/ban.py
+    mode: 0755

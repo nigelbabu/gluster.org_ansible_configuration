@@ -15,3 +15,5 @@
     enabled: yes
 
 - include: create_lists.yml
+
+- include: ban_command.yml
