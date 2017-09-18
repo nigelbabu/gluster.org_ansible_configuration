@@ -1,6 +1,8 @@
 ---
 - name: Install mailman
-  package: name=mailman state=present
+  package:
+    name: mailman
+    state: present
 
 - name: Deploy mm_cfg.py
   template:
