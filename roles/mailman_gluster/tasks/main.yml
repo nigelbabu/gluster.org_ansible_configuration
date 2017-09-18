@@ -19,3 +19,6 @@
 - include: create_lists.yml
 
 - include: ban_command.yml
+
+- include: dnsbl_blacklist.yml
+  when: dnsbl_mailman 

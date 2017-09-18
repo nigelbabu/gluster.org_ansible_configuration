@@ -1,0 +1,15 @@
+---
+- package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - mod_security
+  notify: verify config and restart httpd
+  name: Install mod_security packages
+
+- name: Add the blacklist template file
+  template:
+    src: blacklist_spam.conf
+    dest: "{{ _vhost_confdir }}/blacklist_spam.conf"
+  notify: verify config and restart httpd
+
