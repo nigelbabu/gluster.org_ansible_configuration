@@ -22,3 +22,6 @@
 - hosts: fstat.rht.gluster.org
   roles:
   - role: fstat
+  - role: swap_file
+    size: 1G
+    path: /var/swap
