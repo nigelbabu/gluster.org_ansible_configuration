@@ -2,24 +2,9 @@
 - hosts: haplometrosis.rht.gluster.org
   roles:
   - role: guest_jenkins_builder_rht
-    number: 1
-    version: 6
-  - role: guest_jenkins_builder_rht
     number: 2
     version: 6
 
-  - role: guest_jenkins_builder_rht
-    number: 0
-    version: 7
-  - role: guest_jenkins_builder_rht
-    number: 3
-    version: 7
-  - role: guest_jenkins_builder_rht
-    number: 4
-    version: 7
-  - role: guest_jenkins_builder_rht
-    number: 5
-    version: 7
   - role: guest_jenkins_builder_rht
     number: 6
     version: 7
