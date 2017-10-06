@@ -3,7 +3,6 @@
   roles:
   - role: guest_virt_install
     name: aide.int.rht.gluster.org
-    volgroup: myrmicinae
     system_disk_size: 8
     data_disk_size: 120 
     mem_size: 2048
@@ -11,7 +10,6 @@
     distribution: Centos
     version: 7
     bridge: "{{ bridge_common }}"
-    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
     network:
       bootproto: static
       ip: 172.24.1.52/24
