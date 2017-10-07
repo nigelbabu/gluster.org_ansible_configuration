@@ -87,6 +87,7 @@
   - sqlite3
   - pkgconf
   - liburcu
+  - gmake
 
 - package:
     state: present
