@@ -35,16 +35,7 @@ fstat.rht.gluster.org
 postgresql.rht.gluster.org
 proxy.rht.gluster.org
 gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
-builder0.rht.gluster.org
-builder1.rht.gluster.org
 builder2.rht.gluster.org
-builder3.rht.gluster.org
-builder4.rht.gluster.org
-builder5.rht.gluster.org
-builder6.rht.gluster.org
-builder7.rht.gluster.org
-builder8.rht.gluster.org
-builder9.rht.gluster.org
 jenkins-stage.rht.gluster.org
 bugziller.rht.gluster.org
 analysis.rht.gluster.org
@@ -95,16 +86,7 @@ slave32.cloud.gluster.org
 slave33.cloud.gluster.org
 
 [jenkins_builders_rht]
-builder0.rht.gluster.org
-builder1.rht.gluster.org
 builder2.rht.gluster.org
-builder3.rht.gluster.org
-builder4.rht.gluster.org
-builder5.rht.gluster.org
-builder6.rht.gluster.org
-builder7.rht.gluster.org
-builder8.rht.gluster.org
-builder9.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
 builder0.int.rht.gluster.org
 builder1.int.rht.gluster.org
