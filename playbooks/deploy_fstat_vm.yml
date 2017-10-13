@@ -5,7 +5,6 @@
     name: fstat.rht.gluster.org
     system_disk_size: 10
     mem_size: 1024
-    num_cpus: 1
     distribution: Centos
     version: 7
     bridge: "{{ bridge_public }}"

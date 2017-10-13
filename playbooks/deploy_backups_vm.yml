@@ -10,7 +10,6 @@
     # 1G for mysql/wordpress
     data_disk_size: 75
     mem_size: 1024
-    num_cpus: 1
     distribution: Centos
     version: 7
     bridge: "{{ bridge_common }}"
