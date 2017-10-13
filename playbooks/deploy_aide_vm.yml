@@ -14,7 +14,3 @@
       bootproto: static
       ip: 172.24.1.52/24
       gateway: 172.24.1.181
-      nameservers:
-      - 8.8.8.8
-      - 8.8.4.4
-

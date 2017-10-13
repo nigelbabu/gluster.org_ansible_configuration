@@ -3,36 +3,27 @@
   roles:
   - role: guest_virt_install
     name: gerrit-stage.rht.gluster.org
-    volgroup: myrmicinae
     system_disk_size: 20
     mem_size: 2048
     num_cpus: 2
     distribution: Centos
     version: 7
-    bridge: virbr1
-    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    bridge: "{{ bridge_public }}"
     network:
       bootproto: static
       ip: 8.43.85.174/24
       gateway: 8.43.85.254
-      nameservers:
-      - 8.8.8.8
-      - 8.8.4.4
+
   - role: guest_virt_install
     name: gerrit-new.rht.gluster.org
-    volgroup: myrmicinae
     system_disk_size: 15
     data_disk_size: 15
     mem_size: 4096
     num_cpus: 2
     distribution: Centos
     version: 7
-    bridge: virbr1
-    sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+    bridge: "{{ bridge_public }}"
     network:
       bootproto: static
       ip: 8.43.85.176/24
       gateway: 8.43.85.254
-      nameservers:
-      - 8.8.8.8
-      - 8.8.4.4
