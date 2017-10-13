@@ -1,2 +1,6 @@
 sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 volgroup: "{{ vm_storage_vg }}"
+# to be replaced later once we have proper internal DNS
+nameservers:
+- 8.8.8.8
+- 8.8.4.4
