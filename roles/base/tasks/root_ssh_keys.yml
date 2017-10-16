@@ -1,7 +1,17 @@
 ---
-- name: install root ssh keys
-  authorized_key: user=root
-                  key="{{ item }}"
+- name: Install root ssh keys
+  authorized_key: 
+    user: root
+    key: "{{ item }}"
   with_file:
   - misc.pub
   - nigel.pub
+
+# key generated on a yubikey
+- name: Remove old keys
+  authorized_key:
+    user: root
+    key: "{{ item }}"
+    state: absent
+  with_file:
+  - misc_old.pub
