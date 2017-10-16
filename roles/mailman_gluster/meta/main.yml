@@ -5,3 +5,8 @@ dependencies:
   - src: '^/$'
     target: '/mailman/listinfo'
     match: True
+- role: blacklist_httpd
+  rbl:
+  - "b.barracudacentral.org"
+  - "cbl.abuseat.org"
+  - "dnsbl.dronebl.org"
