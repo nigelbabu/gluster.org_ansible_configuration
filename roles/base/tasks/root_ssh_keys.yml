@@ -4,7 +4,8 @@
     user: root
     key: "{{ item }}"
   with_file:
-  - misc.pub
+  - misc_main.pub
+  - misc_backup.pub
   - nigel.pub
 
 # key generated on a yubikey
@@ -14,4 +15,5 @@
     key: "{{ item }}"
     state: absent
   with_file:
-  - misc_old.pub
+  - misc_nano_old.pub
+  - misc_tpm_old.pub
