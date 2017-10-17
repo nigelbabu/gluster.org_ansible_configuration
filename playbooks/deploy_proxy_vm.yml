@@ -8,6 +8,12 @@
       ip: 8.43.85.175/24
       gateway: 8.43.85.254
 
+- hosts: proxy.rht.gluster.org
+  roles:
+  - role: swap_file
+    size: 1G
+    path: /var/swap
+
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_proxy_rht
