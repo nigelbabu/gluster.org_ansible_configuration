@@ -167,6 +167,7 @@ aide.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 bugziller.int.rht.gluster.org
 http.int.rht.gluster.org
+webbuilder.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
