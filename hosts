@@ -17,7 +17,8 @@ freeipa01.rax.gluster.org
 syslog01.rax.gluster.org
 
 [webbuilder]
-webbuilder.gluster.org
+#webbuilder.gluster.org
+webbuilder.int.rht.gluster.org
 
 [virt_hosts]
 formicary.rht.gluster.org
