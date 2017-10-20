@@ -1,5 +1,0 @@
----
-- name: Reload libvirtd
-  service:
-    name: libvirtd
-    state: reloaded

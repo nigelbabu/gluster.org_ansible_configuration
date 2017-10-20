@@ -1,5 +1,0 @@
-<network>
-  <name>internal</name>
-  <bridge name='{{ internal_bridge }}' stp='on' delay='0'/>
-</network>
-
