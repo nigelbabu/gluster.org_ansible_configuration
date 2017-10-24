@@ -6,5 +6,6 @@
   - role: httpd_blog
     website_domain: oldblog.gluster.org
     document_root: /var/www/html
-
+    server_aliases:
+    - community.gluster.org
  
