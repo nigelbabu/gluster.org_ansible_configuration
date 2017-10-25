@@ -3,7 +3,6 @@ ansible_connection=ssh
 ansible_ssh_user=root
 
 [bastion]
-salt-master.gluster.org
 ant-queen.int.rht.gluster.org
 
 [backups]
@@ -16,7 +15,6 @@ freeipa01.rax.gluster.org
 syslog01.rax.gluster.org
 
 [webbuilder]
-#webbuilder.gluster.org
 webbuilder.int.rht.gluster.org
 
 [virt_hosts]
