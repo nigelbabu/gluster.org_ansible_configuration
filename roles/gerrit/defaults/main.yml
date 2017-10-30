@@ -1,2 +1,5 @@
 gerrit_user: review
 gerrit_user_home: /review
+# timeout to start gerrit, in second
+# default is 90, not enough on staging
+gerrit_timeout: 360

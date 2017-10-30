@@ -24,6 +24,7 @@
 [container]
         user = {{ gerrit_user }}
         javaHome = /etc/alternatives/jre
+        startupTimeout = {{ gerrit_timeout }}
 [sshd]
         advertisedaddress = {{ gerrit_domain }}
         listenAddress = *:29418
