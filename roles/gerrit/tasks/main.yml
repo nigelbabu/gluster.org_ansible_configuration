@@ -62,16 +62,6 @@
   when: bugzilla_user is defined
   no_log: True
 
-- name: Setup the hooks
-  copy:
-    src: "{{item}}"
-    dest: "{{ _gerrit_dir }}/hooks/{{item}}"
-    owner: "{{gerrit_user}}"
-    mode: 0755
-  with_items:
-  - patchset-created
-  - change-merged
-
 - name: Set the SELinux policy for cgit
   sefcontext:
     target: "{{ _gerrit_dir }}/git"
