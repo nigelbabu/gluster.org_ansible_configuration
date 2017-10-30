@@ -1,7 +1,7 @@
 - name: Setup the replication.config file
   template:
     src: replication.config.j2
-    dest: "{{gerrit_user_home}}/{{gerrit_home}}/etc/replication.config"
+    dest: "{{ _gerrit_dir }}/etc/replication.config"
     owner: "{{gerrit_user}}"
     mode: 0755
   notify: restart gerrit

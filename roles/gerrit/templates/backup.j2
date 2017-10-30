@@ -10,7 +10,7 @@ mkdir -p "$BACKUP_FOLDER"
 find $BACKUP_ROOT -mtime +1 -exec rm {} \;
 
 # copy the files for backup
-cp -r {{gerrit_user_home}}/{{gerrit_home}} $BACKUP_FOLDER
+cp -r {{ _gerrit_dir }} $BACKUP_FOLDER
 
 # delete logs
 rm -rf $BACKUP_FOLDER/logs/*

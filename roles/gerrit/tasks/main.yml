@@ -16,6 +16,11 @@
     name: "{{gerrit_user}}"
     home: "{{gerrit_user_home}}"
 
+# absolute path of where gerrit is installed
+- name: Set gerrit_dir
+  set_fact:
+    _gerrit_dir: "{{ gerrit_user_home }}/{{ gerrit_home }}"
+
 - name: Setup the selinux boolean for proxying
   seboolean:
     name: httpd_can_network_connect
@@ -24,18 +29,18 @@
 
 - name: Check if Gerrit is installed
   stat:
-    path: "{{gerrit_user_home}}/{{gerrit_home}}"
+    path: "{{ _gerrit_dir }}"
   register: gerrit_status
 
 - name: "Fail when Gerrit is not setup"
   fail:
-    msg: "Please setup Gerrit at {{gerrit_user_home}}/{{gerrit_home}}"
+    msg: "Please setup Gerrit at {{ _gerrit_dir }}"
   when: gerrit_status.stat.exists == False
 
 - name: Setup the gerrit.config file
   template:
     src: gerrit.config.j2
-    dest: "{{gerrit_user_home}}/{{gerrit_home}}/etc/gerrit.config"
+    dest: "{{ _gerrit_dir }}/etc/gerrit.config"
     owner: "{{gerrit_user}}"
     mode: 0644
   notify: restart gerrit
@@ -47,7 +52,7 @@
   cron:
     name: "Clean logs"
     special_time: "weekly"
-    job: "find {{gerrit_user_home}}/{{gerrit_home}}/logs -mtime +15 -delete"
+    job: "find {{ _gerrit_dir }}/logs -mtime +15 -delete"
     user: "{{gerrit_user}}"
 
 - name: Setup python-bugzilla
@@ -60,7 +65,7 @@
 - name: Setup the hooks
   copy:
     src: "{{item}}"
-    dest: "{{gerrit_user_home}}/{{gerrit_home}}/hooks/{{item}}"
+    dest: "{{ _gerrit_dir }}/hooks/{{item}}"
     owner: "{{gerrit_user}}"
     mode: 0755
   with_items:
@@ -69,6 +74,6 @@
 
 - name: Set the SELinux policy for cgit
   sefcontext:
-    target: "{{gerrit_user_home}}/{{gerrit_home}}/git"
+    target: "{{ _gerrit_dir }}/git"
     setype: git_sys_content_t
     state: present

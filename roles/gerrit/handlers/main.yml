@@ -2,7 +2,7 @@
 - name: restart gerrit
   command: bin/gerrit.sh restart
   args:
-    chdir: "{{gerrit_user_home}}/{{gerrit_home}}"
+    chdir: "{{ _gerrit_dir }}"
   become: yes
   become_user: "{{gerrit_user}}"
   async: 60
