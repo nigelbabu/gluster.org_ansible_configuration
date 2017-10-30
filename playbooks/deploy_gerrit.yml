@@ -1,26 +1,28 @@
-- hosts: gerrit
-  roles:
-  - role: cgit
-    git_repositories_dir: /review/review.gluster.org/git/
-    scan_path: true
-  - role: xinetd
-  - role: gerrit
-    gerrit_replication:
-    - repo: glusterfs
-      github_user: gluster
-      keyfile: gluster-glusterfs
-    - repo: glusterfs-specs
-      github_user: gluster
-      keyfile: gluster-glusterfs-specs
-    - repo: glusto-tests
-      github_user: gluster
-      keyfile: gluster-glusto-tests
-    - repo: gluster-block
-      github_user: gluster
-      keyfile: gluster-gluster-block
-    gerrit_domain: review.gluster.org
-    gerrit_email: review@review.gluster.org
-    gerrit_home: review.gluster.org
-    use_letsencrypt: True
-    mail_domain: gluster.org
-    website_domain: review.gluster.org
+# commented for now, since gerrit prod is not managed
+# by ansible
+#- hosts: gerrit
+#  roles:
+#  - role: cgit
+#    git_repositories_dir: /review/review.gluster.org/git/
+#    scan_path: true
+#  - role: xinetd
+#  - role: gerrit
+#    gerrit_replication:
+#    - repo: glusterfs
+#      github_user: gluster
+#      keyfile: gluster-glusterfs
+#    - repo: glusterfs-specs
+#      github_user: gluster
+#      keyfile: gluster-glusterfs-specs
+#    - repo: glusto-tests
+#      github_user: gluster
+#      keyfile: gluster-glusto-tests
+#    - repo: gluster-block
+#      github_user: gluster
+#      keyfile: gluster-gluster-block
+#    gerrit_domain: review.gluster.org
+#    gerrit_email: review@review.gluster.org
+#    gerrit_home: review.gluster.org
+#    use_letsencrypt: True
+#    mail_domain: gluster.org
+#    website_domain: review.gluster.org
