@@ -67,3 +67,15 @@
     target: "{{ _gerrit_dir }}/git"
     setype: git_sys_content_t
     state: present
+
+- name: Deploy systemd service
+  template:
+    dest: /etc/systemd/system/gerrit.service
+    src: gerrit.service.j2
+
+- name: Enable systemd service
+  systemd:
+    state: started
+    daemon_reload: True
+    name: gerrit
+    enabled: True

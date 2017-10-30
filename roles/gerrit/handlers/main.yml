@@ -1,9 +1,5 @@
 ---
 - name: restart gerrit
-  command: bin/gerrit.sh restart
-  args:
-    chdir: "{{ _gerrit_dir }}"
-  become: yes
-  become_user: "{{gerrit_user}}"
-  async: 60
-  poll: 5
+  systemd:
+    name: gerrit
+    daemon_reload: True

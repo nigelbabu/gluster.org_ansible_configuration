@@ -1,0 +1,29 @@
+# taken from https://tobywf.com/2016/04/gerrit-installation-systemd/
+# improved and modified
+[Unit]
+Description=Web based code review and project management for Git based projects
+After=syslog.target network.target remote-fs.target
+
+[Service]
+Type=simple
+User={{ gerrit_user }}
+ExecStart=/usr/bin/java -DGerritCodeReview=1 -jar {{ _gerrit_dir }}/bin/gerrit.war daemon -d {{ _gerrit_dir }}
+KillSignal=SIGINT
+# stupid java exit codes
+SuccessExitStatus=130 SIGINT
+SuccessExitStatus=143 SIGTERM
+TimeoutStartSec={{ gerrit_timeout }}
+
+# default gerrit ulimits set by the init.d script... your choice
+LimitCORE=0
+LimitDATA=unlimited
+LimitFSIZE=unlimited
+LimitRSS=unlimited
+# NOFILE :  GERRIT_FDS, determined by "core.packedGitOpenFiles" in the script
+LimitNOFILE=1024
+LimitCPU=unlimited
+LimitAS=unlimited
+LimitLOCKS=unlimited
+
+[Install]
+WantedBy=multi-user.target
