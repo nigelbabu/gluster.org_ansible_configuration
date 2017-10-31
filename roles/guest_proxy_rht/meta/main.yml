@@ -9,3 +9,6 @@ dependencies:
   distribution: Centos
   version: 7
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+- role: guest_add_bridge
+  bridge: "{{ bridge_common }}"
+
