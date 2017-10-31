@@ -38,7 +38,6 @@
         scheme = ssh
         scheme = http
         scheme = anon_http
-        scheme = anon_git
 [index]
         type = LUCENE
 [github]
@@ -46,7 +45,6 @@
         clientId = {{ github_client_id }}
         clientSecret = {{ github_client_secret }}
         apiUrl = https://api.github.com
-        scopes = USER_EMAIL
 [commentlink "bugzilla"]
         match = ([Bb][Uu][Gg]:\\s+)(\\d+)
         html = $1<a href=\"https://bugzilla.redhat.com/show_bug.cgi?id=$2\">$2</a>
@@ -64,3 +62,8 @@
         cgi = /var/www/cgi-bin/cgit
         url = http://git.gluster.org/cgit/
         type = cgit
+[changeCleanup]
+        abandonAfter = 90 days
+        abandonMessage = This change has not had activity in 90 days. We're automatically closing this change.\n\nPlease re-open and get in touch with the component owners if you are interested in merging this patch.
+        startTime = 00:00
+        interval = 1 h
