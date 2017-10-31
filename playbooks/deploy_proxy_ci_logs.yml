@@ -1,0 +1,6 @@
+---
+- hosts: proxy
+  roles:
+  - role: httpd_proxy
+    website_domain: ci-logs.gluster.org
+    reverse_proxy: https://http.int.rht.gluster.org/

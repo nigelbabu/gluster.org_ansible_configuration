@@ -23,6 +23,3 @@
     website_domain: analysis.gluster.org
     reverse_proxy: http://analysis.rht.gluster.org/
 
-  - role: httpd_proxy
-    website_domain: ci-logs.gluster.org
-    reverse_proxy: https://http.int.rht.gluster.org/
