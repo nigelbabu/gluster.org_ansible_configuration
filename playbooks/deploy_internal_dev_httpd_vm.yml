@@ -4,7 +4,11 @@
   - role: guest_virt_install
     name: http.int.rht.gluster.org
     system_disk_size: 8
-    data_disk_size: 30
+    # 5G => bits.g.o
+    # 1G => analysis.g.o
+    # 1G => nightly.g.o
+    # 500G => ci-logs.g.o
+    data_disk_size: 520
     mem_size: 1024
     distribution: Centos
     version: 7
