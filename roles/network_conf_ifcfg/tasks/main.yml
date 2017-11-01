@@ -4,3 +4,6 @@
     dest: "/etc/sysconfig/network-scripts/ifcfg-{{ interface }}"
     src: ifcfg
   notify: Reload network
+
+- name: Apply handlers
+  meta: flush_handlers
