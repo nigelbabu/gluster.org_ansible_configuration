@@ -1,3 +1,4 @@
+deploy_*.yml
 *.swp
 *.retry
 roles/bastion
