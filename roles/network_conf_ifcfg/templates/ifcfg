@@ -1,4 +1,5 @@
 NAME="{{ interface }}"
+DEVICE="{{ interface }}"
 HWADDR="{{ hostvars[inventory_hostname]['ansible_' + interface]['macaddress'] }}"
 ONBOOT=yes
 NETBOOT=yes
