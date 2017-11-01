@@ -10,4 +10,6 @@ IPV4_FAILURE_FATAL=no
 IPV6INIT=no
 IPADDR="{{ ip | ipaddr('address') }}"
 PREFIX="{{ ip | ipaddr('prefix') }}"
-
+{% if zone is defined %}
+ZONE={{ zone }}
+{% endif %}
