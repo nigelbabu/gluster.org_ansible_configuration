@@ -1,3 +1,4 @@
+# {{ ansible_managed }}
 NAME="{{ interface }}"
 DEVICE="{{ interface }}"
 HWADDR="{{ hostvars[inventory_hostname]['ansible_' + interface]['macaddress'] }}"
