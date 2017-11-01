@@ -1,0 +1,6 @@
+---
+- name: "Deploy ifcfg for {{ interface }}"
+  template:
+    dest: "/etc/sysconfig/network-scripts/ifcfg-{{ interface }}"
+    src: ifcfg
+  notify: Reload network
