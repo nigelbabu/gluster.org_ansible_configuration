@@ -1,0 +1,6 @@
+---
+- hosts: proxy
+  roles:
+  - role: httpd_proxy
+    website_domain: bits.gluster.org
+    reverse_proxy: http://bits.int.rht.gluster.org/
