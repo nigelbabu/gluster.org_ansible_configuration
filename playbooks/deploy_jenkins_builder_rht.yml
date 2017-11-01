@@ -32,6 +32,41 @@
   - role: guest_jenkins_builder_int_rht
     number: 9
     version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 10
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 11
+    version: 6
+  - role: guest_jenkins_builder_int_rht
+    number: 12
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 13
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 14
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 15
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 16
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 17
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 18
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 19
+    version: 7
+  - role: guest_jenkins_builder_int_rht
+    number: 20
+    version: 7
+
+
 
 - hosts: jenkins_builders_rht
   tasks:
