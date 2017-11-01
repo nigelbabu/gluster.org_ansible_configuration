@@ -1,6 +1,15 @@
 ---
 - hosts: proxy
   roles:
+
+  - role: swap_file
+    size: 1G
+    path: /var/swap
+
+  - role: network_conf_ifcfg
+    interface: eth1
+    ip: "{{ internal_ip }}"
+
   - role: httpd_proxy
     website_domain: build.proxy.gluster.org
     reverse_proxy: http://8.43.85.172/
