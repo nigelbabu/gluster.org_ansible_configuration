@@ -11,6 +11,4 @@ dependencies:
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 - role: guest_add_bridge
   bridge: "{{ bridge_common }}"
-- role: swap_file
-  size: 1G
-  path: /var/swap
+
