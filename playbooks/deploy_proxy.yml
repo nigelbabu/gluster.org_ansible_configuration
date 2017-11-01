@@ -6,10 +6,12 @@
     size: 1G
     path: /var/swap
 
-  - role: network_conf_ifcfg
-    interface: eth1
-    ip: "{{ internal_ip }}"
-
+# commented until the issue with ethernet swapping is debugged
+# might have been the eth01 interface that cause trouble
+#  - role: network_conf_ifcfg
+#    interface: eth0
+#    ip: "{{ internal_ip }}"
+#
   - role: httpd_proxy
     website_domain: build.proxy.gluster.org
     reverse_proxy: http://8.43.85.172/
