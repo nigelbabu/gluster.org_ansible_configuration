@@ -5,3 +5,7 @@
   - role: httpd
     website_domain: http.int.rht.gluster.org
     document_root: /var/www/glusterfs-logs
+  - role: httpd
+    website_domain: bits.int.rht.gluster.org
+    document_root: /var/www/bits
+
