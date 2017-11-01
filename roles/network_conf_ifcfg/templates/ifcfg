@@ -4,7 +4,6 @@ DEVICE="{{ interface }}"
 HWADDR="{{ hostvars[inventory_hostname]['ansible_' + interface]['macaddress'] }}"
 ONBOOT=yes
 NETBOOT=yes
-# to do, make a generic 
 UUID="{{ (ansible_fqdn + interface) | to_uuid }}"
 BOOTPROTO=static
 TYPE=Ethernet
