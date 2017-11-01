@@ -1,3 +1,4 @@
 - hosts: jenkins_master
+  #see hostvars for the domain used for each master
   roles:
   - jenkins_master
