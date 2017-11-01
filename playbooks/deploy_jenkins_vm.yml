@@ -38,7 +38,7 @@
       name: /var/lib/jenkins
       src: /dev/mapper/vg_data_jenkins--stage.rht.gluster.org-var_lib_jenkins
       fstype: xfs
-      state: present
+      state: mounted
 
 - hosts: myrmicinae.rht.gluster.org
   roles:
@@ -79,4 +79,4 @@
       name: /var/lib/jenkins
       src: /dev/mapper/vg_data_jenkins--el7.rht.gluster.org-var_lib_jenkins
       fstype: xfs
-      state: present
+      state: mounted
