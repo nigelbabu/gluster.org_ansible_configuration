@@ -23,3 +23,9 @@
     name: jenkins
     state: started
     enabled: True
+
+- name: Setup the selinux boolean for proxying
+  seboolean:
+    name: httpd_can_network_connect
+    state: yes
+    persistent: yes
