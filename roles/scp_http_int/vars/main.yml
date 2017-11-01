@@ -1,2 +1,2 @@
 user: _logs-collector
-jenkins_server: build.gluster.org
+jenkins_server: jenkins-el7.rht.gluster.org
