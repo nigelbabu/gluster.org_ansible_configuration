@@ -9,7 +9,6 @@
     interface: "{{ interco_fw_interface }}"
     ip: "{{ interco_fw_ip }}/24"
     zone: interco_fw
-  - role: firewall_rht_network 
   - role: keepalived
     master: masa
     vip:
