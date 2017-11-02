@@ -30,6 +30,7 @@
     permanent: True
     state: enabled
     immediate: True
+    zone: dmz 
 
 - name: Start service
   service:
