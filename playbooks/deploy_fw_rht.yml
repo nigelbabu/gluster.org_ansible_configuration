@@ -11,6 +11,7 @@
     zone: interco_fw
   - role: keepalived
     master: masa
+    group: firewall_rht
     vip:
       public:
         interface: "{{ public_interface }}"
