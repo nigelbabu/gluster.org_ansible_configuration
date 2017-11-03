@@ -62,12 +62,12 @@
   - role: guest_jenkins_builder_int_rht
     number: 19
     version: 7
-  - role: guest_jenkins_builder_int_rht
-    number: 20
-    version: 7
 
 - hosts: pleometrosis.rht.gluster.org
   roles:
+  - role: guest_jenkins_builder_int_rht
+    number: 20
+    version: 7
   - role: guest_jenkins_builder_int_rht
     number: 21
     version: 7
