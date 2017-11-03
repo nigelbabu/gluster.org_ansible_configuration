@@ -23,3 +23,8 @@
       src: /dev/vdb
       fstype: xfs
       state: mounted
+  roles:
+  - role: swap_file
+    size: 1G
+    path: /var/swap
+
