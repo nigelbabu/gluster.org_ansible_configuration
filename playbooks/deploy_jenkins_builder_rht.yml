@@ -3,10 +3,10 @@
   roles:
   - role: guest_jenkins_builder_int_rht
     number: 0
-    version: 6
+    version: 7
   - role: guest_jenkins_builder_int_rht
     number: 1
-    version: 6
+    version: 7
 
   - role: guest_jenkins_builder_int_rht
     number: 2
