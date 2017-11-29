@@ -76,6 +76,7 @@
   - readline-devel
 # tmpwatch to clean /tmp
   - tmpwatch
+  - bc
 
 - package:
     state: present
