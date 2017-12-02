@@ -25,7 +25,8 @@
     website_domain: lists.gluster.org
     mail_domain: gluster.org
     dnsbl_mailman:
-    - b.barracudacentral.org
+# too much false positive
+#    - b.barracudacentral.org
     - cbl.abuseat.org
     - dnsbl.dronebl.org
 
