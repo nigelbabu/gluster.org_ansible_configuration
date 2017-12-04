@@ -100,7 +100,7 @@
     version: 7
   - role: guest_jenkins_builder_int_rht
     number: 31
-    version: 6
+    version: 7
   - role: guest_jenkins_builder_int_rht
     number: 32
     version: 7
