@@ -6,6 +6,11 @@
 
 - package:
     state: present
+    name: libselinux-python
+  when: ansible_distribution == 'Fedora'
+
+- package:
+    state: present
     name: "{{ item }}"
   with_items:
   - lsof
