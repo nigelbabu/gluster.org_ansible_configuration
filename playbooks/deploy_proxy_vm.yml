@@ -15,7 +15,7 @@
   - role: guest_proxy_rht
     name: proxy01.rht.gluster.org
     distribution: Fedora
-    version: 27
+    version: 26
     network:
       bootproto: static
       ip: 8.43.85.182/24
@@ -26,7 +26,7 @@
   - role: guest_proxy_rht
     name: proxy02.rht.gluster.org
     distribution: Fedora
-    version: 27
+    version: 26
     network:
       bootproto: static
       ip: 8.43.85.183/24
