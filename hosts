@@ -59,6 +59,8 @@ ansible_python_interpreter=/usr/bin/python3
 [python3]
 masa.rht.gluster.org
 mune.rht.gluster.org
+proxy01.rht.gluster.org
+proxy02.rht.gluster.org
 
 [jenkins_builders_rackspace:vars]
 location=rackspace
