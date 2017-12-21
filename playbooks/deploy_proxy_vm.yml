@@ -3,6 +3,8 @@
   roles:
   - role: guest_proxy_rht
     name: proxy.rht.gluster.org
+    distribution: Centos
+    version: 7
     network:
       bootproto: static
       ip: 8.43.85.175/24

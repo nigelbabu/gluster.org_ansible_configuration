@@ -6,8 +6,8 @@ dependencies:
   system_disk_size: 10
   mem_size: 1024
   num_cpus: 1
-  distribution: Centos
-  version: 7
+#  distribution: Centos
+#  version: 7
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 - role: guest_add_bridge
   bridge: "{{ bridge_common }}"
