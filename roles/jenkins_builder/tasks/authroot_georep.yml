@@ -29,3 +29,4 @@
   copy:
     content: "export PATH=$PATH:/build/install/sbin:/build/install/bin"
     dest: /etc/profile.d/georep.sh
+  when: ansible_system == 'Linux'
