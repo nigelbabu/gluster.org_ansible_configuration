@@ -23,3 +23,9 @@
     key: "{{ georep_pub_key.stdout }}"
     key_options: 'from="127.0.0.1"'
   name: Add authorized_key for georep tests
+
+# see https://bugzilla.redhat.com/show_bug.cgi?id=1532591
+- name: Add glusterfs to $PATH for georep
+  copy:
+    content: "export PATH=$PATH:/build/install/sbin:/build/install/bin"
+    dest: /etc/profile.d/georep.sh
