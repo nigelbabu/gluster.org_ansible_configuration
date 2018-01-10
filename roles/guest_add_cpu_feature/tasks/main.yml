@@ -1,0 +1,4 @@
+---
+- guest_add_cpu_feature:
+    name: "{{ name }}"
+    feature: "{{ feature }}"
