@@ -8,8 +8,8 @@ ant-queen.int.rht.gluster.org
 [backups]
 backups.int.rht.gluster.org
 
-[freeipa]
-freeipa01.rax.gluster.org
+#[freeipa]
+#freeipa01.rax.gluster.org
 
 [syslog]
 syslog01.rax.gluster.org
