@@ -1,0 +1,67 @@
+---
+- name: Install gluster
+  package:
+    name: glusterfs-server
+    state: present
+
+- name: Start the service
+  service:
+    name: glusterd
+    enabled: True
+    state: started
+
+# replace once upstream grow the feature for adding zone
+# https://github.com/ansible/ansible/issues/33307
+- name: Add zone for gluster
+  firewalld_zone:
+    name: "{{ fw_zone }}"
+    state: present
+
+- name: Add interface to the zone
+  firewalld:
+    zone: "{{ fw_zone }}"
+    interface: "{{ interface }}"
+    permanent: True
+    immediate: True
+    state: enabled
+
+- name: Open the firewall
+  firewalld:
+    permanent: True
+    immediate: True
+    zone: "{{ fw_zone }}"
+    service: glusterfs
+    state: enabled
+
+- name: Create the brick
+  file:
+    name: "{{ brick_path }}"
+    state: directory
+    
+- name: Create the shared volume
+  gluster_volume:
+    state: present
+    name: "{{ volume_name }}"
+    bricks: "{{ brick_path }}"
+    # TODO fix me later by having a separate disk
+    force: True
+    replicas: 2
+    cluster: "{{ groups[group]|map('extract', hostvars, ['ansible_' + interface, 'ipv4', 'address']) | list  }}"
+  run_once: true
+
+- name: Create the mount
+  file:
+    name: "{{ mount_path }}"
+    state: directory
+
+- name: Mount Gluster
+  mount:
+    fstype: glusterfs
+    src: "{{ hostvars[ansible_fqdn]['ansible_' + interface]['ipv4']['address'] }}:{{ volume_name }}"
+    path: "{{ mount_path }}"
+    state: mounted
+
+# TODO take care of letsencrypt setup
+# - link /etc/letsencrypt to /srv
+# - cronjob that run only if the keepalive is master
+# - likely selinux permission

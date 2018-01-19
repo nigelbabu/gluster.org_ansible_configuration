@@ -1,0 +1,5 @@
+brick_path: "/srv/gfs_letsencrypt"
+mount_path: "/srv/letsencrypt"
+volume_name: "certificates"
+fw_zone: "gluster_internal"
+
