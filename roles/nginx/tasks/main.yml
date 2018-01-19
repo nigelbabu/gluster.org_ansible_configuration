@@ -1,15 +1,4 @@
 ---
-- package:
-    name: nginx
-    state: present
-
-- set_fact: nginx_prefix={{ nginx_setup[ansible_system]['prefix']| default('/') }}
-- set_fact: nginx_user={{ nginx_setup[ansible_system]['user'] | default('nginx') }}
-
-- file:
-    state: directory
-    name: "{{ nginx_prefix }}etc/nginx/conf.d/"
-
 - template:
     dest: "{{ nginx_prefix }}etc/nginx/nginx.conf"
     src: nginx.conf
@@ -23,11 +12,3 @@
     content: ""
   when: ansible_system == 'Linux'
   notify: restart nginx
-
-- service:
-    name: nginx
-    state: started
-    enabled: yes
-
-- include: firewall_linux.yml
-  when: ansible_system == 'Linux'
