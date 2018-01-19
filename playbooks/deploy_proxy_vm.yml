@@ -39,6 +39,7 @@
       fstype: ext4
       dev: "/dev/vdb"
   - name: Mount the fs
+    mount: 
       name: /srv/
       src: /dev/vdb
       fstype: ext4
