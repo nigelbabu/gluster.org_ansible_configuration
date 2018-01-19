@@ -167,6 +167,10 @@ proxy.rht.gluster.org
 proxy01.rht.gluster.org
 proxy02.rht.gluster.org
 
+[proxy_ha]
+proxy01.rht.gluster.org
+proxy02.rht.gluster.org
+
 [signer]
 signer.int.rht.gluster.org
 

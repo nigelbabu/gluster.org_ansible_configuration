@@ -31,3 +31,15 @@
       bootproto: static
       ip: 8.43.85.183/24
       gateway: 8.43.85.254
+
+- hosts: proxy_ha
+  tasks:
+  - name: Make sure the datadisk is present
+    filesystem:
+      fstype: ext4
+      dev: "/dev/vdb"
+  - name: Mount the fs
+      name: /srv/
+      src: /dev/vdb
+      fstype: ext4
+      state: mounted  
