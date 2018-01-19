@@ -1,4 +1,4 @@
 ---
 dependencies:
 - { role: lvm_config }
-- { role: nginx }
+- { role: nginx_builder }
