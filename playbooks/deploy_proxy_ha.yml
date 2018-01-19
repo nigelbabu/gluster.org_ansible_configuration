@@ -1,0 +1,25 @@
+---
+- hosts: proxy_ha
+  roles:
+  - role: keepalived
+    master: proxy01.rht.gluster.org
+    group: proxy_ha
+    vip:
+      public:
+        interface: eth0
+        address: 8.43.85.185
+        prefix: 24
+
+  - role: network_conf_ifcfg
+    interface: eth1
+    ip: "{{ internal_ip }}/24"
+    # since firewalld modify the file, we need to not revert the change 
+    when: ansible_eth1.ipv4.address != internal_ip
+
+  - role: cert_syncer
+    group: proxy_ha
+    interface: eth1
+
+#  - role: reverse_proxy_vhost
+#   website_domain: fstat.gluster.org
+#    reverse_proxy: http://fstat.rht.gluster.org/
