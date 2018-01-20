@@ -1,0 +1,5 @@
+acme_root: /srv/letsencrypt
+acme_webroot: "{{ acme_root }}/webroot"
+acme_keydir: "{{ acme_root }}/acme_key"
+acme_key: "{{ acme_keydir }}/acme.key"
+acme_certs: "{{ acme_root }}/nginx_certs"

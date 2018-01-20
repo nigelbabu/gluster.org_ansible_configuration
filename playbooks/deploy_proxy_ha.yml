@@ -20,6 +20,7 @@
     group: proxy_ha
     interface: eth1
 
-#  - role: reverse_proxy_vhost
-#   website_domain: fstat.gluster.org
-#    reverse_proxy: http://fstat.rht.gluster.org/
+  - role: nginx_proxy_vhost
+    domain: fstat.proxy.gluster.org
+    backends:
+    - fstat.rht.gluster.org

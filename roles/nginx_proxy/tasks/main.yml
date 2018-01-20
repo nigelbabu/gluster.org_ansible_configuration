@@ -1,0 +1,36 @@
+---
+# TODO make it portable to more than Fedora
+- name: Install required packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - python3-pyOpenSSL
+  - acme-tiny
+
+- name: Let nginx read the gluster share
+  seboolean:
+    name: httpd_use_fusefs
+    state: yes
+    persistent: yes
+
+- name: Create the hierarchy of files for acme 
+  file:
+    name: "{{ item }}"
+    state: directory
+  with_items:
+  - "{{ acme_webroot }}"
+  - "{{ acme_keydir }}"
+  - "{{ acme_certs }}"
+  run_once: True
+
+- name: Generate the ACME key
+  openssl_privatekey:
+    path: "{{ acme_key }}"
+  run_once: True
+
+- name: Set the default vhost
+  template:
+    src: default_vhost.conf
+    dest: /etc/nginx/default.d/default_vhost.conf
+  notify: Verify config and restart nginx

@@ -1,0 +1,16 @@
+---
+- openssl_privatekey:
+    path: "{{ privatekey_path }}"
+
+- openssl_csr:
+    path: "{{ csr_path }}"
+    privatekey_path: "{{ privatekey_path }}"
+    commonName: "{{ domain }}"
+
+- openssl_certificate:
+    path: "{{ certificate_path }}"
+    privatekey_path: "{{ privatekey_path }}"
+    csr_path: "{{ csr_path }}"
+    provider: acme
+    acme_challenge_path: "{{ acme_webroot }}"
+    acme_accountkey_path: "{{ acme_key }}"

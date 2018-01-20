@@ -1,0 +1,9 @@
+---
+- include_tasks: generate_cert.yml 
+  run_once: True
+
+- name: Deploy proxy config file
+  template:
+    src: vhost.conf
+    dest: "/etc/nginx/conf.d/{{ domain }}.conf"
+  notify: Verify config and restart nginx

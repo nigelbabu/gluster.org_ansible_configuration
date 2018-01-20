@@ -1,0 +1,4 @@
+prefix: "{{ acme_certs }}"
+privatekey_path: "{{ prefix }}/{{ domain }}.key"
+csr_path: "{{ prefix }}/{{ domain }}.csr"
+certificate_path: "{{ prefix }}/{{ domain }}.crt"
