@@ -77,6 +77,8 @@
 # tmpwatch to clean /tmp
   - tmpwatch
   - bc
+# required for https://review.gluster.org/#/c/18532/
+  - libcurl-devel
 
 - package:
     state: present
@@ -96,6 +98,7 @@
   - gcc
 # adding because it is present on freebsd0.cloud, for parity
   - gsed
+  - curl
 
 - package:
     state: present
