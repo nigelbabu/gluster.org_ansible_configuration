@@ -1,0 +1,3 @@
+handlers:
+  - name: run dracut
+    command: dracut -v -f
