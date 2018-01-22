@@ -13,6 +13,7 @@
 
 - include: setup_disk_{{ location }}.yml
   when: ansible_system == 'Linux' and location
+  tags: key
 
 - include: setup_lvm_config.yml
   when: ansible_system == 'Linux'
@@ -36,6 +37,16 @@
   user:
     name: jenkins
     groups: wheel
+
+- import_tasks: setup_auth_rax.yml
+  when: location == 'rax'
+
+- name: Start and enable rpc-statd
+  service:
+    name: rpc-statd
+    enabled: true
+    state: started
+  when: location == 'rax'
 
 #TODO add the fingerprint of review.gluster.org to user jenkins
 # so it doesn't block
