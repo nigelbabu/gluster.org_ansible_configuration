@@ -5,10 +5,17 @@
 # may fail with more than 1 interface (ideally, this should be fixed
 # and bug reports should be opened to track progress)
 - name: Clean hosts
-  lineinfile: 
+  lineinfile:
     state: absent
     dest: /etc/hosts
     regexp: "^(10\\.|2001:)"
+
+- name: Setup hosts file so that IP is in /etc/hosts
+  lineinfile:
+    state: present
+    dest: /etc/hosts
+    line: "{{ ansible_eth0['ipv4']['address'] }} {{ ansible_nodename }}"
+    regexp: "^{{ ansible_eth0['ipv4']['address'] }}.*"
 
 - name: Make sure eth0 is enabled
   lineinfile:
