@@ -9,11 +9,10 @@
   when: ansible_system == 'FreeBSD'
 
 - include: setup_rackspace_network.yml
-  when: ansible_system == 'Linux' and location == 'rackspace'
+  when: ansible_system == 'Linux' and (location == 'rackspace' or location == 'rax')
 
 - include: setup_disk_{{ location }}.yml
   when: ansible_system == 'Linux' and location
-  tags: key
 
 - include: setup_lvm_config.yml
   when: ansible_system == 'Linux'
