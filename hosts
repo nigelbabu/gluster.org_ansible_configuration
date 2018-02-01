@@ -79,7 +79,6 @@ slave24.cloud.gluster.org
 slave25.cloud.gluster.org
 slave26.cloud.gluster.org
 slave27.cloud.gluster.org
-slave28.cloud.gluster.org
 slave32.cloud.gluster.org
 slave33.cloud.gluster.org
 
@@ -143,7 +142,7 @@ gerrit-stage.rht.gluster.org
 #build.gluster.org
 jenkins-stage.rht.gluster.org
 jenkins-el7.rht.gluster.org
- 
+
 [download]
 download01.rax.gluster.org
 
