@@ -16,6 +16,14 @@
     dest: /etc/hosts
     line: "{{ ansible_eth0['ipv4']['address'] }} {{ ansible_nodename }}"
     regexp: "^{{ ansible_eth0['ipv4']['address'] }}.*"
+  when: location == 'rax'
+
+- name: Make sure firewalld allows traffic from the machine to itself
+  firewalld:
+    rich_rule: "rule family='ipv4' source address='{{ansible_eth0['ipv4']['address']}}' accept"
+    permanent: true
+    state: enabled
+  when: location == 'rax'
 
 - name: Make sure eth0 is enabled
   lineinfile:
