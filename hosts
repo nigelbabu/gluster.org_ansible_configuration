@@ -80,7 +80,6 @@ slave25.cloud.gluster.org
 slave26.cloud.gluster.org
 slave27.cloud.gluster.org
 slave32.cloud.gluster.org
-slave33.cloud.gluster.org
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org
