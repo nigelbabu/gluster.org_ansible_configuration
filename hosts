@@ -74,6 +74,12 @@ location=rht
 [jenkins_builders_rax]
 builder100.cloud.gluster.org
 builder101.cloud.gluster.org
+builder102.cloud.gluster.org
+builder103.cloud.gluster.org
+builder104.cloud.gluster.org
+builder105.cloud.gluster.org
+builder106.cloud.gluster.org
+builder107.cloud.gluster.org
 
 [jenkins_builders_rackspace]
 freebsd0.cloud.gluster.org
