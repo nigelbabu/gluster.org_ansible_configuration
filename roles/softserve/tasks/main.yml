@@ -87,7 +87,7 @@
 
 - name: Deploy local nginx configuration
   template:
-    dest: /etc/nginx/config.d/softserve.conf
+    dest: /etc/nginx/conf.d/softserve.conf
     src: nginx.conf
   notify: verify config and restart nginx
 
