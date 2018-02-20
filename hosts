@@ -77,10 +77,6 @@ builder101.cloud.gluster.org
 
 [jenkins_builders_rackspace]
 freebsd0.cloud.gluster.org
-slave21.cloud.gluster.org
-slave22.cloud.gluster.org
-slave23.cloud.gluster.org
-slave24.cloud.gluster.org
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org
