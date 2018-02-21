@@ -81,6 +81,8 @@ builder104.cloud.gluster.org
 builder105.cloud.gluster.org
 builder106.cloud.gluster.org
 builder107.cloud.gluster.org
+builder108.cloud.gluster.org
+builder109.cloud.gluster.org
 
 [jenkins_builders_rackspace]
 freebsd0.cloud.gluster.org
