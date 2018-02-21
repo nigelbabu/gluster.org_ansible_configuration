@@ -3,7 +3,7 @@
   roles:
   - role: guest_virt_install
     name: gerrit-stage.rht.gluster.org
-    system_disk_size: 20
+    system_disk_size: 24
     mem_size: 2048
     num_cpus: 2
     distribution: Centos
