@@ -10,5 +10,5 @@
     path: "{{ scp_dest }}"
     state: directory
     owner: "{{ user }}"
-    mode: 0744
+    mode: 0755
 
