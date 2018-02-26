@@ -3,7 +3,7 @@
   template:
     dest: /etc/nginx/conf.d/{{ vhost_name }}.conf
     src: nginx.conf
-  notify: verify config and restart nginx
+  notify: Verify config and restart nginx
 
 - name: Setup the selinux boolean for proxying
   seboolean:

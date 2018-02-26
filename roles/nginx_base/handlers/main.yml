@@ -1,5 +1,5 @@
 ---
-- name: verify config and restart nginx
+- name: Verify config and restart nginx
   shell: nginx -t
   notify: Restart nginx
 
