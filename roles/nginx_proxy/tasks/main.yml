@@ -14,6 +14,12 @@
     state: yes
     persistent: yes
 
+- name: Let nginx read the gluster share
+  seboolean:
+    name: httpd_can_network_relay
+    state: yes
+    persistent: yes
+
 - name: Create the hierarchy of files for acme 
   file:
     name: "{{ item }}"
