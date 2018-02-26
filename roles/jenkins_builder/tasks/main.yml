@@ -109,7 +109,9 @@
   notify: verify config and restart nginx
 
 - name: Set selinux context for nginx
-  command: semanage fcontext -a -t public_content_t {{ item }}(/.*)?
+  sefcontext:
+    target: "{{ item }}(/.*)?"
+    setype: public_content_t
   with_items:
   - /archives
   when: ansible_system == 'Linux'
