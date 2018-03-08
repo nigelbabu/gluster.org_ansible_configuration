@@ -24,3 +24,8 @@
     domain: fstat.proxy.gluster.org
     backends:
     - fstat.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: docs.proxy.gluster.org
+    backends:
+    - gluster.readthedocs.io
