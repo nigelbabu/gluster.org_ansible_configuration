@@ -1,10 +1,3 @@
-- name: Open the firewall for Jenkins
-  shell: lokkit -p {{ item }}:tcp
-  with_items:
-  - 80
-  - 443 
-  when: ansible_distribution_major_version == '6' and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
-
 - name: Add the jenkins repository
   yum_repository:
     name: jenkins
