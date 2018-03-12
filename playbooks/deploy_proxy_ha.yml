@@ -29,3 +29,8 @@
     domain: docs.proxy.gluster.org
     backends:
     - gluster.readthedocs.io
+
+  - role: nginx_proxy_vhost
+    domain: docs.gluster.org
+    backends:
+    - gluster.readthedocs.io
