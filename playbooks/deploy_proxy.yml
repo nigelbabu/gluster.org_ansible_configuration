@@ -34,7 +34,4 @@
     server_aliases:
     - failurestat.gluster.org
 
-  - role: httpd_proxy
-    website_domain: analysis.gluster.org
-    reverse_proxy: http://analysis.rht.gluster.org/
 
