@@ -45,3 +45,10 @@
     permanent: True
     immediate: True
     state: enabled
+
+- name: Setup logging rule to create the firewall
+  firewalld:
+    rich_rule: 'rule family="ipv4" source address="172.24.1.0/24" log prefix="test" level="info" limit value="1/m" accept'
+    permanent: true
+    state: enabled
+    immediate: True
