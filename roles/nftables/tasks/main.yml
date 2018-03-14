@@ -1,0 +1,21 @@
+---
+- name: Install nftables
+  package:
+    name: nftables
+    state: present
+
+- name: Deploy default configuration
+  copy:
+    dest: /etc/sysconfig/nftables
+    src: nftables.sysconfig
+
+- name: Deploy directory for rules
+  file:
+    name: /etc/nftables/rules.d/
+    state: directory
+
+- name: Start nftables service
+  service: 
+    name: nftables
+    state: started
+    enabled: True
