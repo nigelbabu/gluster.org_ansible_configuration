@@ -1,0 +1,7 @@
+- name: Open vrrp for firewalld
+  firewalld:
+    rich_rule: 'rule family=ipv4 protocol value="vrrp" destination address="224.0.0.18" accept'
+    permanent: True
+    state: enabled
+    immediate: True
+    zone: dmz 

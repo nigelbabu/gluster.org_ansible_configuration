@@ -24,13 +24,8 @@
     src: wrapper_conntrackd.sh
     mode: 0755
 
-- name: Open vrrp for firewalld 
-  firewalld:
-    rich_rule: 'rule family=ipv4 protocol value="vrrp" destination address="224.0.0.18" accept'
-    permanent: True
-    state: enabled
-    immediate: True
-    zone: dmz 
+- include_tasks: firewalld.yml
+  when: use_firewalld
 
 - name: Start service
   service:
