@@ -16,5 +16,5 @@
     state: started
     enabled: yes
 
-- include: firewall_linux.yml
+- include_tasks: firewall_linux.yml
   when: ansible_system == 'Linux'
