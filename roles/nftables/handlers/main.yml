@@ -1,4 +1,8 @@
 ---
+- name: Reload and verify nftables
+  shell: nft -c -f /etc/sysconfig/nftables
+  notify: Reload nftables
+
 - name: Reload nftables
   service:
     name: nftables
