@@ -6,3 +6,4 @@
   with_items:
   - ban
   - unban
+  - list_bans
