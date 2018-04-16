@@ -39,7 +39,6 @@
     hour: "1"
     job: "/fstat/env/bin/python /fstat/code/manage.py process_jobs -n 3 -j {{item.job}}"
   with_items:
-    - { name: 'centos', job: 'centos6-regression' }
-    - { name: 'netbsd', job: 'netbsd7-regression' }
+    - { name: 'centos', job: 'centos7-regression' }
     - { name: 'regression-test-burn-in', job: 'regression-test-burn-in' }
     - { name: 'regression-test-with-multiplex', job: 'regression-test-with-multiplex' }
