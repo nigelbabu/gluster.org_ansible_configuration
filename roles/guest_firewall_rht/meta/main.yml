@@ -7,7 +7,7 @@ dependencies:
   mem_size: 1024
   num_cpus: 1
   distribution: Fedora
-  version: 25
+  version: 28
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 - role: guest_add_bridge
   bridge: "{{ bridge_common }}"
