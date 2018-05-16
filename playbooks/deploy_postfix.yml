@@ -19,6 +19,7 @@
     - heketi-devel
     - integration
     - automated-testing
+    - tlc
   roles:
   - postgrey
   # temporary role
