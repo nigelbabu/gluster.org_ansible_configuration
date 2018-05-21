@@ -48,3 +48,5 @@
   name: polyinst_tmp
 - src: git+https://gitlab.com/osas/ansible-role-redis.git
   name: redis
+- src: git+https://gitlab.com/osas/ansible-role-entropy.git
+  name: entropy
