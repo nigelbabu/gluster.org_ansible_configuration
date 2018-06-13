@@ -135,6 +135,10 @@ bugziller.int.rht.gluster.org
 masa.rht.gluster.org
 mune.rht.gluster.org
 
+[squid_unbound]
+squid01.int.rht.gluster.org
+squid02.int.rht.gluster.org
+
 [int_rht_gluster_org]
 signer.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
@@ -146,6 +150,8 @@ ant-queen.int.rht.gluster.org
 bugziller.int.rht.gluster.org
 http.int.rht.gluster.org
 webbuilder.int.rht.gluster.org
+squid01.int.rht.gluster.org
+squid02.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
