@@ -21,3 +21,16 @@
       bootproto: static
       ip: 172.24.1.61/24
       gateway: 172.24.1.181
+
+- hosts: squid_unbound
+  tasks:
+  - name: Make sure the datadisk is present
+    filesystem:
+      fstype: ext4
+      dev: "/dev/vdb"
+  - name: Mount the fs
+    mount: 
+      name: /srv/
+      src: /dev/vdb
+      fstype: ext4
+      state: mounted  
