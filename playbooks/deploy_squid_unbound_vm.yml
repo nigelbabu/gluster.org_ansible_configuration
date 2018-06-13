@@ -1,0 +1,23 @@
+- hosts: myrmicinae.rht.gluster.org
+  roles:
+  - role: guest_squid_unbound
+    vars:
+      name: squid01.int.rht.gluster.org
+    distribution: Fedora
+    version: 27
+    network:
+      bootproto: static
+      ip: 172.24.1.60/24
+      gateway: 172.24.1.181
+
+- hosts: formicary.rht.gluster.org
+  roles:
+  - role: guest_squid_unbound
+    vars:
+      name: squid02.int.rht.gluster.org
+    distribution: Fedora
+    version: 27
+    network:
+      bootproto: static
+      ip: 172.24.1.61/24
+      gateway: 172.24.1.181
