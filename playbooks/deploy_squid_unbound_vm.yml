@@ -27,7 +27,6 @@
   - filesystem:
       dev: /dev/vdb
       fstype: lvm
-      force: True
   - lvg:
       vg: "vg_data_{{ ansible_hostname }}"
       pvs: /dev/vdb
