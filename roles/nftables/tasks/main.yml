@@ -4,18 +4,16 @@
     name: nftables
     state: present
 
-- name: Deploy default configuration
-  copy:
-    dest: /etc/sysconfig/nftables
-    src: nftables.sysconfig
+- name: Deploy firewall rules
+  template:
+    dest: /etc/sysconfig/nftables.conf
+    src: nftables.conf
+# do not apply until ready
+#  notify: Reload and verify nftables
 
-- name: Deploy directory for rules
-  file:
-    name: /etc/nftables/rules.d/
-    state: directory
-
+# do not start until everything is ready
 - name: Start nftables service
-  service: 
+  service:
     name: nftables
-    state: started
-    enabled: True
+    state: stopped
+    enabled: False
