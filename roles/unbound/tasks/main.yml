@@ -1,0 +1,27 @@
+---
+- name: Install unbound
+  package:
+    name: unbound
+    state: installed
+
+- name: Deploy unbound configuration
+  template:
+    dest: /etc/unbound/unbound.conf
+    src: unbound.conf
+  notify: Verify and reload unbound
+
+# include partition
+- import_tasks: partition_disk.yml
+
+- name: Open firewall for DNS
+  firewalld: 
+    service: dns
+    permanent: True
+    state: enabled
+    immediate: yes
+
+- name: Start the unbound service
+  service:
+    name: unbound
+    state: started
+    enabled: True

@@ -1,0 +1,18 @@
+---
+- lvol:
+    vg: "vg_data_{{ ansible_hostname }}"
+    lv: unbound_logs
+    size: 2G
+- filesystem:
+    fstype: ext4
+    dev: "/dev/mapper/vg_data_{{ ansible_hostname }}-unbound_logs"
+
+- file:
+    path: /etc/unbound/log
+    state: directory
+
+- mount:
+    path: /etc/unbound/log
+    src: "/dev/mapper/vg_data_{{ ansible_hostname }}-unbound_logs"
+    fstype: ext4
+    state: mounted    

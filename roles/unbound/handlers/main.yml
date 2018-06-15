@@ -1,0 +1,9 @@
+---
+- name: Verify and reload unbound
+  shell: unbound-checkconf /etc/unbound/unbound.conf
+  notify: Reload unbound
+
+- name: Reload unbound
+  service:
+    name: unbound
+    state: restarted
