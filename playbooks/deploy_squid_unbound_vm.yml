@@ -4,7 +4,7 @@
     vars:
       name: squid01.int.rht.gluster.org
     distribution: Fedora
-    version: 27
+    version: 28
     network:
       bootproto: static
       ip: 172.24.1.60/24
@@ -16,7 +16,7 @@
     vars:
       name: squid02.int.rht.gluster.org
     distribution: Fedora
-    version: 27
+    version: 28
     network:
       bootproto: static
       ip: 172.24.1.61/24
@@ -24,13 +24,11 @@
 
 - hosts: squid_unbound
   tasks:
-  - name: Make sure the datadisk is present
-    filesystem:
-      fstype: ext4
-      dev: "/dev/vdb"
-  - name: Mount the fs
-    mount: 
-      name: /srv/
-      src: /dev/vdb
-      fstype: ext4
-      state: mounted  
+  - filesystem:
+      dev: /dev/vdb
+      fstype: lvm
+      force: True
+  - lvg:
+      vg: "vg_data_{{ ansible_hostname }}"
+      pvs: /dev/vdb
+
