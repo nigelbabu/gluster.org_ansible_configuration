@@ -1,7 +1,8 @@
 ---
 dependencies:
 - role: guest_virt_install
-  name: builder{{ number }}.int.rht.gluster.org
+  vars:
+    name: "builder{{ number }}.int.rht.gluster.org"
   system_disk_size: 30
   volgroup: "{{ vm_storage_vg }}"
   mem_size: 2048
