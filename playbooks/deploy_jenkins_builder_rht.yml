@@ -68,6 +68,9 @@
     version: 28
 
 - hosts: pleometrosis.rht.gluster.org
+    # default value for builders
+    distribution: Centos
+    version: 7
   roles:
   - role: guest_jenkins_builder_int_rht
     number: 20
