@@ -66,7 +66,7 @@
   - python-prettytable
 # used for build-jobs testing
   - python-virtualenv
-  - python-argparse
+#  - python-argparse
 # used for utils/create-files.py
   - pyxattr
 # used for regression testing
@@ -80,6 +80,22 @@
 # required for https://review.gluster.org/#/c/18532/
   - libcurl-devel
   - lcov
+
+#- package:
+#    state: present
+#    name: "{{ item }}"
+#  name: Install jenkins builder Fedora packages
+#  when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
+#  with_items:
+#  - python2-argparse
+
+- package:
+    state: present
+    name: "{{ item }}"
+  name: Install jenkins builder Centos packages
+  when: ansible_system == 'Linux' and ansible_distribution == 'Centos'
+  with_items:
+  - python-argparse
 
 - package:
     state: present
