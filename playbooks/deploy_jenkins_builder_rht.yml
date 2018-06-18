@@ -68,6 +68,7 @@
     version: 28
 
 - hosts: pleometrosis.rht.gluster.org
+  vars: 
     # default value for builders
     distribution: Centos
     version: 7
