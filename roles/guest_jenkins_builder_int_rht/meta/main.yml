@@ -12,7 +12,9 @@ dependencies:
   bridge: "{{ bridge_common }}"
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   network:
-    ip: 172.24.1.{{ 100 + number }}/24
+    # due to bad planning for the ip numbering, we have builder starting at 100, until 40 where they
+    # go back to 80
+    ip: 172.24.1.{{ (100 + number) if (number < 40) else (40 + number) }}/24
     gateway: 172.24.1.181
     nameservers:
     - 8.8.8.8
