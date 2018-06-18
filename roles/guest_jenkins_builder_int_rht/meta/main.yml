@@ -12,7 +12,6 @@ dependencies:
   bridge: "{{ bridge_common }}"
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   network:
-    bootproto: static
     ip: 172.24.1.{{ 100 + number }}/24
     gateway: 172.24.1.181
     nameservers:
