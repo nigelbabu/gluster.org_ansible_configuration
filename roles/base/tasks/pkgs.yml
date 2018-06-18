@@ -6,7 +6,10 @@
 
 - package:
     state: present
-    name: libselinux-python
+    name: "{{ item }}"
+  with_items:
+  - python3-libselinux
+  - python3-policycoreutils
   when: ansible_distribution == 'Fedora'
 
 - package:
