@@ -7,8 +7,6 @@ dependencies:
   volgroup: "{{ vm_storage_vg }}"
   mem_size: 2048
   num_cpus: 2
-  distribution: Centos
-  version: 7
   bridge: "{{ bridge_common }}"
   sshkey: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
   network:

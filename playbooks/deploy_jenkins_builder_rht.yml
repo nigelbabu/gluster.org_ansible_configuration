@@ -1,11 +1,14 @@
 ---
 - hosts: haplometrosis.rht.gluster.org
+  vars:
+    # default value for builders
+    distribution: Centos
+    version: 7
   roles:
   - role: guest_jenkins_builder_int_rht
     number: 0
   - role: guest_jenkins_builder_int_rht
     number: 1
-
   - role: guest_jenkins_builder_int_rht
     number: 2
   - role: guest_jenkins_builder_int_rht
@@ -42,6 +45,27 @@
     number: 18
   - role: guest_jenkins_builder_int_rht
     number: 19
+
+  - role: guest_jenkins_builder_int_rht
+    number: 45
+    distribution: Fedora
+    version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 46
+    distribution: Fedora
+    version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 47
+    distribution: Fedora
+    version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 48
+    distribution: Fedora
+    version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 49
+    distribution: Fedora
+    version: 28
 
 - hosts: pleometrosis.rht.gluster.org
   roles:
@@ -86,7 +110,26 @@
   - role: guest_jenkins_builder_int_rht
     number: 39
 
-
+  - role: guest_jenkins_builder_int_rht
+    number: 40
+    distribution: Fedora
+    version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 41
+    distribution: Fedora
+    version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 42
+    distribution: Fedora
+    version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 43
+    distribution: Fedora
+    version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 44
+    distribution: Fedora
+    version: 28
 
 - hosts: jenkins_builders_rht
   tasks:
