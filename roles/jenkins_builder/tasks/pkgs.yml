@@ -81,13 +81,13 @@
   - libcurl-devel
   - lcov
 
-#- package:
-#    state: present
-#    name: "{{ item }}"
-#  name: Install jenkins builder Fedora packages
-#  when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
-#  with_items:
-#  - python2-argparse
+- package:
+    state: present
+    name: "{{ item }}"
+  name: Install jenkins builder Fedora packages
+  when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
+  with_items:
+  - libtirpc-devel
 
 - package:
     state: present
