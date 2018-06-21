@@ -38,6 +38,8 @@
   name: Install jenkins builder Linux packages
   when: ansible_system == 'Linux'
   with_items:
+  # used to be pulled by openssl
+  - make
   # needed for some tests
   - net-tools
   # used for smoke.sh, for killall
@@ -88,6 +90,7 @@
   when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
   with_items:
   - libtirpc-devel
+  - rpcgen
 
 - package:
     state: present
