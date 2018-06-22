@@ -1,3 +1,11 @@
 - hosts: squid_unbound
   roles:
+  - role: keepalived
+    master: squid01.int.rht.gluster.org
+    group: squid_unbound
+    vip:
+      public:
+        interface: eth0
+        address: 172.24.1.62
+        prefix: 24
   - unbound 
