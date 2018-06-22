@@ -49,7 +49,7 @@
 - name: Setup logging rule to create the firewall
   firewalld:
     zone: dmz
-    rich_rule: 'rule family="ipv4" source address="172.24.1.0/24" destination not address="224.0.0.1" log prefix="test" level="info" limit value="1/m" accept'
+    rich_rule: 'rule family="ipv4" source address="172.24.1.0/24" destination not address="224.0.0.1" log prefix="test " level="info" limit value="1/m" accept'
     permanent: true
     state: enabled
     immediate: True
