@@ -1,6 +1,11 @@
 ---
-- package: name=mock state=present
-  name: Install mock package
+- name: Install mock package
+  package:
+    name: mock
+    state: present
 
-- user: name=mock groups=mock state=present
-  name: Add a mock user
+- name: Add a mock user
+  user:
+    name: mock
+    groups: mock
+    state: present
