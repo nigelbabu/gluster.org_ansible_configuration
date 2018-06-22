@@ -13,7 +13,6 @@
 - include_tasks: firewalld.yml
   when: use_firewalld
 
-#TODO open the firewall
 - name: Make sure the service is started
   service:
     name: conntrackd
