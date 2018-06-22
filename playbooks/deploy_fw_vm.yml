@@ -2,7 +2,8 @@
 - hosts: formicary.rht.gluster.org
   roles:
   - role: guest_firewall_rht
-    name: masa.rht.gluster.org
+    vars:
+      name: masa.rht.gluster.org
     network: 
       bootproto: static
       ip: 8.43.85.179/24
@@ -11,7 +12,8 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_firewall_rht
-    name: mune.rht.gluster.org
+    vars:
+      name: mune.rht.gluster.org
     network: 
       bootproto: static
       ip: 8.43.85.180/24
@@ -21,7 +23,8 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_firewall_rht
-    name: chrono.rht.gluster.org
+    vars:
+      name: chrono.rht.gluster.org
     network:
       ip: 8.43.85.172/24
       gateway: 8.43.85.254
