@@ -1,0 +1,24 @@
+# set in yum.conf
+- name:
+  ini_file:
+    path: /etc/yum.conf
+    section: main
+    option: proxy
+    value: "{{ proxy }}"
+  when: ansible_pkg_mgr == 'yum'
+
+# set in dnf.conf 
+- name:
+  ini_file:
+    path: /etc/dnf/dnf.conf
+    section: main
+    option: proxy
+    value: "{{ proxy }}"
+  when: ansible_pkg_mgr == 'dnf'
+
+# set for git
+- name: Configure git to use the proxy
+  git_config:
+    name: http.proxy
+    scope: global
+    value: "{{ proxy }}"
