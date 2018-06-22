@@ -65,6 +65,7 @@ proxy02.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 builder[40:49].int.rht.gluster.org
+chrono.rht.gluster.org
 
 [jenkins_builders_rax:vars]
 location=rax
