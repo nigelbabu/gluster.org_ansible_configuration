@@ -27,3 +27,4 @@ roles/mariadb
 roles/swap_file
 roles/polyinst_tmp
 roles/redis
+roles/entropy
