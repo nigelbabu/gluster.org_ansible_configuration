@@ -20,7 +20,7 @@
   firewalld_direct:
     chain: POSTROUTING_direct
     table: nat
-    args: '-m mark --mark 1 -j SNAT --to-source 8.43.85.181'
+    args: '-m mark --mark 1 -j SNAT --to-source {{ outgoing_ip }}'
     state: present
 
 - name: Tag packet to nat (permanent)
@@ -34,7 +34,7 @@
   firewalld_direct:
     chain: POSTROUTING_direct
     table: nat
-    args: '-m mark --mark 1 -j SNAT --to-source 8.43.85.181'
+    args: '-m mark --mark 1 -j SNAT --to-source {{ outgoing_ip }}'
     permanent: True
     state: present
 

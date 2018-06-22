@@ -1,5 +1,7 @@
 ---
 - hosts: firewall_rht
+  vars:
+    outgoing_ip: 8.43.85.181
   roles:
   - role: network_conf_ifcfg
     interface: "{{ common_interface }}"
