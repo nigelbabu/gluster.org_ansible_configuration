@@ -17,3 +17,9 @@
     name: nftables
     state: stopped
     enabled: False
+
+# remove firewalld once that's ready
+#- name: Remove firewalld
+#  package:
+#    name: firewalld
+#    state: absent
