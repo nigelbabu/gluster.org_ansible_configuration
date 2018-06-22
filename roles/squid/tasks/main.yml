@@ -1,0 +1,26 @@
+---
+- name: Install squid
+  package:
+    name: squid
+    state: installed
+
+- name: Deploy squid config
+  template:
+    src: squid.conf
+    dest: /etc/squid/squid.conf
+  notify: Verify and restart squid
+
+# TODO add partition for the log
+# place the log on the partition
+- name: Open firewall for Squid
+  firewalld:
+    service: squid
+    permanent: True
+    state: enabled
+    immediate: yes
+
+- name: Start the squid service
+  service:
+    name: squid
+    state: started
+    enabled: True

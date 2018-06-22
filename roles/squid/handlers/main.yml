@@ -1,0 +1,9 @@
+---
+- name: Verify and restart squid
+  shell: squid -k parse
+  notify: Restart squid
+
+- name: Restart squid
+  service:
+    name: squid
+    state: restarted
