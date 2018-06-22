@@ -11,6 +11,7 @@
     path: /etc/unbound/log
     state: directory
     owner: unbound
+    setype: named_log_t
 
 - mount:
     path: /etc/unbound/log
