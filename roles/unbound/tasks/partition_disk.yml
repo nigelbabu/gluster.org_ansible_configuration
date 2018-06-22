@@ -10,6 +10,7 @@
 - file:
     path: /etc/unbound/log
     state: directory
+    owner: unbound
 
 - mount:
     path: /etc/unbound/log
