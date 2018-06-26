@@ -1,0 +1,6 @@
+common_ip: 172.24.1.172
+common_interface: eth1
+public_ip: 8.43.85.172
+public_interface: eth0
+interco_fw_ip: 192.168.1.172
+interco_fw_interface: eth2

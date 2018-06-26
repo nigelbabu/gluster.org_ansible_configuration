@@ -29,7 +29,6 @@
   - role: firewall_cage
   - role: nftables
 
----
 - hosts: chrono.rht.gluster.org
   roles:
   - role: network_conf_ifcfg
