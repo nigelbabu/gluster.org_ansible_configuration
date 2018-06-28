@@ -43,6 +43,8 @@ gerrit-new.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8
 
 [community_cage:children]
 int_rht_gluster_org
+proxy_ha
+firewall_rht
 
 [munin]
 munin.gluster.org
