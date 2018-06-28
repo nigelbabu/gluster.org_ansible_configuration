@@ -8,18 +8,24 @@
   template:
     dest: /etc/sysconfig/nftables.conf
     src: nftables.conf
-# do not apply until ready
-#  notify: Reload and verify nftables
+  notify: Reload and verify nftables
+# make sure firewalld is not running, since it
+# make the postrouting stuff fail by default
 
 # do not start until everything is ready
 - name: Start nftables service
   service:
     name: nftables
-    state: stopped
-    enabled: False
+    state: started
+    enabled: True
 
-# remove firewalld once that's ready
-#- name: Remove firewalld
-#  package:
-#    name: firewalld
-#    state: absent
+- name: Enable routing with sysctl
+  sysctl:
+    name: net.ipv4.ip_forward
+    state: present
+    value: 1
+
+- name: Remove firewalld
+  package:
+    name: firewalld
+    state: absent
