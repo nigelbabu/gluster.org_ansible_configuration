@@ -27,7 +27,6 @@
     sync_interface: "{{ interco_fw_interface }}"
     group: firewall_rht
   - role: firewall_cage
-  - role: nftables
 
 - hosts: chrono.rht.gluster.org
   roles:
