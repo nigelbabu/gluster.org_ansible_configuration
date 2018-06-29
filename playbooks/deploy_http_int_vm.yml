@@ -2,7 +2,8 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_virt_install
-    name: http.int.rht.gluster.org
+    vars:
+      name: http.int.rht.gluster.org
     system_disk_size: 8
     # 5G => bits.g.o
     # 1G => analysis.g.o
