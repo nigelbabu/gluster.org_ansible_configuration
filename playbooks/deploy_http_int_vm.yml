@@ -14,7 +14,6 @@
     version: 7
     bridge: "{{ bridge_common }}"
     network:
-      bootproto: static
       ip: 172.24.1.55/24
       gateway: 172.24.1.181
 
