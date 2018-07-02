@@ -20,5 +20,11 @@
 
 - include: ban_command.yml
 
+- name: Block list creation on the web
+  template:
+    src: block_web_ml.conf
+    dest: "{{ _vhost_confdir }}/block_web_ml.conf"
+  notify: verify config and restart httpd
+
 - include: dnsbl_blacklist.yml
   when: dnsbl_mailman 
