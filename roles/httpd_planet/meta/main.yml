@@ -1,3 +1,5 @@
 ---
 dependencies:
-- { role: httpd }
+- role: httpd
+  force_tls: True
+  use_tls: True
