@@ -85,7 +85,7 @@ try:
 except:
     fqdn = 'mm_cfg_has_unknown_host_domains'
 
-DEFAULT_URL_HOST   = '{{ website_domain }}'
+DEFAULT_URL_HOST   = 'https://{{ website_domain }}'
 DEFAULT_EMAIL_HOST = '{{ mail_domain }}'
 
 # Because we've overriden the virtual hosts above add_virtualhost
