@@ -6,8 +6,8 @@
   - role: httpd_blog
     website_domain: oldblog.gluster.org
     document_root: /var/www/html
-    server_aliases:
-    - community.gluster.org
+#    server_aliases:
+#    - community.gluster.org
     website_user: oldblog
     # see private repo for the password
     website_password: "{{ oldblog_pass }}" 
