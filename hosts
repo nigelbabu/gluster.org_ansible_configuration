@@ -148,7 +148,7 @@ squid02.int.rht.gluster.org
 [int_rht_gluster_org]
 signer.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
-builder[0:39].int.rht.gluster.org
+builder[0:50].int.rht.gluster.org
 
 backups.int.rht.gluster.org
 aide.int.rht.gluster.org
