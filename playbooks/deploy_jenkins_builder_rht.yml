@@ -134,6 +134,10 @@
     number: 44
     distribution: Fedora
     version: 28
+  - role: guest_jenkins_builder_int_rht
+    number: 50
+    distribution: Debian
+    version: stable
 
 - hosts: jenkins_builders_rht
   tasks:
