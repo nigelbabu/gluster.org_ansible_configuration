@@ -35,7 +35,20 @@
     name: "{{ item }}"
   with_items:
   - strace
-  - vim-enhanced
   - lshw
   - rsync
   when: ansible_system == 'Linux'
+
+- package:
+    state: present
+    name: "{{ item }}"
+  with_items:
+  - vim-enhanced
+  when: ansible_distribution == 'Fedora' or ansible_distribution == 'CentOS'
+
+- package:
+    state: present
+    name: "{{ item }}"
+  with_items:
+  - vim-nox
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
