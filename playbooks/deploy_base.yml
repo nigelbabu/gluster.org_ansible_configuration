@@ -4,7 +4,7 @@
   - role: openssh
     when: ansible_fqdn != 'gerrit-new.rht.gluster.org'
   - role: selinux
-    when: ansible_system == 'Linux'
+    when: ansible_system == 'Linux' and ansible_distribution != 'Debian'
   - ntp
   - role: shell_timeout
     when: ansible_system == 'Linux'
