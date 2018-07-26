@@ -119,6 +119,9 @@
 # adding because it is present on freebsd0.cloud, for parity
   - gsed
   - curl
+# requested on https://bugzilla.redhat.com/show_bug.cgi?id=1608707
+# debundling 
+  - e2fsprogs-libuuid
 
 - package:
     state: present
