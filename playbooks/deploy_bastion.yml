@@ -3,9 +3,9 @@
   - role: bastion
     run_on_new_host:
     - deploy_base.yml
-    - deploy_rsyslog.yml
-    - deploy_freeipa.yml
-    - deploy_munin.yml
+#    - deploy_rsyslog.yml
+#    - deploy_freeipa.yml
+#    - deploy_munin.yml
     compat_disable: True
     ansible_committers_group: admins
     remotes:
