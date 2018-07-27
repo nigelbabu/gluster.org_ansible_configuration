@@ -1,0 +1,3 @@
+- hosts: builder7.int.rht.gluster.org
+  roles:
+  - role: set_proxy
