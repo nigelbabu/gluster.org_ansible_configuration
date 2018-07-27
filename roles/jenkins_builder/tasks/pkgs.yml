@@ -122,6 +122,8 @@
 # requested on https://bugzilla.redhat.com/show_bug.cgi?id=1608707
 # debundling 
   - e2fsprogs-libuuid
+# requested on https://bugzilla.redhat.com/show_bug.cgi?id=1609347
+  - argp-standalone 
 
 - package:
     state: present
