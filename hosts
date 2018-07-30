@@ -161,3 +161,8 @@ squid02.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
+
+[set_proxy]
+builder7.int.rht.gluster.org
+freebsd10.3.int.rht.gluster.org
+ant-queen.int.rht.gluster.org
