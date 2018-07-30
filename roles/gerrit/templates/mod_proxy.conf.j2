@@ -1,8 +1,8 @@
 ProxyPreserveHost On
-ProxyPass / http://127.0.0.1:8081
+ProxyPass / http://127.0.0.1:8081 nocanon
 # needed for letsencrypt
 ProxyPass /.well-known/acme-challenge/ !
 ProxyPassReverse / http://127.0.0.1:8081
 # needed for gerrit
-AllowEncodedSlashes nodecode
+AllowEncodedSlashes on
 
