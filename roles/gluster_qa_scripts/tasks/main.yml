@@ -1,4 +1,9 @@
 ---
+- name: Make sure that git is installed
+  package:
+    name: git
+    state: present
+
 - name: Update the glusterfs-patch-acceptance-tests repo
   git:
     repo: https://github.com/gluster/glusterfs-patch-acceptance-tests.git
