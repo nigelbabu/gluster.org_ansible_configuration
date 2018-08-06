@@ -1,0 +1,3 @@
+- hosts: bugziller
+  roles:
+  - role: gluster_qa_scripts
