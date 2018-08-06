@@ -1,0 +1,5 @@
+---
+- name: Update the glusterfs-patch-acceptance-tests repo
+  git:
+    repo: https://github.com/gluster/glusterfs-patch-acceptance-tests.git
+    dest: /opt/qa/

@@ -2,3 +2,4 @@
 dependencies:
 - { role: lvm_config }
 - { role: nginx_builder }
+- { role: gluster_qa_scripts }
