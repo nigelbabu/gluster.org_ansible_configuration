@@ -93,7 +93,7 @@ jenkins_builders_rht
 jenkins_builders_rackspace
 jenkins_builders_rax
 
-[container_pipeline_builder]
+[container_pipeline_builders]
 builder[40:49].int.rht.gluster.org
 
 [gerrit]
