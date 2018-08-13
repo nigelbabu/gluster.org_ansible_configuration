@@ -93,6 +93,9 @@ jenkins_builders_rht
 jenkins_builders_rackspace
 jenkins_builders_rax
 
+[container_pipeline_builder]
+builder[40:49].int.rht.gluster.org
+
 [gerrit]
 #dev.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.171:21 root@myrmicinae.rht.gluster.org"'
 gerrit-stage.rht.gluster.org

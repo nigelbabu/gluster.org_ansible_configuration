@@ -1,3 +1,7 @@
 - hosts: jenkins_builders
   roles:
   - jenkins_builder
+
+- hosts: container_pipeline_builders
+  roles:
+  - container_pipeline_builder
