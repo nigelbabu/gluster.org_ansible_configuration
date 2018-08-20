@@ -1,5 +1,8 @@
 ---
-- name: Install buildah
+- name: Install required package
   package:
-    name: buildah
+    name: "{{ item }}"
     state: present
+  with_items:
+  - buildah
+  - ansible
