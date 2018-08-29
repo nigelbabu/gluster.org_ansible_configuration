@@ -96,6 +96,9 @@
   with_items:
   - libtirpc-devel
   - rpcgen
+# needed for smoke testing on Fedora
+# https://bugzilla.redhat.com/show_bug.cgi?id=1623487
+  - python3-devel
 
 - package:
     state: present
