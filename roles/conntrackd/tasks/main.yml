@@ -13,6 +13,14 @@
 - include_tasks: firewalld.yml
   when: use_firewalld
 
+# TODO remove it once policy is fixed upstream, and in Fedora (likely 29)
+# https://github.com/fedora-selinux/selinux-policy-contrib/pull/66
+- name: Let conntrackd load kernel module
+  seboolean:
+    name: domain_kernel_load_modules
+    state: yes
+    persistent: yes
+
 - name: Make sure the service is started
   service:
     name: conntrackd
