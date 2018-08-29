@@ -2,33 +2,33 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_proxy_rht
-    name: proxy.rht.gluster.org
+    vars:
+      name: proxy.rht.gluster.org
     distribution: Centos
     version: 7
     network:
-      bootproto: static
       ip: 8.43.85.175/24
       gateway: 8.43.85.254
 
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_proxy_rht
-    name: proxy01.rht.gluster.org
+    vars:
+      name: proxy01.rht.gluster.org
     distribution: Fedora
-    version: 26
+    version: 28
     network:
-      bootproto: static
       ip: 8.43.85.182/24
       gateway: 8.43.85.254
 
 - hosts: formicary.rht.gluster.org
   roles:
   - role: guest_proxy_rht
-    name: proxy02.rht.gluster.org
+    vars:
+      name: proxy02.rht.gluster.org
     distribution: Fedora
-    version: 26
+    version: 28
     network:
-      bootproto: static
       ip: 8.43.85.183/24
       gateway: 8.43.85.254
 
