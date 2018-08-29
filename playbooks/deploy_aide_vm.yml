@@ -2,7 +2,8 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_virt_install
-    name: aide.int.rht.gluster.org
+    vars:
+      name: aide.int.rht.gluster.org
     system_disk_size: 8
     data_disk_size: 120 
     mem_size: 2048

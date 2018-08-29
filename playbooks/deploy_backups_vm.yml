@@ -2,7 +2,8 @@
 - hosts: formicary.rht.gluster.org
   roles:
   - role: guest_virt_install
-    name: backups.int.rht.gluster.org
+    vars:
+      name: backups.int.rht.gluster.org
     system_disk_size: 10
     # 1G for pgsql
     # 60G for binary
