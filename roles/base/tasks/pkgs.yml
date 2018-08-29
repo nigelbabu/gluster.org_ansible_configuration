@@ -22,21 +22,19 @@
 
 - package:
     state: present
-    name: "{{ item }}"
-  with_items:
-  - lsof
-  - screen
-  - htop
-  - nmap
-  - socat
+    name:
+    - lsof
+    - screen
+    - htop
+    - nmap
+    - socat
 
 - package:
     state: present
-    name: "{{ item }}"
-  with_items:
-  - strace
-  - lshw
-  - rsync
+    name:
+    - strace
+    - lshw
+    - rsync
   when: ansible_system == 'Linux'
 
 - package:
