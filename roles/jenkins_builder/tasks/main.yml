@@ -71,12 +71,15 @@
   - /d/build
   - /d/logs
   - /home/jenkins/root
-  - /home/jenkins/root/workspace
   - /archives/archived_builds
   - /archives/log
   - /archives/logs
 
-- name: Setup permissions for /home/jenkins/root
+- name: Create directory /home/jenkins/root/workspace
+  file:
+    state: directory
+
+- name: Setup permissions for /home/jenkins/root/workspace
   file:
     path: /home/jenkins/root/workspace
     recurse: yes
@@ -85,7 +88,7 @@
     mode: g+s
   when: ansible_system == 'Linux'
 
-- name: Setup group acl for /home/jenkins/root
+- name: Setup group acl for /home/jenkins/root/workspace
   acl:
     path: /home/jenkins/root/workspace
     entity: jenkins
