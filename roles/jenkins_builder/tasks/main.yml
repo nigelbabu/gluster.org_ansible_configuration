@@ -83,6 +83,7 @@
   file:
     path: /home/jenkins/root/workspace
     recurse: yes
+    follow: no
     owner: jenkins
     group: jenkins
     mode: g+s
