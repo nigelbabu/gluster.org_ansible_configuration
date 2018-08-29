@@ -1,7 +1,8 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_virt_install
-    name: ant-queen.int.rht.gluster.org
+    vars:
+      name: ant-queen.int.rht.gluster.org
     system_disk_size: 10
     data_disk_size: 2
     mem_size: 1024
@@ -9,7 +10,6 @@
     version: 7
     bridge: "{{ bridge_common }}"
     network:
-      bootproto: static
       ip: 172.24.1.53/24
       gateway: 172.24.1.181
 

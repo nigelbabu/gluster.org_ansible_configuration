@@ -2,13 +2,13 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_virt_install
-    name: bugziller.int.rht.gluster.org
+    vars:
+      name: bugziller.int.rht.gluster.org
     system_disk_size: 10
     mem_size: 1024
     distribution: Centos
     version: 7
     bridge: "{{ bridge_common }}"
     network:
-      bootproto: static
       ip: 172.24.1.54/24
       gateway: 172.24.1.181

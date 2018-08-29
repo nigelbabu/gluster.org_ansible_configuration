@@ -2,7 +2,8 @@
 - hosts: myrmicinae.rht.gluster.org
   roles:
   - role: guest_virt_install
-    name: gerrit-stage.rht.gluster.org
+    vars:
+      name: gerrit-stage.rht.gluster.org
     system_disk_size: 24
     mem_size: 2048
     num_cpus: 2
@@ -10,12 +11,12 @@
     version: 7
     bridge: "{{ bridge_public }}"
     network:
-      bootproto: static
       ip: 8.43.85.174/24
       gateway: 8.43.85.254
 
   - role: guest_virt_install
-    name: gerrit-new.rht.gluster.org
+    vars:
+      name: gerrit-new.rht.gluster.org
     system_disk_size: 15
     data_disk_size: 15
     mem_size: 8192
@@ -24,6 +25,5 @@
     version: 7
     bridge: "{{ bridge_public }}"
     network:
-      bootproto: static
       ip: 8.43.85.171/24
       gateway: 8.43.85.254
