@@ -78,6 +78,7 @@
 - name: Create directory /home/jenkins/root/workspace
   file:
     state: directory
+    path: /home/jenkins/root/workspace
 
 - name: Setup permissions for /home/jenkins/root/workspace
   file:
