@@ -20,6 +20,7 @@
     - integration
     - automated-testing
     - tlc
+    - ci-results
   roles:
   - postgrey
   # temporary role
