@@ -1,2 +1,3 @@
-prepare_migration: False
+# set to False for migration
+generate_certificates: True
 
