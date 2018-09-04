@@ -1,6 +1,7 @@
 ---
 - include_tasks: generate_cert.yml 
   run_once: True
+  when: prepare_migration is False
 
 - name: Deploy proxy config file
   template:
