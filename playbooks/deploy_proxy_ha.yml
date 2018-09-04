@@ -39,3 +39,9 @@
     domain: bits.gluster.org
     backends:
     - bits.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: ci-logs.gluster.org
+    backends:
+    - http.int.rht.gluster.org
+    generate_certificates: False
