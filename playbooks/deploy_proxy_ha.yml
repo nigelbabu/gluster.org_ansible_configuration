@@ -44,4 +44,3 @@
     domain: ci-logs.gluster.org
     backends:
     - http.int.rht.gluster.org
-    generate_certificates: False
