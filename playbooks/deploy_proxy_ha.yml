@@ -49,10 +49,13 @@
     domain: fstat.gluster.org
     backends:
     - fstat.rht.gluster.org
-    generate_certificates: False
+
+  - role: nginx_proxy_vhost
+    domain: failurestat.gluster.org
+    backends:
+    - fstat.rht.gluster.org
 
   - role: nginx_proxy_vhost
     domain: softserve.gluster.org
     backends:
     - softserve.rht.gluster.org
-    generate_certificates: False
