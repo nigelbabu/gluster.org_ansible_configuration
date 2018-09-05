@@ -1,0 +1,32 @@
+# replace once upstream grow the feature for adding zone
+# https://github.com/ansible/ansible/issues/33307
+- name: Add zone for gluster
+  firewalld_zone:
+    name: "{{ fw_zone }}"
+    state: present
+
+- name: Add interface to the zone
+  firewalld:
+    zone: "{{ fw_zone }}"
+    interface: "{{ interface }}"
+    permanent: True
+    immediate: True
+    state: enabled
+
+- name: Open the firewall (gluster)
+  firewalld:
+    permanent: True
+    immediate: True
+    zone: "{{ fw_zone }}"
+    service: glusterfs
+    state: enabled
+
+- name: Open the firewall (ssh)
+  firewalld:
+    permanent: True
+    immediate: True
+    zone: "{{ fw_zone }}"
+    service: ssh
+    state: enabled
+
+
