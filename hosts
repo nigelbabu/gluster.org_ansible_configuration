@@ -62,8 +62,8 @@ ansible_python_interpreter=/usr/bin/python3
 [python3]
 masa.rht.gluster.org
 mune.rht.gluster.org
-proxy01.rht.gluster.org
-proxy02.rht.gluster.org
+proxy01.int.rht.gluster.org
+proxy02.int.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 builder[40:49].int.rht.gluster.org
@@ -127,8 +127,8 @@ fstat.rht.gluster.org
 proxy.rht.gluster.org
 
 [proxy_ha]
-proxy01.rht.gluster.org
-proxy02.rht.gluster.org
+proxy01.int.rht.gluster.org
+proxy02.int.rht.gluster.org
 
 [signer]
 signer.int.rht.gluster.org
