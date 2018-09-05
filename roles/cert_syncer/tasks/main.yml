@@ -25,12 +25,20 @@
     immediate: True
     state: enabled
 
-- name: Open the firewall
+- name: Open the firewall (gluster)
   firewalld:
     permanent: True
     immediate: True
     zone: "{{ fw_zone }}"
     service: glusterfs
+    state: enabled
+
+- name: Open the firewall (ssh)
+  firewalld:
+    permanent: True
+    immediate: True
+    zone: "{{ fw_zone }}"
+    service: ssh
     state: enabled
 
 - name: Create the brick
