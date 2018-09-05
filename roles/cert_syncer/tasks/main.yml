@@ -65,7 +65,7 @@
 - name: Mount Gluster
   mount:
     fstype: glusterfs
-    src: "{{ hostvars[inventory_name]['ansible_' + interface]['ipv4']['address'] }}:{{ volume_name }}"
+    src: "{{ hostvars[inventory_hostname]['ansible_' + interface]['ipv4']['address'] }}:{{ volume_name }}"
     path: "{{ mount_path }}"
     state: mounted
 
