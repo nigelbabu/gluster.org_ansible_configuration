@@ -12,14 +12,4 @@
 #    interface: eth1
 #    ip: "{{ internal_ip }}/24"
 
-  - role: httpd_proxy
-    website_domain: softserve.gluster.org
-    reverse_proxy: http://softserve.rht.gluster.org/
-
-  - role: httpd_proxy
-    website_domain: fstat.gluster.org
-    reverse_proxy: http://fstat.rht.gluster.org/
-    server_aliases:
-    - failurestat.gluster.org
-
 
