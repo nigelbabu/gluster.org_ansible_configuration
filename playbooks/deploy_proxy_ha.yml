@@ -44,3 +44,15 @@
     domain: ci-logs.gluster.org
     backends:
     - http.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: fstat.gluster.org
+    backends:
+    - fstat.rht.gluster.org
+    generate_certs: False
+
+  - role: nginx_proxy_vhost
+    domain: softserve.gluster.org
+    backends:
+    - softserve.rht.gluster.org
+    generate_certs: False
