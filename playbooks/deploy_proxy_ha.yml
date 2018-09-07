@@ -64,4 +64,3 @@
     domain: planet.gluster.org
     backends:
     - planet.int.rht.gluster.org
-    generate_certificates: False
