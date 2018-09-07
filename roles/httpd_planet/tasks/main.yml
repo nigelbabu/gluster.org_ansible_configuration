@@ -1,4 +1,5 @@
 - name: Set the proper permission on the directory
   file:
+    state: directory
     owner: "{{ sync_user }}"
     path: "{{ document_root }}" 
