@@ -7,8 +7,8 @@
     name: gluster_planet
     git_url: "https://github.com/gluster/planet-gluster.git"
     git_version: master
-    rsync_location: /srv/middleman_website/www/planet/master
-    rsync_server: supercolony.gluster.org
+    rsync_location: /var/www/planet
+    rsync_server: http.int.rht.gluster.org
     rsync_user: deploy_website
     # push rebuild every hour
     rebuild_interval: 1
