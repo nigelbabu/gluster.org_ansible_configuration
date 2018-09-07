@@ -4,3 +4,5 @@
     website_domain: planet.gluster.org
     sync_user: deploy_website
     document_root: /srv/middleman_website/www/planet/master/
+    force_tls: True
+    use_tls: True
