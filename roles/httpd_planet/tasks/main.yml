@@ -1,3 +1,7 @@
+- name: Create user to upload file
+  user:
+    name: "{{ sync_user }}"
+ 
 - name: Set the proper permission on the directory
   file:
     state: directory
