@@ -1,0 +1,10 @@
+---
+- hosts: nagios
+  roles:
+  - role: nagios
+    websites:
+    - {host: www.gluster.org, use_ssl: True}
+    - {host: download.gluster.org, use_ssl: True}
+#   see private repo for the lists of admins
+#    admins:
+

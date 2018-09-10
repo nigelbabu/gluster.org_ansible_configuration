@@ -1,0 +1,7 @@
+---
+dependencies:
+- role: httpd
+  redirects:
+  - src: '^/$'
+    target: '/nagios/'
+    match: True

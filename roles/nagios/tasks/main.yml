@@ -1,0 +1,69 @@
+---
+- name: Install nagios packages
+  package:
+    state: present
+    pkg: "{{ item }}"
+  with_items:
+  - nagios
+  - nagios-plugins-http
+  - nagios-plugins-ping
+  - nagios-plugins-ssh
+  - nagios-plugins-nrpe
+  - nagios-plugins-smtp
+  - nagios-plugins-by_ssh
+  - nagios-plugins-tcp
+# need to restart when we install a new plugin
+  notify: Verify config and restart nagios
+
+- name: Deploy check_nrpe config
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/nagios/conf.d/{{ item }}"
+    owner: root
+    group: nagios
+    mode: 0640
+  with_items:
+  - check_nrpe.cfg
+  notify: Verify config and restart nagios
+
+- name: Deploy cgi nagios configuration
+  template:
+    src: "{{ item }}"
+    dest: "/etc/nagios/{{ item }}"
+    owner: root
+    group: nagios
+    mode: 0640
+  with_items:
+  - cgi.cfg
+  notify: Verify config and restart nagios
+
+- name: Deploy nagios configuration
+  template:
+    src: "{{ item }}"
+    dest: "/etc/nagios/conf.d/{{ item }}"
+    owner: root
+    group: nagios
+    mode: 0640
+  with_items:
+  - contact.cfg
+  - server.cfg
+  - templates.cfg
+  notify: Verify config and restart nagios
+
+- name: Erase default nagios configuration
+  copy:
+    content: ""
+    dest: "{{ item }}"
+  with_items:
+  - /etc/nagios/objects/localhost.cfg
+  - /etc/nagios/objects/templates.cfg
+  - /etc/nagios/objects/contacts.cfg
+  notify: Verify config and restart nagios
+
+- name: Start the nagios service
+  service:
+    name: nagios
+    state: started
+    enabled: yes
+
+- include: httpd.yml

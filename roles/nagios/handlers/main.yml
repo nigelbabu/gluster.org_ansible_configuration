@@ -1,0 +1,9 @@
+---
+- name: Verify config and restart nagios
+  shell: nagios -v /etc/nagios/nagios.cfg
+  notify: Restart nagios
+
+- name: Restart nagios
+  service:
+    name: nagios
+    state: restarted
