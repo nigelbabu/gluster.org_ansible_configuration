@@ -23,6 +23,9 @@ myrmicinae.rht.gluster.org
 haplometrosis.rht.gluster.org
 pleometrosis.rht.gluster.org
 
+[nagios]
+nagios.int.rht.gluster.org
+
 [community_cage]
 haplometrosis.rht.gluster.org
 pleometrosis.rht.gluster.org
@@ -161,6 +164,7 @@ http.int.rht.gluster.org
 webbuilder.int.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
+nagios.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
