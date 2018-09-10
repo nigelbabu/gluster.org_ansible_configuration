@@ -64,3 +64,8 @@
     domain: planet.gluster.org
     backends:
     - planet.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: nagios.gluster.org
+    backends:
+    - nagios.int.rht.gluster.org
