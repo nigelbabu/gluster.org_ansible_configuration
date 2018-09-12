@@ -95,6 +95,7 @@
 # https://bugzilla.redhat.com/show_bug.cgi?id=1623487
     - python3-devel
     - python3-pylint
+    - git-clang-format
   when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
 
 - name: Install jenkins builder Centos packages
