@@ -15,7 +15,7 @@
     diskstats_exclude: "mapper_patchy_,patchy_"
 
 
-- hosts: munin.gluster.org
+- hosts: munin.rax.gluster.org
   roles:
   - role: swap_file
     size: 1G
