@@ -50,7 +50,8 @@ proxy_ha
 firewall_rht
 
 [munin]
-munin.gluster.org
+munin.rax.gluster.org
+munin.int.rht.gluster.org
 
 [freebsd:vars]
 ansible_python_interpreter=/usr/local/bin/python
