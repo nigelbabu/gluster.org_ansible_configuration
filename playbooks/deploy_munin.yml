@@ -1,9 +1,18 @@
 - hosts: all:!int_rht_gluster_org
   roles:
   - role: munin
-    munin_master: munin.gluster.org
+    munin_master: munin.int.rht.gluster.org
+    munin_master_ip: 8.43.85.181
 #    admin_email: root@{{ ansible_domain }}
     diskstats_exclude: "mapper_patchy_,patchy_"
+
+- hosts: int_rht_gluster_org
+  roles:
+  - role: munin
+    munin_master: munin.int.rht.gluster.org
+#    admin_email: root@{{ ansible_domain }}
+    diskstats_exclude: "mapper_patchy_,patchy_"
+
 
 - hosts: munin.gluster.org
   roles:
