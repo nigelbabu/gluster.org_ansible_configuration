@@ -74,4 +74,3 @@
     domain: munin.gluster.org
     backends:
     - munin.int.rht.gluster.org
-    generate_certificates: False
