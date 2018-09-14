@@ -165,6 +165,7 @@ webbuilder.int.rht.gluster.org
 squid01.int.rht.gluster.org
 squid02.int.rht.gluster.org
 nagios.int.rht.gluster.org
+munin.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
