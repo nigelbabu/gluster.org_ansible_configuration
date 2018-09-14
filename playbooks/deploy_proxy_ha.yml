@@ -69,3 +69,9 @@
     domain: nagios.gluster.org
     backends:
     - nagios.int.rht.gluster.org
+
+  - role: nginx_proxy_vhost
+    domain: munin.gluster.org
+    backends:
+    - munin.int.rht.gluster.org
+    generate_certificates: False
