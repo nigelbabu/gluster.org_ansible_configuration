@@ -5,3 +5,4 @@
     tcp_services:
     - http
     - ssh
+    ip_munin: 8.43.85.181
