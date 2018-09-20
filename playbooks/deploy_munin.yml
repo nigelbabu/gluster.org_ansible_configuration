@@ -1,4 +1,4 @@
-- hosts: int_rht_gluster_org:firewall_rht:proxy_ha
+- hosts: monitoring_from_inside
   roles:
   - role: munin
     munin_master: munin.int.rht.gluster.org
@@ -6,7 +6,7 @@
 #    admin_email: root@{{ ansible_domain }}
     diskstats_exclude: "mapper_patchy_,patchy_"
 
-- hosts: all:!int_rht_gluster_org:!firewall_rht:!proxy_ha
+- hosts: all:!monitoring_from_inside
   roles:
   - role: munin
     munin_master: munin.int.rht.gluster.org

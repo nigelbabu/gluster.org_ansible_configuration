@@ -171,7 +171,17 @@ munin.int.rht.gluster.org
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
 
+# group for servers using the proxy as a test
 [set_proxy]
 builder7.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
+
+# group for server whose monitoring (munin/nagios) come from inside
+# used for IP filtering
+[monitoring_from_inside:children]
+int_rht_gluster_org
+proxy_ha
+firewall_rht
+
+
