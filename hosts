@@ -182,6 +182,5 @@ ant-queen.int.rht.gluster.org
 [monitoring_from_inside:children]
 int_rht_gluster_org
 proxy_ha
-firewall_rht
 
 
