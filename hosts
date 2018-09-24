@@ -176,6 +176,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gl
 builder7.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
+munin.int.rht.gluster.org
 
 # group for server whose monitoring (munin/nagios) come from inside
 # used for IP filtering
