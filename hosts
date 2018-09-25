@@ -182,6 +182,5 @@ munin.int.rht.gluster.org
 # used for IP filtering
 [monitoring_from_inside:children]
 int_rht_gluster_org
-proxy_ha
 
 
