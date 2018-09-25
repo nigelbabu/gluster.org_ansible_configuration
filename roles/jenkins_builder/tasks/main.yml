@@ -62,7 +62,7 @@
     state: directory
   with_items:
   - /var/log/glusterfs
-  - /var/lib/glusterd
+  - /var/{% if ansible_system == 'FreeBSD'%}db{% else %}lib{% endif %}/glusterd
   - /var/run/gluster
   - /d
   - /archives
