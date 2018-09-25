@@ -74,3 +74,11 @@
     domain: munin.gluster.org
     backends:
     - munin.int.rht.gluster.org
+
+# TODO move internally
+  - role: nginx_proxy_vhost
+    domain: bugs.gluster.org
+    backends:
+    - bugs.rax.gluster.org
+
+
