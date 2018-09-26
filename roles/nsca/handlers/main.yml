@@ -1,0 +1,5 @@
+---
+- name: Restart nsca
+  service:
+    name: nsca
+    state: restarted

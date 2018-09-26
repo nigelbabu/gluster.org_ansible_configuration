@@ -1,0 +1,23 @@
+---
+- name: Install nsca
+  package:
+    name: nsca
+    state: present
+
+- name: Deploy nsca.cfg
+  template:
+    dest: /etc/nagios/nsca.cfg
+    src: nsca.cfg
+  notify: Restart nsca
+
+- name: Start the nsca service
+  service:
+    name: ncsa
+    state: started
+
+- name: Open firewall for DNS
+  firewalld: 
+    port: 5667
+    permanent: True
+    state: enabled
+    immediate: yes
