@@ -1,0 +1,8 @@
+---
+- package:
+    name: nsca-client
+    state: installed
+
+- template:
+    dest: /etc/nagios/send_nsca.cfg
+    src: send_nsca.cfg 
