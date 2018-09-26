@@ -12,7 +12,7 @@
 
 - name: Start the nsca service
   service:
-    name: ncsa
+    name: nsca
     state: started
 
 - name: Open firewall for DNS
