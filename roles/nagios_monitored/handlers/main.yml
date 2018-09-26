@@ -1,0 +1,11 @@
+---
+- name: Verify config and restart nagios
+  shell: nagios -v /etc/nagios/nagios.cfg
+  notify: Restart nagios
+  delegate_to: "{{ nagios_server }}"
+
+- name: Restart nagios
+  service:
+    name: nagios
+    state: restarted
+  delegate_to: "{{ nagios_server }}"

@@ -17,15 +17,8 @@
 #    - {host: ci-logs.gluster.org, use_ssl: True}
     - {host: fstat.gluster.org, use_ssl: True}
     - {host: lists.gluster.org, use_ssl: True}
+    # beware, this one requires the host to be declared first
     smtp_servers:
     - supercolony.gluster.org
 #   see private repo for the lists of admins
 #    admins:
-
-# do not move out of that playbook, we need to be
-# here for handlers purpose
-- hosts: all
-  roles:
-  - role: nagios_monitored
-    # TODO do not hardcode
-    nagios_server: nagios.int.rht.gluster.org
