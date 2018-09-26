@@ -15,6 +15,10 @@
     - {host: bits.gluster.org, use_ssl: True}
     - {host: ci-logs.gluster.org, use_ssl: True}
     - {host: fstat.gluster.org, use_ssl: True}
+    - {host: lists.gluster.org, use_ssl: True}
+    smtp_servers:
+    - supercolony.gluster.org
+
 #   see private repo for the lists of admins
 #    admins:
 
