@@ -8,3 +8,6 @@
   roles:
   - role: nsca_client
     nsca_password: "{{ lookup('password', '~/nsca_password') }}"
+  - role: munin_nagios_alerting
+    nagios_server: nagios.int.rht.gluster.org
+
