@@ -12,6 +12,7 @@
   - nagios-plugins-smtp
   - nagios-plugins-by_ssh
   - nagios-plugins-tcp
+  - nagios-plugins-dummy
 # need to restart when we install a new plugin
   notify: Verify config and restart nagios
 
