@@ -1,0 +1,5 @@
+---
+- hosts: nagios
+  roles:
+  - role: nsca
+    nsca_password: "{{ lookup('password', '~/nsca_password') }}"   
