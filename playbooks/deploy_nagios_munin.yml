@@ -2,4 +2,9 @@
 - hosts: nagios
   roles:
   - role: nsca
-    nsca_password: "{{ lookup('password', '~/nsca_password') }}"   
+    nsca_password: "{{ lookup('password', '~/nsca_password') }}"
+
+- hosts: munin
+  roles:
+  - role: nsca_client
+    nsca_password: "{{ lookup('password', '~/nsca_password') }}"
