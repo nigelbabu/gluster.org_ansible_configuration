@@ -8,6 +8,13 @@
     - {host: build.gluster.org, use_ssl: True}
     - {host: munin.gluster.org, use_ssl: True}
     - {host: download.gluster.org, use_ssl: True}
+    - {host: bugs.gluster.org, use_ssl: True}
+    - {host: planet.gluster.org, use_ssl: True}
+    - {host: softserve.gluster.org, use_ssl: True}
+    - {host: docs.gluster.org, use_ssl: True} 
+    - {host: bits.gluster.org, use_ssl: True}
+    - {host: ci-logs.gluster.org, use_ssl: True}
+    - {host: fstat.gluster.org, use_ssl: True}
 #   see private repo for the lists of admins
 #    admins:
 
