@@ -1,0 +1,5 @@
+---
+- name: Link munin to nagios
+  template:
+    dest: /etc/munin/conf.d/alert_nagios.conf
+    src: alert_nagios.conf 
