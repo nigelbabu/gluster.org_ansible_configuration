@@ -4,5 +4,5 @@
     src: nagios_base.cfg
     dest: /etc/nagios/conf.d/{{ inventory_hostname }}_base.cfg
   delegate_to: "{{ item }}"
-  notify: verify config and restart nagios
+  notify: Verify config and restart nagios
   with_items: "{{ nagios_server }}"
