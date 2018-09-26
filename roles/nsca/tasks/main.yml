@@ -17,7 +17,7 @@
 
 - name: Open firewall for DNS
   firewalld: 
-    port: 5667
+    port: 5667/tcp
     permanent: True
     state: enabled
     immediate: yes
