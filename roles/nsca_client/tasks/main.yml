@@ -4,7 +4,8 @@
     state: installed
 
 - template:
-    dest: /etc/nagios/send_nsca.cfg
+    dest: /etc/send_nsca.cfg
     src: send_nsca.cfg
     group: munin
     mode: 0640 
+    setype: munin_etc_t
