@@ -11,3 +11,8 @@
   - role: munin_nagios_alerting
     nagios_server: nagios.int.rht.gluster.org
 
+  tasks:
+  - name: Work around lack of selinux for send ncsa 
+    selinux_permissive:
+    name: munin_t
+    permissive: true
