@@ -14,5 +14,5 @@
   tasks:
   - name: Work around lack of selinux for send ncsa 
     selinux_permissive:
-    name: munin_t
-    permissive: true
+      name: munin_t
+      permissive: true
