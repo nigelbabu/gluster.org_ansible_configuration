@@ -9,3 +9,4 @@
     name: nagios
     state: restarted
   delegate_to: "{{ nagios_server }}"
+  run_once: True
