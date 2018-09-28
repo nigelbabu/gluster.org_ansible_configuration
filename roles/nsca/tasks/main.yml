@@ -15,7 +15,7 @@
     name: nsca
     state: started
 
-- name: Open firewall for DNS
+- name: Open firewall for nsca
   firewalld: 
     port: 5667/tcp
     permanent: True
