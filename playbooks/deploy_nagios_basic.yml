@@ -9,3 +9,13 @@
   - role: nagios_monitored_nrpe
     nagios_server: nagios.int.rht.gluster.org
     nagios_ip: 172.24.1.63
+
+- hosts: squid_unbound
+  roles:
+  - role: nagios_monitored_nrpe_process
+    nagios_server: nagios.int.rht.gluster.org
+    nagios_ip: 172.24.1.63
+    processes:
+    - {name: unbound}
+    - {name: squid}
+    - {name: keepalived}
