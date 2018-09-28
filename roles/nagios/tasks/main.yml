@@ -2,17 +2,16 @@
 - name: Install nagios packages
   package:
     state: present
-    pkg: "{{ item }}"
-  with_items:
-  - nagios
-  - nagios-plugins-http
-  - nagios-plugins-ping
-  - nagios-plugins-ssh
-  - nagios-plugins-nrpe
-  - nagios-plugins-smtp
-  - nagios-plugins-by_ssh
-  - nagios-plugins-tcp
-  - nagios-plugins-dummy
+    pkg:
+    - nagios
+    - nagios-plugins-http
+    - nagios-plugins-ping
+    - nagios-plugins-ssh
+    - nagios-plugins-nrpe
+    - nagios-plugins-smtp
+    - nagios-plugins-by_ssh
+    - nagios-plugins-tcp
+    - nagios-plugins-dummy
 # need to restart when we install a new plugin
   notify: Verify config and restart nagios
 

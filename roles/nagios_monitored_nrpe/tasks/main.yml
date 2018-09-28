@@ -2,15 +2,14 @@
 - name: Install NRPE and plugins
   package:
     state: installed
-    name: "{{ item }}"
-  with_items:
-  - nrpe
-  - nagios-plugins-load
-  - nagios-plugins-uptime
-  - nagios-plugins-check-updates
-  - nagios-plugins-procs
-  - nagios-plugins-file_age
-  - nagios-plugins-swap
+    name:
+    - nrpe
+    - nagios-plugins-load
+    - nagios-plugins-uptime
+    - nagios-plugins-check-updates
+    - nagios-plugins-procs
+    - nagios-plugins-file_age
+    - nagios-plugins-swap
 
 - name: Fix allowed_hosts in NRPE
   lineinfile:
