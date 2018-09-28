@@ -1,6 +1,6 @@
 - name: Deploy NRPE process checks
   template:
-    dest: /etc/nrpe.d/check_{{ item.name }}.cfg
+    dest: /etc/nrpe.d/check_proc_{{ item.name }}.cfg
     src: check_procs.cfg
     mode: 0644 
     owner: root
