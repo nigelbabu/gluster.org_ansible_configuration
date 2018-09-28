@@ -19,6 +19,13 @@
     line: "allowed_hosts=127.0.0.1,{{ nagios_ip }}"
   notify: Restart nrpe
 
+- name: Add configuration for default checks
+  template:
+    dest: /etc/nrpe.d/{{ service.check }}.cfg  
+    src: check_base.cfg     
+  notify: Restart nrpe
+  with_items: "{{ nrpe_services }}"
+
 - name: Start NRPE service
   service:
     name: nrpe
