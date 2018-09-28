@@ -1,0 +1,9 @@
+#!/bin/bash
+/usr/sbin/getenforce | /bin/grep -q Enforcing
+if [ $? -eq 0 ]; then
+    echo "SELinux OK"
+    exit 0
+else
+    echo "SELinux is not active: $(/usr/sbin/getenforce 2>&1)"
+    exit 2
+fi;

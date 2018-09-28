@@ -1,0 +1,24 @@
+---
+- name: Deploy the check_selinux script
+  copy:
+    dest: /usr/local/bin/check_selinux
+    src: check_selinux
+    mode: 0755 
+    owner: root
+    group: root
+    setype: nagios_unconfined_plugin_exec_t
+  
+- name: Set the file context for check_selinux
+  sefcontext:
+    target: /usr/local/bin/check_selinux
+    setype: nagios_unconfined_plugin_exec_t
+    state: present
+  
+- name: Add the nrpe config for check_selinux
+  copy:
+    dest: /etc/nrpe.d/check_selinux.cfg
+    src: check_selinux.cfg
+    mode: 0644
+    owner: root
+    group: nrpe
+  notify: Restart nrpe
