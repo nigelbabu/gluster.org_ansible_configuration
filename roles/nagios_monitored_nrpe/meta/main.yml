@@ -1,3 +1,3 @@
 ---
 dependencies:
-- nagios_monitored
+- role: nagios_monitored
