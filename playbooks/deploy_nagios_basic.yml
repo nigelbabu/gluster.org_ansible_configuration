@@ -21,6 +21,7 @@
     - {name: keepalived}
 
 - hosts: monitoring_from_inside:!freebsd:!debian 
+  roles:
   - role: nagios_monitored_nrpe_selinux
     nagios_server: nagios.int.rht.gluster.org
     nagios_ip: 172.24.1.63
