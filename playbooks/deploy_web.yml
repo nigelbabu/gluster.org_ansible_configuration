@@ -4,13 +4,6 @@
     website_domain: supercolony.gluster.org
     redirect:    https://supercolony.gluster.org/
 
-  - role: httpd_www
-    website_domain: www.gluster.org
-    server_aliases:
-    - oldwww.gluster.org
-    document_root: /srv/middleman_website/www/web/master/
-    sync_user: deploy_website 
-
   - role: httpd
     website_domain: gluster.org
     server_aliases:
