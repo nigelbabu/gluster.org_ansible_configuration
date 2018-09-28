@@ -31,7 +31,8 @@
 
 - name: Open firewall for NRPE (firewalld)
   firewalld:
-    permanent: true
+    permanent: True
+    immediate: True
     state: enabled
     rich_rule: 'rule family="ipv4" port port=5666 protocol=tcp source address="{{ nagios_ip }}" accept'
   when: ansible_distribution == 'Fedora' or ansible_distribution_major_version == '7'
