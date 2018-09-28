@@ -12,6 +12,8 @@
     - nagios-plugins-by_ssh
     - nagios-plugins-tcp
     - nagios-plugins-dummy
+    - nagios-plugins-dns
+    - nagios-plugins-pgsql
 # need to restart when we install a new plugin
   notify: Verify config and restart nagios
 
