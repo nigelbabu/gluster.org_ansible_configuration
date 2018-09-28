@@ -21,7 +21,7 @@
 
 - name: Add configuration for default checks
   template:
-    dest: /etc/nrpe.d/{{ service.check }}.cfg  
+    dest: /etc/nrpe.d/{{ item.check }}.cfg  
     src: check_base.cfg     
   notify: Restart nrpe
   with_items: "{{ nrpe_services }}"
