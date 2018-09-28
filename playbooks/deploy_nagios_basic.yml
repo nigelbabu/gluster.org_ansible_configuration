@@ -3,3 +3,9 @@
   roles:
   - role: nagios_monitored
     nagios_server: nagios.int.rht.gluster.org
+
+- hosts: munin.int.rht.gluster.org
+  roles:
+  - role: nagios_monitored_nrpe
+    nagios_server: nagios.int.rht.gluster.org
+    nagios_ip: 172.24.1.63
