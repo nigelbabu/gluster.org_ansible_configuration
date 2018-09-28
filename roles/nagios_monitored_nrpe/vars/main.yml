@@ -1,0 +1,6 @@
+---
+nrpe_services:
+- desc: Load
+  check: check_load   
+- desc: Zombies
+  check: check_zombie_procs 
