@@ -22,3 +22,11 @@
     owner: root
     group: nrpe
   notify: Restart nrpe
+
+- name: Deploy NRPE check on nagios server for SELinux
+  template:
+    dest: /etc/nagios/conf.d/{{ inventory_hostname }}_nrpe_selinux.cfg
+    src: nrpe_selinux.cfg
+  delegate_to: "{{ item }}"
+  notify: Verify config and restart nagios
+  with_items: "{{ nagios_server }}"
