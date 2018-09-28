@@ -1,0 +1,20 @@
+- name: Deploy NRPE process checks
+  template:
+    dest: /etc/nrpe.d/check_{{ item.name }}.cfg
+    src: check_procs.cfg
+    mode: 0644 
+    owner: root
+    group: nrpe
+  with_items:
+  - { name: crond }
+  - { name: rsyslogd }
+  - "{{ processes }}"
+  notify: Restart nrpe
+
+- name: Deploy NRPE check on nagios server
+  template:
+    dest: /etc/nagios/conf.d/{{ inventory_hostname }}_nrpe_procs.cfg
+    src: nrpe_procs.cfg 
+  delegate_to: "{{ item }}"
+  notify: Verify config and restart nagios
+  with_items: "{{ nagios_server }}"
