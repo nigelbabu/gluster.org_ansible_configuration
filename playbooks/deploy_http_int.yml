@@ -2,7 +2,7 @@
 - hosts: http.int.rht.gluster.org
   roles:
   - role: httpd_planet
-    website_domain: planet.int.rht.gluster.org
+    _website_domain: planet.int.rht.gluster.org
     server_aliases:
     - planet.gluster.org
     sync_user: deploy_website
@@ -11,7 +11,7 @@
   - role: scp_http_int
     target_name: ci-logs
     scp_dest: /var/www/glusterfs-logs
-    website_domain: http.int.rht.gluster.org
+    _website_domain: ci-logs.gluster.org
     document_root: /var/www/glusterfs-logs
 
   - role: scp_http_int
@@ -24,6 +24,5 @@
       match: True
 
   - role: httpd_enable_index
-    website_domain: bits.int.rht.gluster.org
+    _website_domain: bits.int.rht.gluster.org
     document_root: /var/www/bits
-
