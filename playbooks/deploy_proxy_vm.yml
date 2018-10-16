@@ -3,17 +3,6 @@
   roles:
   - role: guest_proxy_rht
     vars:
-      name: proxy.rht.gluster.org
-    distribution: Centos
-    version: 7
-    network:
-      ip: 8.43.85.175/24
-      gateway: 8.43.85.254
-
-- hosts: myrmicinae.rht.gluster.org
-  roles:
-  - role: guest_proxy_rht
-    vars:
       name: proxy01.rht.gluster.org
     distribution: Fedora
     version: 28
