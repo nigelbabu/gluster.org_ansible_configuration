@@ -1,4 +1,0 @@
-- hosts: all:!freebsd:!supercolony.gluster.org
-  roles:
-  - role: rsyslog
-    syslog_server: syslog01.rax.gluster.org

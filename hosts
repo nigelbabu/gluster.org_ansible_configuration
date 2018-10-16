@@ -8,12 +8,6 @@ ant-queen.int.rht.gluster.org
 [backups]
 backups.int.rht.gluster.org
 
-#[freeipa]
-#freeipa01.rax.gluster.org
-
-[syslog]
-syslog01.rax.gluster.org
-
 [webbuilder]
 webbuilder.int.rht.gluster.org
 
@@ -50,7 +44,6 @@ proxy_ha
 firewall_rht
 
 [munin]
-munin.rax.gluster.org
 munin.int.rht.gluster.org
 
 [freebsd:vars]
