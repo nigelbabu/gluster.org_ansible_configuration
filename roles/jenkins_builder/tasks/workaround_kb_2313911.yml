@@ -1,6 +1,0 @@
-# needed to work around https://access.redhat.com/solutions/2313911
-# until centos catch up
-- copy:
-    dest: /etc/environment
-    content: "NSS_DISABLE_HW_AES=1\n"
-
