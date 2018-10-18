@@ -31,7 +31,6 @@ softserve.rht.gluster.org
 postgresql.rht.gluster.org
 gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
 jenkins-stage.rht.gluster.org
-bugziller.rht.gluster.org
 softserve.rht.gluster.org
 jenkins-el7.rht.gluster.org
 
@@ -135,7 +134,6 @@ signer.int.rht.gluster.org
 aide.int.rht.gluster.org
 
 [bugziller]
-bugziller.rht.gluster.org
 bugziller.int.rht.gluster.org
 
 [firewall_rht]
