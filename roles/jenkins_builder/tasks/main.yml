@@ -26,11 +26,11 @@
     src: sudoers_jenkins
 
 # TODO /home should be 755
-# TODO set a static password
 - name: Create jenkins user
   user:
     name: jenkins
     groups: wheel
+    password: "{{ jenkins_user_password |default(omit) }}"
 
 - import_tasks: setup_auth_rax.yml
   when: location == 'rax'
