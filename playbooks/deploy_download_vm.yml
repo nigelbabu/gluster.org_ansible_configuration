@@ -1,0 +1,42 @@
+---
+- hosts: myrmicinae.rht.gluster.org
+  roles:
+  - role: guest_virt_install
+    vars:
+      name: download.rht.gluster.org
+    system_disk_size: 20
+    data_disk_size: 80
+    mem_size: 2048
+    distribution: Centos
+    version: 7
+    bridge: "{{ bridge_public }}"
+    network:
+      ip: 8.43.85/24
+      gateway: 8.43.85.254
+
+
+- hosts: download.rht.gluster.org
+  vars:
+    vg: "vg_data_{{ ansible_hostname }}"
+    lv: "var_www"
+    dev: "/dev/mapper/{{ vg }}-{{ lv }}"
+    fs: xfs
+  tasks:
+  - filesystem:
+      dev: /dev/vdb
+      fstype: lvm
+  - lvg:
+      vg: "{{ vg }}"
+      pvs: /dev/vdb
+  - lvol:
+      vg: "{{ vg }}"
+      lv: "{{ lv }}"
+      size: 75G
+  - filesystem:
+      fstype: "{{ fs }}"
+      dev: "{{ dev }}"
+  - mount:
+      name: /var/www/
+      src: "{{ dev }}"
+      fstype: "{{ fs }}"
+      state: mounted
