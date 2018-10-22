@@ -71,4 +71,8 @@
     backends:
     - bugs.rax.gluster.org
 
-
+  - role: nginx_proxy_vhost
+    domain: download.gluster.org
+    backends:
+    - download01.rax.gluster.org
+    generate_certificates: False
