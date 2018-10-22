@@ -11,7 +11,7 @@
     version: 7
     bridge: "{{ bridge_public }}"
     network:
-      ip: 8.43.85/24
+      ip: 8.43.85.175/24
       gateway: 8.43.85.254
 
 
