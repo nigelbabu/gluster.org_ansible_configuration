@@ -1,14 +1,13 @@
 - hosts: download
   tasks:
-  - package: state=present name=createrepo
+  - package:
+        state: present
+        name: createrepo
   # temporary until freeipa is properly setup
   - copy:
-      dest: /etc/sudoers.d/kkeithley
-      content: "kkeithley ALL= ALL"
+      dest: /etc/sudoers.d/kkeithle
+      content: "kkeithle ALL= ALL"
   roles:
   - role: httpd_download
     website_domain: download.gluster.org
     document_root: /var/www/html
-  - rsync_bitergia
-#  - role: static_analysis
-#    website_domain: download.gluster.org
