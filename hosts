@@ -167,7 +167,9 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gl
 
 # group for servers using the proxy as a test
 [set_proxy]
+builder6.int.rht.gluster.org
 builder7.int.rht.gluster.org
+builder8.int.rht.gluster.org
 freebsd10.3.int.rht.gluster.org
 ant-queen.int.rht.gluster.org
 munin.int.rht.gluster.org
