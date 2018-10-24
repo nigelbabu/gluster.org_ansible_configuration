@@ -68,4 +68,12 @@
     state: started
     enabled: yes
 
+- name: Deploy helpers scripts
+  copy:
+    dest: "/usr/local/bin/{{ item }}"
+    src: "{{ item }}"
+    mode: 0755
+  with_items:
+  - notify-host-by-email-pager.sh
+ 
 - include: httpd.yml
