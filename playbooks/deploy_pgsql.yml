@@ -13,4 +13,11 @@
     - name: "softserve"
       address: "8.43.85.186/32"
   - role: postgresql_backups
+  tasks:
+  - name: Open firewall for the internal range only
+    firewalld:
+      permanent: True
+      immediate: True
+      state: enabled
+      rich_rule: 'rule family="ipv4" port port=5432 protocol=tcp source address="8.43.85.128/26" accept'
 
