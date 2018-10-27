@@ -74,6 +74,6 @@
     src: "{{ item }}"
     mode: 0755
   with_items:
-  - notify-host-by-email-pager.sh
+  - notify-by-email-pager.sh
  
 - include: httpd.yml
