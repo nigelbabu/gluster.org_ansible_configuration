@@ -17,6 +17,14 @@
 # need to restart when we install a new plugin
   notify: Verify config and restart nagios
 
+- name: Enable env var for notification
+  lineinfile:
+    path: /etc/nagios/nagios.cfg
+    state: present
+    regexp: '^enable_environment_macros='
+    line: 'enable_environment_macros=1'
+  notify: Verify config and restart nagios
+
 - name: Deploy check_nrpe config
   copy:
     src: "{{ item }}"
