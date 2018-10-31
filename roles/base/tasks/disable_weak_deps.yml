@@ -1,0 +1,6 @@
+- name: Disable the weak deps for DNF
+  ini_file:
+    path: /etc/dnf/dnf.conf
+    section: main
+    option: install_weak_deps
+    value: False

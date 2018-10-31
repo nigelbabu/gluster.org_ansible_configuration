@@ -9,5 +9,8 @@
 
 - include_tasks: timezone.yml
 
+- include_tasks: disable_weak_deps.yml
+  when: ansible_pkg_mgr == 'dnf'
+ 
 - include_tasks: freebsd.yml
   when: ansible_system == 'FreeBSD'
