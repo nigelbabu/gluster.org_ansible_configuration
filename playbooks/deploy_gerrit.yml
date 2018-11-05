@@ -17,9 +17,9 @@
 #    - repo: glusto-tests
 #      github_user: gluster
 #      keyfile: gluster-glusto-tests
-#    - repo: gluster-block
+#    - repo: glusto-libs
 #      github_user: gluster
-#      keyfile: gluster-gluster-block
+#      keyfile: gluster-glusto-libs
 #    gerrit_domain: review.gluster.org
 #    gerrit_email: review@review.gluster.org
 #    gerrit_home: review.gluster.org
