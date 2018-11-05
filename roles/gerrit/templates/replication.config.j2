@@ -4,4 +4,5 @@
     push = +refs/tags/*:refs/tags/*
     url = ssh://git@{{repo.repo}}.github.com/{{repo.github_user}}/${name}.git
     projects = {{repo.repo}}
+    rescheduleDelay = 15
 {% endfor %}
