@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ "$NAGIOS_SERVICEDESC" -ne "" ]]; then 
+if [[ ! -z "$NAGIOS_SERVICEDESC" ]]; then 
     SERVICEDESC="/$NAGIOS_SERVICEDESC"
     OUTPUT="$NAGIOS_SERVICEOUTPUT"
 else
