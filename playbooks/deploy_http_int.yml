@@ -8,26 +8,29 @@
     sync_user: deploy_website
     document_root: /var/www/planet
 
+- hosts: http.int.rht.gluster.org
+  vars:
+    document_root: /var/www/glusterfs-logs
+    website_domain: ci-logs.gluster.org
+  roles:
   - role: scp_http_int
     target_name: ci-logs
     scp_dest: /var/www/glusterfs-logs
-    website_domain: http.int.rht.gluster.org
-    document_root: /var/www/glusterfs-logs
 
   - role: httpd_enable_index
-    website_domain: http.int.rht.gluster.org
-    document_root: /var/www/glusterfs-logs
 
-  - role: scp_http_int
-    scp_dest: /var/www/bits
-    user: _bits-gluster
-    target_name: bits
+- hosts: http.int.rht.gluster.org
+  vars:
+    website_domain: bits.int.rht.gluster.org
+    document_root: /var/www/bits
     redirects:
     - src: '^/$'
       target: '/pub'
       match: True
+  roles:
+  - role: scp_http_int
+    scp_dest: /var/www/bits
+    user: _bits-gluster
+    target_name: bits
 
   - role: httpd_enable_index
-    website_domain: bits.int.rht.gluster.org
-    document_root: /var/www/bits
-
