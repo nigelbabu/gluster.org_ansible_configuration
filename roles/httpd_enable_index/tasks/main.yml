@@ -4,3 +4,9 @@
     dest: "/etc/httpd/conf.d/{{ _website_domain }}.conf.d/directory_index.conf"
     content: "Options +Indexes"
   notify: verify config and restart httpd
+
+- name: Disable welcome page systemwide
+  copy:
+    dest: /etc/httpd/conf.d/welcome.conf
+    content: ""
+  notify: verify config and restart httpd
