@@ -1,3 +1,4 @@
 ---
- - include: user_creation.yml
- - include: http_int_credential.yml
+- include: user_creation.yml
+- include: http_int_credential.yml
+- include: http_index.yml

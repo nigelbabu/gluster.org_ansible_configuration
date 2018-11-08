@@ -17,8 +17,6 @@
     target_name: ci-logs
     scp_dest: /var/www/glusterfs-logs
 
-  - role: httpd_enable_index
-
 - hosts: http.int.rht.gluster.org
   vars:
     website_domain: bits.int.rht.gluster.org
@@ -32,5 +30,3 @@
     scp_dest: /var/www/bits
     user: _bits-gluster
     target_name: bits
-
-  - role: httpd_enable_index
