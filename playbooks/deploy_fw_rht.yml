@@ -13,6 +13,7 @@
     zone: interco_fw
   - role: keepalived
     master: masa
+    use_firewalld: False
     group: firewall_rht
     vip:
       public:
