@@ -2,6 +2,7 @@
 - hosts: firewall_rht
   vars:
     outgoing_ip: 8.43.85.181
+    use_firewalld: False
   roles:
   - role: network_conf_ifcfg
     interface: "{{ common_interface }}"
@@ -13,7 +14,6 @@
     zone: interco_fw
   - role: keepalived
     master: masa
-    use_firewalld: False
     group: firewall_rht
     vip:
       public:
