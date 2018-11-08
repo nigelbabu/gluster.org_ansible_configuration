@@ -12,6 +12,13 @@
 # make sure firewalld is not running, since it
 # make the postrouting stuff fail by default
 
+- name: Stop firewalld service
+  service:
+    name: firewalld
+    state: stopped
+    enabled: False
+  ignore_errors: True
+
 # do not start until everything is ready
 - name: Start nftables service
   service:
