@@ -32,7 +32,7 @@
     state: present
     value: 1
 
-- name: Remove firewalld
-  package:
-    name: firewalld
-    state: absent
+#- name: Remove firewalld
+#  package:
+#    name: firewalld
+#    state: absent
