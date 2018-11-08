@@ -7,11 +7,9 @@
   - role: network_conf_ifcfg
     interface: "{{ common_interface }}"
     ip: "{{ common_ip }}/24"
-    zone: dmz
   - role: network_conf_ifcfg
     interface: "{{ interco_fw_interface }}"
     ip: "{{ interco_fw_ip }}/24"
-    zone: interco_fw
   - role: keepalived
     master: masa
     group: firewall_rht
@@ -27,14 +25,4 @@
   - role: conntrackd
     sync_interface: "{{ interco_fw_interface }}"
     group: firewall_rht
-#  - role: firewall_cage
   - role: nftables
-
-- hosts: chrono.rht.gluster.org
-  roles:
-  - role: network_conf_ifcfg
-    interface: "{{ common_interface }}"
-    ip: "{{ common_ip }}/24"
-    zone: dmz
-  - role: nftables
-    outgoing_ip: 8.43.85.172
