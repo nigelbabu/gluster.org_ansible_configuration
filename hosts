@@ -40,7 +40,7 @@ download.rht.gluster.org
 
 [community_cage:children]
 int_rht_gluster_org
-proxy_ha
+proxy
 firewall_rht
 
 [munin]
@@ -125,7 +125,7 @@ postgresql.rht.gluster.org
 fstat.rht.gluster.org
 
 
-[proxy_ha]
+[proxy]
 proxy01.int.rht.gluster.org
 proxy02.int.rht.gluster.org
 

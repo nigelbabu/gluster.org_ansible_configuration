@@ -1,9 +1,9 @@
 ---
-- hosts: proxy_ha
+- hosts: proxy
   roles:
   - role: keepalived
     master: proxy01.rht.gluster.org
-    group: proxy_ha
+    group: proxy
     vip:
       public:
         interface: eth0
@@ -17,7 +17,7 @@
     when: ansible_eth1.ipv4.address != internal_ip
 
   - role: cert_syncer
-    group: proxy_ha
+    group: proxy
     interface: eth1
 
   - role: nginx_proxy_vhost
@@ -75,4 +75,3 @@
     domain: download.gluster.org
     backends:
     - download01.rax.gluster.org
-    generate_certificates: False
