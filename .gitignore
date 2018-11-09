@@ -1,7 +1,6 @@
 *.sw*
 *.retry
 roles/bastion
-roles/salt_transport
 roles/httpd
 roles/freeipa
 roles/openssh
@@ -17,7 +16,6 @@ roles/lvm_config
 roles/memcached
 roles/pf_firewall
 roles/tor
-roles/salt
 roles/unattended_updates
 roles/postgrey
 roles/guest_virt_install
