@@ -5,7 +5,6 @@ roles/httpd
 roles/openssh
 roles/selinux
 roles/shell_timeout
-roles/rsyslog
 roles/builder
 roles/ntp
 roles/systemd_container

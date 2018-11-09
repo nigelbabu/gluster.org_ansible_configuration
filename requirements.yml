@@ -11,8 +11,6 @@
   name: openssh
 - src: https://github.com/OSAS/ansible-role-selinux
   name: selinux
-- src: https://github.com/OSAS/ansible-role-rsyslog
-  name: rsyslog
 - src: https://github.com/OSAS/ansible-role-web_builder
   name: builder
 - src: git+https://gitlab.com/osas/ansible-role-ntp.git
