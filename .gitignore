@@ -2,7 +2,6 @@
 *.retry
 roles/bastion
 roles/httpd
-roles/freeipa
 roles/openssh
 roles/selinux
 roles/shell_timeout
