@@ -7,7 +7,6 @@ roles/selinux
 roles/shell_timeout
 roles/builder
 roles/ntp
-roles/systemd_container
 roles/libvirt
 roles/munin
 roles/lvm_config
