@@ -1,0 +1,6 @@
+---
+- name: Install unbound
+  package:
+    name: unbound-munin
+    state: installed
+# TODO restart munin ?
