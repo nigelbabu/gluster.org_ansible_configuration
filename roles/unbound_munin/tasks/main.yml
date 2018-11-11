@@ -8,6 +8,6 @@
   shell: for i in /usr/share/munin/plugins/unbound_*; do ln -s $i; done
   args:
     chdir: /etc/munin/plugins/
-    creates: /usr/share/munin/plugins/unbound_munin_queue
+    creates: /etc/munin/plugins/unbound_munin_queue
 
 # TODO restart munin ?
