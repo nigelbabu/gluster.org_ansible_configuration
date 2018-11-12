@@ -10,7 +10,6 @@
 
 - hosts: http.int.rht.gluster.org
   vars:
-    document_root: /var/www/glusterfs-logs
     website_domain: ci-logs.gluster.org
   roles:
   - role: scp_http_int
@@ -20,7 +19,6 @@
 - hosts: http.int.rht.gluster.org
   vars:
     website_domain: bits.int.rht.gluster.org
-    document_root: /var/www/bits
     redirects:
     - src: '^/$'
       target: '/pub'
