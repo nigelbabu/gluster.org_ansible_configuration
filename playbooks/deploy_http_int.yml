@@ -28,3 +28,12 @@
     scp_dest: /var/www/bits
     user: _bits-gluster
     target_name: bits
+
+- hosts: http.int.rht.gluster.org
+  vars:
+    website_domain: bugs.int.rht.gluster.org
+  roles:
+  - role: scp_http_int
+    scp_dest: /var/www/glusterfs-bugs
+    user: _bits-gluster
+    target_name: bits
