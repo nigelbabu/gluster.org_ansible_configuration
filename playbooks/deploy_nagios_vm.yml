@@ -14,7 +14,7 @@
       gateway: 172.24.1.181
 
 - hosts: nagios.int.rht.gluster.org
-   roles:
+  roles:
   - role: swap_file
     size: 1G
     path: /var/swap
