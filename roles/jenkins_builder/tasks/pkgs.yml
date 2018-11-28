@@ -96,6 +96,7 @@
     - python3-devel
     - python3-pylint
     - git-clang-format
+    - libtsan
   when: ansible_system == 'Linux' and ansible_distribution == 'Fedora'
 
 - name: Install jenkins builder Centos packages
