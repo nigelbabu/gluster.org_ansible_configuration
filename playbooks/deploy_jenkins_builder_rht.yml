@@ -154,3 +154,9 @@
       resizefs: True
     when: ansible_system == 'Linux'
 
+# Fedora
+- hosts: builder4[0-9].int.rht.gluster.org
+  roles:
+  - role: swap_file
+    size: 1G
+    path: /var/swap
