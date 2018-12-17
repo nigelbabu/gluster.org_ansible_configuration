@@ -3,3 +3,8 @@
   service: 
     name: nrpe
     state: restarted
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: yes
+  notify: Restart nrpe

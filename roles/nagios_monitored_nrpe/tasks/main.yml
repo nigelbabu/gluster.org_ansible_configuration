@@ -26,6 +26,19 @@
   notify: Restart nrpe
   with_items: "{{ nrpe_services }}"
 
+- name: Create nrpe.service.d
+  file:
+    name: /etc/systemd/system/nrpe.service.d/
+    state: directory
+  when: ansible_service_mgr == 'systemd'
+
+- name: Deploy systemd configuration to auto restart
+  copy:
+    dest: /etc/systemd/system/nrpe.service.d/restart.conf
+    src: restart.conf
+  notify: Reload systemd and restart
+  when: ansible_service_mgr == 'systemd'
+
 - name: Start NRPE service
   service:
     name: nrpe
@@ -51,3 +64,4 @@
   delegate_to: "{{ item }}"
   notify: Verify config and restart nagios
   with_items: "{{ nagios_server }}"
+
