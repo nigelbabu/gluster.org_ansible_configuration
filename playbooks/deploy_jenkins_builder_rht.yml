@@ -158,5 +158,5 @@
 - hosts: builder4[0-9].int.rht.gluster.org
   roles:
   - role: swap_file
-    size: 1G
+    size: 2G
     path: /var/swap
