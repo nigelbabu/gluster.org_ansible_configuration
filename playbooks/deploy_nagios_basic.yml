@@ -29,5 +29,6 @@
 - hosts: supercolony.rht.gluster.org
   roles:
   - role: nagios_monitored_nrpe_process
+    nagios_server: nagios.int.rht.gluster.org
     processes:
     - {name: postgrey}
