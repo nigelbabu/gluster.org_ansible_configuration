@@ -25,3 +25,9 @@
   - role: nagios_monitored_nrpe_selinux
     nagios_server: nagios.int.rht.gluster.org
     nagios_ip: 172.24.1.63
+
+- hosts: supercolony.rht.gluster.org
+  roles:
+  - role: nagios_monitored_nrpe_process
+    processes:
+    - {name: postgrey}
