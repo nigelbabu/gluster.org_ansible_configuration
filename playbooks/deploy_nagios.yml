@@ -19,6 +19,6 @@
     - {host: lists.gluster.org, use_ssl: True}
     # beware, this one requires the host to be declared first
     smtp_servers:
-    - supercolony.gluster.org
+    - supercolony.rht.gluster.org
 #   see private repo for the lists of admins
 #    admins:
