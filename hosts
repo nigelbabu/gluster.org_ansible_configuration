@@ -107,7 +107,7 @@ jenkins-stage.rht.gluster.org
 jenkins-el7.rht.gluster.org
 
 [download]
-download01.rax.gluster.org
+#download01.rax.gluster.org
 download.rht.gluster.org
 
 [web]
