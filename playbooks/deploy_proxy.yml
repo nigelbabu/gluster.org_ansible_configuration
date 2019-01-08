@@ -74,4 +74,5 @@
   - role: nginx_proxy_vhost
     domain: download.gluster.org
     backends:
-    - download.rht.gluster.org
+    - download01.rax.gluster.org
+
