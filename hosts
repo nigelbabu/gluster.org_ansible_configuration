@@ -51,7 +51,6 @@ munin.int.rht.gluster.org
 ansible_python_interpreter=/usr/local/bin/python
 
 [freebsd]
-freebsd0.cloud.gluster.org
 freebsd10.3.int.rht.gluster.org
 
 [python3:vars]
@@ -73,8 +72,6 @@ builder50.int.rht.gluster.org
 [jenkins_builders_rax:vars]
 location=rax
 
-[jenkins_builders_rackspace:vars]
-location=rackspace
 
 [jenkins_builders_rht:vars]
 location=rht
@@ -82,8 +79,6 @@ location=rht
 [jenkins_builders_rax]
 builder[100:109].cloud.gluster.org
 
-[jenkins_builders_rackspace]
-freebsd0.cloud.gluster.org
 
 [jenkins_builders_rht]
 freebsd10.3.int.rht.gluster.org
@@ -91,7 +86,6 @@ builder[0:49].int.rht.gluster.org
 
 [jenkins_builders:children]
 jenkins_builders_rht
-jenkins_builders_rackspace
 jenkins_builders_rax
 
 [container_pipeline_builders]
