@@ -33,7 +33,7 @@
     password: "{{ jenkins_user_password |default(omit) }}"
 
 - import_tasks: setup_auth_rax.yml
-  when: location == 'rax'
+  when: location == 'rax' or location == 'aws'
 
 - name: Start and enable rpc-statd
   service:
@@ -85,7 +85,7 @@
     owner: jenkins
     group: jenkins
     mode: g+s
-  when: ansible_system == 'Linux'
+  when: ansible_system == 'Linux' and location != 'aws'
 
 - name: Setup group acl for /home/jenkins/root/workspace
   acl:
@@ -96,7 +96,7 @@
     recursive: yes
     default: yes
     state: present
-  when: ansible_system == 'Linux'
+  when: ansible_system == 'Linux' and location != 'aws'
 
 - name: Symlink /d/build to /build
   file: src=/d/build dest=/build state=link

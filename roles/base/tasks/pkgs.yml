@@ -42,6 +42,7 @@
     name: "{{ item }}"
   with_items:
   - vim-enhanced
+  - firewalld
   when: ansible_distribution == 'Fedora' or ansible_distribution == 'CentOS'
 
 - package:
