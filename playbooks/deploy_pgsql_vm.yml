@@ -13,7 +13,7 @@
       ip: 8.43.85.170/24
       gateway: 8.43.85.254
 
-- hosts: myrmicinae.rht.gluster.org
+- hosts: formicary.rht.gluster.org
   roles:
   - role: guest_virt_install
     vars:
