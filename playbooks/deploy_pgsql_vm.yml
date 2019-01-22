@@ -13,4 +13,18 @@
       ip: 8.43.85.170/24
       gateway: 8.43.85.254
 
+- hosts: myrmicinae.rht.gluster.org
+  roles:
+  - role: guest_virt_install
+    vars:
+      name: postgresql.int.rht.gluster.org
+    system_disk_size: 20
+    mem_size: 2048
+    distribution: Centos
+    version: 7
+    bridge: "{{ bridge_common }}"
+    network:
+      ip: 172.24.1.64/24
+      gateway: 172.24.1.181
+
 
