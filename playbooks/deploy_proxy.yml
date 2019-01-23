@@ -69,7 +69,7 @@
   - role: nginx_proxy_vhost
     domain: bugs.gluster.org
     backends:
-    - bugs.rax.gluster.org
+    - bugs.int.rht.gluster.org
 
   - role: nginx_proxy_vhost
     domain: download.gluster.org
