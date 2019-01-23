@@ -21,3 +21,14 @@
       state: enabled
       rich_rule: 'rule family="ipv4" port port=5432 protocol=tcp source address="8.43.85.128/26" accept'
 
+
+- hosts: postgresql.int.rht.gluster.org
+  roles:
+  - role: postgresql
+    listen_addresses: "localhost,172.24.1.64"
+    databases_auth:
+    - name: "fstat"
+      address: "172.24.1.66/32"
+    - name: "softserve"
+      address: "172.24.1.65/32"
+
