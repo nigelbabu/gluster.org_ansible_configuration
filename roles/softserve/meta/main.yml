@@ -4,4 +4,5 @@ dependencies:
   vhost_name: "{{ ansible_nodename }}"
   vhost_aliases:
   - softserve.gluster.org
+  - softserve.test.gluster.org
 - role: redis
