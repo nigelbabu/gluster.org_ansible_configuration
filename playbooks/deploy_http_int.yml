@@ -39,3 +39,7 @@
     scp_dest: /var/www/glusterfs-bugs
     user: _bits-gluster
     target_name: bits
+    - src: '^/$'
+      target: '/gluster-bugs.html'
+      match: True
+
