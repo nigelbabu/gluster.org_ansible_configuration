@@ -110,13 +110,6 @@
 - name: Symlink /d/build to /build
   file: src=/d/build dest=/build state=link
 
-- name: Link nginx config
-  file:
-    src: /opt/qa/nginx/default.conf
-    dest: /{% if ansible_system == 'FreeBSD'%}usr/local/{% endif %}etc/nginx/conf.d/archives.conf
-    state: link
-  notify: Verify config and restart nginx
-
 - name: Set selinux context for nginx
   sefcontext:
     target: "{{ item }}(/.*)?"
