@@ -31,4 +31,12 @@
       address: "172.24.1.66/32"
     - name: "softserve"
       address: "172.24.1.65/32"
+  tasks:
+  - name: Open firewall for the internal range only
+    firewalld:
+      permanent: True
+      immediate: True
+      state: enabled
+      service: postgresql
+
 
