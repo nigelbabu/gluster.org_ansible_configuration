@@ -31,7 +31,6 @@ softserve.rht.gluster.org
 postgresql.rht.gluster.org
 gerrit-stage.rht.gluster.org ansible_ssh_common_args='-o ProxyCommand="ssh -q -W 8.43.85.174:2222 root@myrmicinae.rht.gluster.org"'
 jenkins-stage.rht.gluster.org
-softserve.rht.gluster.org
 jenkins-el7.rht.gluster.org
 
 #build.gluster.org
@@ -157,6 +156,7 @@ squid02.int.rht.gluster.org
 nagios.int.rht.gluster.org
 munin.int.rht.gluster.org
 postgresql.int.rht.gluster.org
+softserve.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
