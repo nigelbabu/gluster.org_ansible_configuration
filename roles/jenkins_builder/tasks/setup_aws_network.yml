@@ -1,0 +1,27 @@
+---
+- name: Setup hostname
+  hostname: "{{ inventory_hostname }}"
+
+- name: Setup hosts file so that IP is in /etc/hosts
+  lineinfile:
+    state: present
+    dest: /etc/hosts
+    line: "{{ 127.0.0.1 }} {{ ansible_hostname }}"
+
+- name: Setup hosts file so that IP is in /etc/hosts
+  lineinfile:
+    state: present
+    dest: /etc/hosts
+    line: "{{ 127.0.0.1 }} {{ ansible_fqdn }}"
+
+- name: Remove the IPV6 entry
+  lineinfile:
+    state: absent
+    dest: /etc/hosts
+    regexp: "::1.*"
+
+- name: Setup DHCP client config so the nameservers are Google DNS servers
+  lineinfile:
+    state: present
+    dest: /etc/dhcp/dhclient.conf
+    line: "supersede domain-name-servers 8.8.8.8;"

@@ -1,2 +1,2 @@
 - name: run dracut
-  command: dracut -v -f
+  command: dracut -v -f -H

@@ -11,6 +11,13 @@
 - include: setup_rackspace_network.yml
   when: ansible_system == 'Linux' and location == 'rax'
 
+- include: setup_aws_network.yml
+  when: ansible_system == 'Linux' and location == 'aws'
+
+  # Flush dracut changes so it doesn't get lost with an error down the line
+- name: Apply change immediately
+  meta: flush_handlers
+
 - include: setup_disk_{{ location }}.yml
   when: ansible_system == 'Linux' and location
 
@@ -76,14 +83,16 @@
   file:
     state: directory
     path: /home/jenkins/root/workspace
+    recurse: yes
+    follow: no
+    owner: jenkins
+    group: jenkins
 
 - name: Setup permissions for /home/jenkins/root/workspace
   file:
     path: /home/jenkins/root/workspace
     recurse: yes
     follow: no
-    owner: jenkins
-    group: jenkins
     mode: g+s
   when: ansible_system == 'Linux' and location != 'aws'
 
@@ -114,7 +123,7 @@
     setype: public_content_t
   with_items:
   - /archives
-  when: ansible_system == 'Linux'
+  when: ansible_system == 'Linux' and location != 'aws'
 
 - sysctl:
     name: "{% if ansible_system == 'FreeBSD' %}kern.corefile{% else %}kernel.core_pattern{% endif %}"
