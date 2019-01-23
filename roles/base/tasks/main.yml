@@ -11,6 +11,8 @@
 
 - include_tasks: disable_weak_deps.yml
   when: ansible_pkg_mgr == 'dnf'
- 
+
 - include_tasks: freebsd.yml
   when: ansible_system == 'FreeBSD'
+
+- include_tasks: hostname.yml
