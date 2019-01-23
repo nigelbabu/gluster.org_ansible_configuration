@@ -32,6 +32,8 @@
 - hosts: http.int.rht.gluster.org
   vars:
     website_domain: bugs.int.rht.gluster.org
+    server_aliases:
+    - bugs.gluster.org
   roles:
   - role: scp_http_int
     scp_dest: /var/www/glusterfs-bugs
