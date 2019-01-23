@@ -157,6 +157,7 @@ nagios.int.rht.gluster.org
 munin.int.rht.gluster.org
 postgresql.int.rht.gluster.org
 softserve.int.rht.gluster.org
+fstat.int.rht.gluster.org
 
 [int_rht_gluster_org:vars]
 ansible_ssh_common_args='-o ProxyCommand="ssh -q -W %h:%p root@myrmicinae.rht.gluster.org"'
