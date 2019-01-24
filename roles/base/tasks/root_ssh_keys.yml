@@ -8,7 +8,8 @@
   - misc_backup.pub
   - nigel.pub
   - deepshikha.pub
-
+  - ant-queen.pub
+ 
 # key generated on a yubikey
 - name: Remove old keys
   authorized_key:
