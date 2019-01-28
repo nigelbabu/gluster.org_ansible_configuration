@@ -7,15 +7,15 @@
   lineinfile:
     state: present
     dest: /etc/hosts
-    line: "127.0.0.1 {{ inventory_hostname }}"
-  tags: debug
+    line: "127.0.0.1 {{ ansible_hostname }}"
+    insertbefore: BOF
 
 - name: Setup hosts file so that IP is in /etc/hosts
   lineinfile:
     state: present
     dest: /etc/hosts
-    line: "127.0.0.1 {{ ansible_hostname }}"
-  tags: debug
+    line: "127.0.0.1 {{ inventory_hostname }}"
+    insertbefore: BOF
 
 - name: Remove the IPV6 entry
   lineinfile:
