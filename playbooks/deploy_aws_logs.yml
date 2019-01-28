@@ -1,0 +1,9 @@
+---
+- hosts: logs.aws.gluster.org
+  vars:
+    website_domain: logs.aws.gluster.org
+  roles:
+  - role: scp_http_int
+    target_name: aws-logs
+    scp_dest: /var/www/glusterfs-logs
+

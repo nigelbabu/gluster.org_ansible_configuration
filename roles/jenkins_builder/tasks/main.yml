@@ -36,7 +36,9 @@
 - name: Create jenkins user
   user:
     name: jenkins
-    groups: wheel
+    groups:
+    - wheel
+    - mock
     password: "{{ jenkins_user_password |default(omit) }}"
 
 - import_tasks: setup_auth_rax.yml
@@ -47,7 +49,7 @@
     name: rpc-statd
     enabled: true
     state: started
-  when: location == 'rax'
+  when: location == 'rax' or location == 'aws'
 
 #TODO add the fingerprint of review.gluster.org to user jenkins
 # so it doesn't block
